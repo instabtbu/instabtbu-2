@@ -1,0 +1,259 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14C109" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" useAutolayout="YES" initialViewController="oIX-ks-njo">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
+    </dependencies>
+    <scenes>
+        <!--Navigation Controller-->
+        <scene sceneID="1G5-HY-lLv">
+            <objects>
+                <navigationController storyboardIdentifier="navigationController" id="oIX-ks-njo" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="hYT-05-1mI">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="4dn-v5-4ab"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Cm7-fk-y2L" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1116" y="-744.56338028169012"/>
+        </scene>
+        <!--instabtbu-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController storyboardIdentifier="SW" id="BYZ-38-t0r" customClass="ViewController" customModule="instabtbu" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="189-eB-ckH"/>
+                        <viewControllerLayoutGuide type="bottom" id="4Y3-CL-mqu"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="G6h-ff-tG3">
+                        <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="shangwang_weilianjie" translatesAutoresizingMaskIntoConstraints="NO" id="JSU-VL-nPH">
+                                <rect key="frame" x="96" y="87" width="576" height="210"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="shangwang_num_left" translatesAutoresizingMaskIntoConstraints="NO" id="l1R-sm-KEd">
+                                <rect key="frame" x="96" y="298" width="70" height="70"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="shangwang_psw_left" translatesAutoresizingMaskIntoConstraints="NO" id="yJJ-cD-LVc">
+                                <rect key="frame" x="96" y="368" width="70" height="70"/>
+                            </imageView>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" minimumFontSize="17" background="shangwang_psw_right" translatesAutoresizingMaskIntoConstraints="NO" id="9J2-ET-dPB">
+                                <rect key="frame" x="166" y="368" width="506" height="70"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="36"/>
+                                <textInputTraits key="textInputTraits" keyboardType="namePhonePad" returnKeyType="done" secureTextEntry="YES"/>
+                                <connections>
+                                    <action selector="goBack" destination="dkx-z0-nzr" eventType="editingDidEndOnExit" id="YNH-TS-JSQ"/>
+                                    <action selector="pswdid:" destination="BYZ-38-t0r" eventType="editingDidEnd" id="fRW-I9-u64"/>
+                                </connections>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yPC-IR-EbB">
+                                <rect key="frame" x="96" y="438" width="288" height="64"/>
+                                <state key="normal" image="shangwang_denglu1">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="denglu:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ClL-SI-CwK"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8by-fF-In4">
+                                <rect key="frame" x="384" y="438" width="288" height="64"/>
+                                <state key="normal" image="shangwang_duankai1">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="duankai:" destination="BYZ-38-t0r" eventType="touchUpInside" id="BCN-Ww-81E"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eCL-7h-k5i">
+                                <rect key="frame" x="96" y="510" width="280" height="140"/>
+                                <state key="normal" image="shangwang_zidongdenglu0">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="zidongdenglu:" destination="BYZ-38-t0r" eventType="touchUpInside" id="9fj-mq-rpU"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NZE-Pf-5cm">
+                                <rect key="frame" x="96" y="658" width="280" height="280"/>
+                                <state key="normal" image="shangwang_chaliuliang">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="chaliuliang:" destination="BYZ-38-t0r" eventType="touchUpInside" id="FJ4-Id-YIB"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LBs-gV-iHn">
+                                <rect key="frame" x="392" y="658" width="280" height="280"/>
+                                <state key="normal" image="shangwang_xiaoyuanwang">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="feedback:" destination="BYZ-38-t0r" eventType="touchUpInside" id="f4j-CE-mwg"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" minimumFontSize="17" background="shangwang_num_right" translatesAutoresizingMaskIntoConstraints="NO" id="5Wf-pv-FeZ">
+                                <rect key="frame" x="166" y="298" width="506" height="70"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="36"/>
+                                <textInputTraits key="textInputTraits" keyboardType="namePhonePad" returnKeyType="next"/>
+                                <connections>
+                                    <action selector="goBack" destination="dkx-z0-nzr" eventType="editingDidEndOnExit" id="EIJ-2R-Eae"/>
+                                    <action selector="numdid:" destination="BYZ-38-t0r" eventType="editingDidEnd" id="BFf-Qz-QwY"/>
+                                </connections>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hyN-Hj-Bzq">
+                                <rect key="frame" x="392" y="510" width="280" height="140"/>
+                                <state key="normal" image="shangwang_zidongcha0"/>
+                                <connections>
+                                    <action selector="zidongcha:" destination="BYZ-38-t0r" eventType="touchUpInside" id="3SU-bq-h0v"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="0" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zgG-Qo-mPD">
+                                <rect key="frame" x="630" y="203" width="30" height="45"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <color key="textColor" red="0.95294117649999999" green="0.95294117649999999" blue="0.95294117649999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="12345MB" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bhU-cZ-nGN">
+                                <rect key="frame" x="441" y="203" width="149" height="45"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <color key="textColor" red="0.95294117649999999" green="0.95294117649999999" blue="0.95294117649999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="0.95294117647058818" green="0.95294117647058818" blue="0.95294117647058818" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="上网登录" id="bOo-a2-kir"/>
+                    <navigationItem key="navigationItem" title="instabtbu" id="dyG-GC-jEd" colorLabel="IBBuiltInLabel-Blue"/>
+                    <connections>
+                        <outlet property="denglubutton" destination="yPC-IR-EbB" id="K0M-Aw-1ct"/>
+                        <outlet property="liulianglabel" destination="bhU-cZ-nGN" id="MKt-Pn-tmv"/>
+                        <outlet property="numtext" destination="5Wf-pv-FeZ" id="AxL-82-ay5"/>
+                        <outlet property="pswtext" destination="9J2-ET-dPB" id="wg0-Fw-BCA"/>
+                        <outlet property="zaixianlabel" destination="zgG-Qo-mPD" id="v61-lZ-GG3"/>
+                        <outlet property="zhuangtai" destination="JSU-VL-nPH" id="5ze-DS-TWF"/>
+                        <outlet property="zidongchabutton" destination="hyN-Hj-Bzq" id="gAB-cy-u1c"/>
+                        <outlet property="zidongdenglubutton" destination="eCL-7h-k5i" id="POT-cf-ObX"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-224" y="-745"/>
+        </scene>
+        <!--教务查询-->
+        <scene sceneID="jKG-mD-ZWJ">
+            <objects>
+                <viewController storyboardIdentifier="JW" id="fRo-n8-kAh" customClass="JWGLViewController" customModule="instabtbu" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="EN9-Lw-vJM"/>
+                        <viewControllerLayoutGuide type="bottom" id="YH7-vq-uHE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="HEr-wd-opt">
+                        <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" minimumFontSize="17" background="shangwang_num_right" translatesAutoresizingMaskIntoConstraints="NO" id="GXf-3Q-qQH" userLabel="usn">
+                                <rect key="frame" x="166" y="489" width="506" height="70"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <textInputTraits key="textInputTraits" keyboardType="namePhonePad" returnKeyType="next"/>
+                                <connections>
+                                    <action selector="goBack" destination="V7B-NM-6yS" eventType="editingDidEndOnExit" id="7ES-CC-14t"/>
+                                    <action selector="usndid:" destination="fRo-n8-kAh" eventType="editingDidEnd" id="dBc-wl-aXJ"/>
+                                </connections>
+                            </textField>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="jiaowu_back" translatesAutoresizingMaskIntoConstraints="NO" id="KqM-H4-gNa">
+                                <rect key="frame" x="96" y="87" width="576" height="394"/>
+                            </imageView>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" minimumFontSize="17" background="shangwang_psw_right" translatesAutoresizingMaskIntoConstraints="NO" id="nj5-my-WsH" userLabel="psw">
+                                <rect key="frame" x="166" y="559" width="506" height="70"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <textInputTraits key="textInputTraits" keyboardType="namePhonePad" returnKeyType="done" secureTextEntry="YES"/>
+                                <connections>
+                                    <action selector="goBack" destination="V7B-NM-6yS" eventType="editingDidEndOnExit" id="0pZ-mf-sbb"/>
+                                    <action selector="pswdid:" destination="fRo-n8-kAh" eventType="editingDidEnd" id="xMB-c4-Cdk"/>
+                                </connections>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GBM-mG-j6u">
+                                <rect key="frame" x="96" y="637" width="284" height="289"/>
+                                <state key="normal" backgroundImage="jiaowu_chengji">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="ChengjiStart:" destination="fRo-n8-kAh" eventType="touchUpInside" id="CDd-ov-cqw"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="u86-UU-KCn">
+                                <rect key="frame" x="388" y="637" width="284" height="289"/>
+                                <state key="normal" backgroundImage="jiaowu_kebiao">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="KebiaoStart:" destination="fRo-n8-kAh" eventType="touchUpInside" id="R1p-2c-FcF"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="h3S-vn-bcI">
+                                <rect key="frame" x="96" y="934" width="284" height="73"/>
+                                <state key="normal" backgroundImage="jiaowu_xiaoli">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="Xiaoli:" destination="fRo-n8-kAh" eventType="touchUpInside" id="Uav-xW-tNN"/>
+                                </connections>
+                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="shangwang_num_left" translatesAutoresizingMaskIntoConstraints="NO" id="UEl-nS-1mt">
+                                <rect key="frame" x="96" y="489" width="70" height="70"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="shangwang_psw_left" translatesAutoresizingMaskIntoConstraints="NO" id="7D2-8I-hsp">
+                                <rect key="frame" x="96" y="559" width="70" height="70"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ged-Gf-gca">
+                                <rect key="frame" x="388" y="934" width="284" height="73"/>
+                                <state key="normal" backgroundImage="jiaowu_qingkongziliao">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="Clear:" destination="fRo-n8-kAh" eventType="touchUpInside" id="2jC-Lj-mSU"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="0.95294117649999999" green="0.95294117649999999" blue="0.95294117649999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="教务查询" id="W4y-5g-1AU"/>
+                    <navigationItem key="navigationItem" title="教务查询" id="OYa-Rm-N5a"/>
+                    <connections>
+                        <outlet property="psw" destination="nj5-my-WsH" id="hYO-dy-uwk"/>
+                        <outlet property="usn" destination="GXf-3Q-qQH" id="qoL-ku-E0H"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="V7B-NM-6yS" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-224" y="393"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="jiaowu_back" width="316" height="224"/>
+        <image name="jiaowu_chengji" width="150" height="152"/>
+        <image name="jiaowu_kebiao" width="150" height="152"/>
+        <image name="jiaowu_qingkongziliao" width="152" height="39"/>
+        <image name="jiaowu_xiaoli" width="152" height="39"/>
+        <image name="shangwang_chaliuliang" width="450" height="456"/>
+        <image name="shangwang_denglu1" width="478" height="108"/>
+        <image name="shangwang_duankai1" width="471" height="108"/>
+        <image name="shangwang_num_left" width="112" height="112"/>
+        <image name="shangwang_num_right" width="279" height="38"/>
+        <image name="shangwang_psw_left" width="112" height="112"/>
+        <image name="shangwang_psw_right" width="279" height="38"/>
+        <image name="shangwang_weilianjie" width="949" height="346"/>
+        <image name="shangwang_xiaoyuanwang" width="450" height="456"/>
+        <image name="shangwang_zidongcha0" width="450" height="225"/>
+        <image name="shangwang_zidongdenglu0" width="450" height="225"/>
+    </resources>
+    <simulatedMetricsContainer key="defaultSimulatedMetrics">
+        <simulatedStatusBarMetrics key="statusBar"/>
+        <simulatedOrientationMetrics key="orientation"/>
+        <simulatedScreenMetrics key="destination"/>
+    </simulatedMetricsContainer>
+</document>
