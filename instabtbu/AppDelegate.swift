@@ -46,7 +46,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let leftSideDrawerViewController = LeftViewController()
         let centerViewController = stb.instantiateViewControllerWithIdentifier("navigationController") as UINavigationController
         drawerController = DrawerController(centerViewController: centerViewController, leftDrawerViewController: leftSideDrawerViewController)
-        drawerController.maximumLeftDrawerWidth = 200.0
+        drawerController.maximumLeftDrawerWidth = centerViewController.view.frame.width*20/32
         drawerController.openDrawerGestureModeMask = .All
         drawerController.closeDrawerGestureModeMask = .All
         drawerController.shouldStretchDrawer = false

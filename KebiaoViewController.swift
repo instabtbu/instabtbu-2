@@ -69,6 +69,7 @@ class KebiaoViewController: UIViewController, UIAlertViewDelegate {
                         kechengT.bounces = false
                         chuli.addObject(chulihou)
                         kechengT.text = chulihou
+                        kechengT.editable = false
                         if view.frame.width == 768 {
                             kechengT.font = UIFont(name: "Helvetica", size: 16)
                         }

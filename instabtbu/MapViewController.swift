@@ -22,11 +22,14 @@ class MapViewController: UIViewController, UIScrollViewDelegate {
         scrollview.delegate = self
         
         var subway = UIImageView(image: UIImage(named: "ditie_bjsubway"))
-        subway.frame = CGRect(x: 0, y: 0, width: 450, height: 399)
+        var width = self.view.frame.width
+        subway.frame = CGRect(x: 0, y: 0, width: width, height: width/450*399)
         scrollview.addSubview(subway)
         
         scrollview.maximumZoomScale = 10
-        scrollview.minimumZoomScale = 0.5
+        scrollview.minimumZoomScale = 1
+        scrollview.bouncesZoom = false
+//        scrollview.bounces = false
         scrollview.contentSize = subway.frame.size
     }
     //只有左侧滑动

@@ -17,16 +17,18 @@ class LeftViewController: UIViewController {
         super.viewDidLoad()
         
         // Do any additional setup after loading the view.
+        var width = self.view.frame.width*20/32
         self.view.backgroundColor = UIColor(red: 61/255, green: 63/255, blue: 79/255, alpha: 1)
-        var TX = UIImageView(frame: CGRect(x: 0, y: 0, width: 200, height: 125))
+        var TX = UIImageView(frame: CGRect(x: 0, y: 0, width: width, height: width*125/200))
         TX.image = UIImage(named: "TX")
         self.view.addSubview(TX)
-        var Sumheight:CGFloat = 125
+        var Sumheight:CGFloat = width*125/200
         for i in 0...3 {
-            var AButton = UIButton(frame: CGRect(x: 0, y: Sumheight, width: 200, height: 43))
-            Sumheight += 43
+            var AButton = UIButton(frame: CGRect(x: 0, y: Sumheight, width: width, height: width*43/200))
+            Sumheight += width*43/200
             AButton.setBackgroundImage(UIImage(named: "\(AButtonName[i])f"), forState: UIControlState.Normal)
             AButton.addTarget(self, action: "qiehuan:", forControlEvents: UIControlEvents.TouchUpInside)
+            AButton.tag = i
             self.view.addSubview(AButton)
             Buttons.append(AButton)
         }
@@ -39,8 +41,8 @@ class LeftViewController: UIViewController {
     }
     
     func qiehuan(sender: UIButton) {
-        var i = Int((sender.frame.maxY - 125)/43)
-        println("\(i)")
+        var i = sender.tag+1
+        println("\(sender.tag)")
         if i == 1 {
             navigation.viewControllers = [(stb.instantiateViewControllerWithIdentifier("SW") as ViewController)]
         }
