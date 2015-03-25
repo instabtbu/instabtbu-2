@@ -18,7 +18,6 @@ class JWGLViewController: UIViewController, UITextFieldDelegate {
     let foc = oc()
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
         if let iSave = NSUserDefaults(suiteName: "iSaveJW") {
             usn.text = iSave.stringForKey("SaveUsn")
             psw.text = iSave.stringForKey("SavePsw")
