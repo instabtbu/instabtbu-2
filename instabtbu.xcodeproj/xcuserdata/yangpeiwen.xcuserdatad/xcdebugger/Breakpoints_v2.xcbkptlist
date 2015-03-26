@@ -10,11 +10,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "instabtbu/ViewController.swift"
-            timestampString = "440920101.201873"
+            timestampString = "449047750.438474"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "453"
-            endingLineNumber = "453"
+            startingLineNumber = "448"
+            endingLineNumber = "448"
             landmarkName = "user(_:psw:)"
             landmarkType = "5">
          </BreakpointContent>
@@ -26,11 +26,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "instabtbu/ViewController.swift"
-            timestampString = "440920101.201873"
+            timestampString = "449047750.438474"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "486"
-            endingLineNumber = "486"
+            startingLineNumber = "481"
+            endingLineNumber = "481"
             landmarkName = "zhuanyi(_:)"
             landmarkType = "5">
          </BreakpointContent>
@@ -42,11 +42,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "instabtbu/ViewController.swift"
-            timestampString = "440920101.201873"
+            timestampString = "449047750.438474"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "487"
-            endingLineNumber = "487"
+            startingLineNumber = "482"
+            endingLineNumber = "482"
             landmarkName = "zhuanyi(_:)"
             landmarkType = "5">
          </BreakpointContent>
@@ -58,11 +58,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "instabtbu/ViewController.swift"
-            timestampString = "440920101.201873"
+            timestampString = "449047750.438474"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "516"
-            endingLineNumber = "516"
+            startingLineNumber = "511"
+            endingLineNumber = "511"
             landmarkName = "getCRC16(_:)"
             landmarkType = "5">
          </BreakpointContent>
@@ -74,11 +74,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "instabtbu/ViewController.swift"
-            timestampString = "440920101.201873"
+            timestampString = "449047750.438474"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "592"
-            endingLineNumber = "592"
+            startingLineNumber = "587"
+            endingLineNumber = "587"
             landmarkName = "show(_:)"
             landmarkType = "5">
          </BreakpointContent>
@@ -134,7 +134,55 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "instabtbu/ViewController.swift"
-            timestampString = "440920101.201873"
+            timestampString = "449047750.438474"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "403"
+            endingLineNumber = "403"
+            landmarkName = "jiefeng(_:)"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "instabtbu/ViewController.swift"
+            timestampString = "449047750.438474"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "401"
+            endingLineNumber = "401"
+            landmarkName = "jiefeng(_:)"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "instabtbu/ViewController.swift"
+            timestampString = "449047750.438474"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "407"
+            endingLineNumber = "407"
+            landmarkName = "jiefeng(_:)"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "instabtbu/ViewController.swift"
+            timestampString = "449047750.438474"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "408"
@@ -150,11 +198,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "instabtbu/ViewController.swift"
-            timestampString = "440920101.201873"
+            timestampString = "449047750.438474"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "406"
-            endingLineNumber = "406"
+            startingLineNumber = "405"
+            endingLineNumber = "405"
             landmarkName = "jiefeng(_:)"
             landmarkType = "5">
          </BreakpointContent>
@@ -166,59 +214,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "instabtbu/ViewController.swift"
-            timestampString = "440920101.201873"
+            timestampString = "449047750.438474"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "412"
-            endingLineNumber = "412"
-            landmarkName = "jiefeng(_:)"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "instabtbu/ViewController.swift"
-            timestampString = "440920101.201873"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "413"
-            endingLineNumber = "413"
-            landmarkName = "jiefeng(_:)"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "instabtbu/ViewController.swift"
-            timestampString = "440920101.201873"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "410"
-            endingLineNumber = "410"
-            landmarkName = "jiefeng(_:)"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "instabtbu/ViewController.swift"
-            timestampString = "440920101.201873"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "409"
-            endingLineNumber = "409"
+            startingLineNumber = "404"
+            endingLineNumber = "404"
             landmarkName = "jiefeng(_:)"
             landmarkType = "5">
          </BreakpointContent>
@@ -246,11 +246,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "instabtbu/ViewController.swift"
-            timestampString = "440920101.201873"
+            timestampString = "449047750.438474"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "239"
-            endingLineNumber = "239"
+            startingLineNumber = "233"
+            endingLineNumber = "233"
             landmarkName = "duankai(_:)"
             landmarkType = "5">
          </BreakpointContent>
@@ -262,11 +262,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "instabtbu/ViewController.swift"
-            timestampString = "440920101.201873"
+            timestampString = "449047750.438474"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "110"
-            endingLineNumber = "110"
+            startingLineNumber = "104"
+            endingLineNumber = "104"
             landmarkName = "zidongcha(_:)"
             landmarkType = "5">
          </BreakpointContent>
@@ -278,11 +278,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "instabtbu/ViewController.swift"
-            timestampString = "440920101.201873"
+            timestampString = "449047750.438474"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "109"
-            endingLineNumber = "109"
+            startingLineNumber = "103"
+            endingLineNumber = "103"
             landmarkName = "zidongcha(_:)"
             landmarkType = "5">
          </BreakpointContent>
@@ -294,7 +294,39 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "instabtbu/ViewController.swift"
-            timestampString = "440920101.201873"
+            timestampString = "449047750.438474"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "206"
+            endingLineNumber = "206"
+            landmarkName = "zidongchaliuliang()"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "instabtbu/ViewController.swift"
+            timestampString = "449047750.438474"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "207"
+            endingLineNumber = "207"
+            landmarkName = "zidongchaliuliang()"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "instabtbu/ViewController.swift"
+            timestampString = "449047750.438474"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "212"
@@ -310,43 +342,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "instabtbu/ViewController.swift"
-            timestampString = "440920101.201873"
+            timestampString = "449047750.438474"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "213"
-            endingLineNumber = "213"
-            landmarkName = "zidongchaliuliang()"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "instabtbu/ViewController.swift"
-            timestampString = "440920101.201873"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "218"
-            endingLineNumber = "218"
-            landmarkName = "zidongchaliuliang()"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "instabtbu/ViewController.swift"
-            timestampString = "440920101.201873"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "245"
-            endingLineNumber = "245"
+            startingLineNumber = "239"
+            endingLineNumber = "239"
             landmarkName = "ViewController"
             landmarkType = "3">
          </BreakpointContent>
@@ -358,11 +358,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "instabtbu/ViewController.swift"
-            timestampString = "440920101.201873"
+            timestampString = "449047750.438474"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "247"
-            endingLineNumber = "247"
+            startingLineNumber = "241"
+            endingLineNumber = "241"
             landmarkName = "xiancheng(_:)"
             landmarkType = "5">
          </BreakpointContent>
@@ -374,11 +374,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "instabtbu/ViewController.swift"
-            timestampString = "440920101.201873"
+            timestampString = "449047750.438474"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "250"
-            endingLineNumber = "250"
+            startingLineNumber = "244"
+            endingLineNumber = "244"
             landmarkName = "ui(_:)"
             landmarkType = "5">
          </BreakpointContent>
@@ -390,11 +390,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "instabtbu/ViewController.swift"
-            timestampString = "440920101.201873"
+            timestampString = "449047750.438474"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "252"
-            endingLineNumber = "252"
+            startingLineNumber = "246"
+            endingLineNumber = "246"
             landmarkName = "ViewController"
             landmarkType = "3">
          </BreakpointContent>
@@ -406,11 +406,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "instabtbu/ViewController.swift"
-            timestampString = "440920101.201873"
+            timestampString = "449047750.438474"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "316"
-            endingLineNumber = "316"
+            startingLineNumber = "311"
+            endingLineNumber = "311"
             landmarkName = "chaliuliang2()"
             landmarkType = "5">
          </BreakpointContent>
@@ -502,11 +502,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "instabtbu/ViewController.swift"
-            timestampString = "440920101.201873"
+            timestampString = "449047750.438474"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "256"
-            endingLineNumber = "256"
+            startingLineNumber = "250"
+            endingLineNumber = "250"
             landmarkName = "baochi()"
             landmarkType = "5">
          </BreakpointContent>
@@ -518,11 +518,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "instabtbu/ViewController.swift"
-            timestampString = "440920101.201873"
+            timestampString = "449047750.438474"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "265"
-            endingLineNumber = "265"
+            startingLineNumber = "259"
+            endingLineNumber = "259"
             landmarkName = "baochi()"
             landmarkType = "5">
          </BreakpointContent>

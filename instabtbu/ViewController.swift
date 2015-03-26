@@ -72,12 +72,6 @@ class ViewController: UIViewController,CLLocationManagerDelegate,GCDAsyncUdpSock
     }
     
     
-    func conn(){
-        
-    }
-    
-    
-    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -139,7 +133,7 @@ class ViewController: UIViewController,CLLocationManagerDelegate,GCDAsyncUdpSock
     @IBOutlet weak var zidongchabutton: UIButton!
     @IBOutlet weak var zidongdenglubutton: UIButton!
     @IBAction func denglu(sender: AnyObject) {
-        denglu2()
+        ui({self.denglu2()})
     }
     
     func denglu2(){
@@ -265,9 +259,10 @@ class ViewController: UIViewController,CLLocationManagerDelegate,GCDAsyncUdpSock
         var cmd = getcmd(0)
         var data = NSData(bytes: cmd, length: cmd.count)
         while always{
-            sleep(5)
-            udp.sendData(data, withTimeout: 15000, tag: 0)
+            sleep(30)
+            udp.sendData(data, withTimeout: 30000, tag: 0)
             println("发送保持数据:\(t(cmd))")
+            
         }
         MobClick.endEvent("service")
     }

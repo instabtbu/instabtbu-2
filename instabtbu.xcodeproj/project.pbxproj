@@ -14,7 +14,6 @@
 		AB2FA5371A8DF7FF000609E1 /* DrawerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB2FA5331A8DF7FF000609E1 /* DrawerController.swift */; };
 		AB2FA5381A8DF7FF000609E1 /* DrawerVisualState.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB2FA5341A8DF7FF000609E1 /* DrawerVisualState.swift */; };
 		AB2FA56E1A8E0B84000609E1 /* LeftViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB2FA56D1A8E0B84000609E1 /* LeftViewController.swift */; };
-		AB6356801A90342B00A427B6 /* NavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB63567F1A90342B00A427B6 /* NavigationViewController.swift */; };
 		ABE6C1D71A74EBBE00163C01 /* NU.m in Sources */ = {isa = PBXBuildFile; fileRef = ABE6C1D61A74EBBE00163C01 /* NU.m */; };
 		ABE6C1DB1A74EBE500163C01 /* ChengjiViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABE6C1D81A74EBE500163C01 /* ChengjiViewController.swift */; };
 		ABE6C1DC1A74EBE500163C01 /* KebiaoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABE6C1D91A74EBE500163C01 /* KebiaoViewController.swift */; };
@@ -58,7 +57,6 @@
 		AB2FA5331A8DF7FF000609E1 /* DrawerController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DrawerController.swift; sourceTree = "<group>"; };
 		AB2FA5341A8DF7FF000609E1 /* DrawerVisualState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DrawerVisualState.swift; sourceTree = "<group>"; };
 		AB2FA56D1A8E0B84000609E1 /* LeftViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LeftViewController.swift; sourceTree = "<group>"; };
-		AB63567F1A90342B00A427B6 /* NavigationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigationViewController.swift; sourceTree = "<group>"; };
 		ABE6C1D51A74EBBE00163C01 /* NU.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NU.h; path = ../NU.h; sourceTree = "<group>"; };
 		ABE6C1D61A74EBBE00163C01 /* NU.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NU.m; path = ../NU.m; sourceTree = "<group>"; };
 		ABE6C1D81A74EBE500163C01 /* ChengjiViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ChengjiViewController.swift; path = ../ChengjiViewController.swift; sourceTree = "<group>"; };
@@ -342,7 +340,6 @@
 				AB2FA56D1A8E0B84000609E1 /* LeftViewController.swift */,
 				AB129AE81AADEB570044759D /* AboutViewController.swift */,
 				AB129AE61AADEB330044759D /* MapViewController.swift */,
-				AB63567F1A90342B00A427B6 /* NavigationViewController.swift */,
 				C0DAD4DA1A3EFD5C00BE24A8 /* testc.c */,
 				C0DAD4DB1A3EFD5C00BE24A8 /* testc.h */,
 				C0DAD4B71A3E7F9F00BE24A8 /* Main.storyboard */,
@@ -498,7 +495,6 @@
 				C0DAD4DC1A3EFD5C00BE24A8 /* testc.c in Sources */,
 				AB2FA56E1A8E0B84000609E1 /* LeftViewController.swift in Sources */,
 				C0C2CABC1A408C8F00DC84A9 /* ytcpsocket.c in Sources */,
-				AB6356801A90342B00A427B6 /* NavigationViewController.swift in Sources */,
 				AB2FA5371A8DF7FF000609E1 /* DrawerController.swift in Sources */,
 				AB2FA5381A8DF7FF000609E1 /* DrawerVisualState.swift in Sources */,
 				ABE6C1DC1A74EBE500163C01 /* KebiaoViewController.swift in Sources */,
