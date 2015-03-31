@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<<<<<<< HEAD
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14C1514" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="oIX-ks-njo">
+=======
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6751" systemVersion="14C1514" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="oIX-ks-njo">
+>>>>>>> origin/master
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6736"/>
         <capability name="Alignment constraints to the first baseline" minToolsVersion="6.0"/>
         <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
@@ -167,11 +171,24 @@
                                     <action selector="denglu:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ClL-SI-CwK"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="19n-Ke-gFP">
+                                <rect key="frame" x="16" y="521" width="288" height="36"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="19n-Ke-gFP" secondAttribute="height" multiplier="476:59" constant="1.5932203389830306" id="RP1-uu-w0g"/>
+                                </constraints>
+                                <state key="normal" image="shangwang_force">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="force:" destination="BYZ-38-t0r" eventType="touchUpInside" id="15g-EH-Lyt"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.95294117647058818" green="0.95294117647058818" blue="0.95294117647058818" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="JSU-VL-nPH" firstAttribute="trailing" secondItem="G6h-ff-tG3" secondAttribute="trailingMargin" id="0Wg-Jh-8a1"/>
                             <constraint firstItem="hyN-Hj-Bzq" firstAttribute="width" secondItem="JSU-VL-nPH" secondAttribute="height" multiplier="4:3" id="1in-FF-xau"/>
+                            <constraint firstItem="19n-Ke-gFP" firstAttribute="trailing" secondItem="LBs-gV-iHn" secondAttribute="trailing" id="2rW-FS-eWn"/>
                             <constraint firstItem="yPC-IR-EbB" firstAttribute="top" secondItem="9J2-ET-dPB" secondAttribute="bottom" id="2yD-iE-ecP"/>
                             <constraint firstItem="NZE-Pf-5cm" firstAttribute="leading" secondItem="G6h-ff-tG3" secondAttribute="leadingMargin" id="3gV-sl-RAd"/>
                             <constraint firstItem="hyN-Hj-Bzq" firstAttribute="top" secondItem="8by-fF-In4" secondAttribute="bottom" constant="8" id="4y6-wq-i9U"/>
@@ -191,6 +208,7 @@
                             <constraint firstItem="bhU-cZ-nGN" firstAttribute="firstBaseline" secondItem="zgG-Qo-mPD" secondAttribute="baseline" id="SgW-cj-2V4"/>
                             <constraint firstItem="bhU-cZ-nGN" firstAttribute="top" secondItem="zgG-Qo-mPD" secondAttribute="top" id="SzS-eL-3Cm"/>
                             <constraint firstItem="9J2-ET-dPB" firstAttribute="top" secondItem="5Wf-pv-FeZ" secondAttribute="bottom" id="Tcs-Of-LMD"/>
+                            <constraint firstItem="19n-Ke-gFP" firstAttribute="top" secondItem="NZE-Pf-5cm" secondAttribute="bottom" constant="8" symbolic="YES" id="WoD-eX-t6z"/>
                             <constraint firstItem="hyN-Hj-Bzq" firstAttribute="trailing" secondItem="G6h-ff-tG3" secondAttribute="trailingMargin" id="c2E-0f-VSZ"/>
                             <constraint firstItem="yJJ-cD-LVc" firstAttribute="leading" secondItem="G6h-ff-tG3" secondAttribute="leadingMargin" id="c8D-9c-hu1"/>
                             <constraint firstItem="JSU-VL-nPH" firstAttribute="top" secondItem="eaJ-Lh-ddE" secondAttribute="bottom" constant="16" id="eCQ-md-Tv2"/>
@@ -208,6 +226,7 @@
                             <constraint firstItem="5Wf-pv-FeZ" firstAttribute="top" secondItem="JSU-VL-nPH" secondAttribute="bottom" id="vHy-54-hhU"/>
                             <constraint firstItem="yPC-IR-EbB" firstAttribute="width" secondItem="JSU-VL-nPH" secondAttribute="height" multiplier="48:35" id="w0z-rs-4Oa"/>
                             <constraint firstItem="LBs-gV-iHn" firstAttribute="trailing" secondItem="G6h-ff-tG3" secondAttribute="trailingMargin" id="wNE-wK-6lB"/>
+                            <constraint firstItem="NZE-Pf-5cm" firstAttribute="leading" secondItem="19n-Ke-gFP" secondAttribute="leading" id="wot-mU-7uX"/>
                             <constraint firstItem="eCL-7h-k5i" firstAttribute="top" secondItem="yPC-IR-EbB" secondAttribute="bottom" constant="8" id="xFf-0x-Leo"/>
                             <constraint firstItem="5Wf-pv-FeZ" firstAttribute="top" secondItem="zgG-Qo-mPD" secondAttribute="bottom" constant="26" id="xur-oO-dHj"/>
                         </constraints>
@@ -387,6 +406,7 @@
         <image name="shangwang_chaliuliang" width="450" height="456"/>
         <image name="shangwang_denglu1" width="478" height="108"/>
         <image name="shangwang_duankai1" width="471" height="108"/>
+        <image name="shangwang_force" width="952" height="118"/>
         <image name="shangwang_num_left" width="112" height="112"/>
         <image name="shangwang_num_right" width="279" height="38"/>
         <image name="shangwang_psw_left" width="112" height="112"/>

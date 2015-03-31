@@ -72,12 +72,6 @@ class ViewController: UIViewController,CLLocationManagerDelegate,GCDAsyncUdpSock
     }
     
     
-    func conn(){
-        
-    }
-    
-    
-    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -139,7 +133,7 @@ class ViewController: UIViewController,CLLocationManagerDelegate,GCDAsyncUdpSock
     @IBOutlet weak var zidongchabutton: UIButton!
     @IBOutlet weak var zidongdenglubutton: UIButton!
     @IBAction func denglu(sender: AnyObject) {
-        denglu2()
+        ui({self.denglu2()})
     }
     
     func denglu2(){
@@ -195,6 +189,9 @@ class ViewController: UIViewController,CLLocationManagerDelegate,GCDAsyncUdpSock
                     xiancheng({
                         self.baochi()
                     })
+//                    xiancheng({
+//                        self.testonline()
+//                    })
                 }else {
                     show(recString)
                     println(recString)
@@ -232,7 +229,7 @@ class ViewController: UIViewController,CLLocationManagerDelegate,GCDAsyncUdpSock
         udp.sendData(data, withTimeout: 15, tag: 0)
         NSThread.sleepForTimeInterval(0.05)
         udp.sendData(data, withTimeout: 15, tag: 0)
-        
+        println("断开成功")
         always = false
         zhuangtai.image=UIImage(named: "shangwang_weilianjie.png")
         denglubutton.setImage(UIImage(named: "shangwang_denglu1.png"), forState: UIControlState.Normal)
@@ -250,7 +247,6 @@ class ViewController: UIViewController,CLLocationManagerDelegate,GCDAsyncUdpSock
         dispatch_async(dispatch_get_main_queue(), code)
     }
     
-    
     func baochi(){
         MobClick.beginEvent("service")
         var udp = GCDAsyncUdpSocket(delegate: self, delegateQueue: dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0))
@@ -265,11 +261,23 @@ class ViewController: UIViewController,CLLocationManagerDelegate,GCDAsyncUdpSock
         var cmd = getcmd(0)
         var data = NSData(bytes: cmd, length: cmd.count)
         while always{
-            sleep(5)
-            udp.sendData(data, withTimeout: 15000, tag: 0)
+            sleep(30)
+            udp.sendData(data, withTimeout: 30000, tag: 0)
             println("发送保持数据:\(t(cmd))")
         }
         MobClick.endEvent("service")
+    }
+    
+    func testonline(){
+        var jwgl = JWGLViewController()
+        while always{
+            var rec = jwgl.sGet("http://baidu.com")
+            println(rec)
+            if rec.length == 0{
+                denglu2()
+            }
+            sleep(30)
+        }
     }
     
     func udpSocket(sock: GCDAsyncUdpSocket!, didReceiveData data: NSData!, fromAddress address: NSData!, withFilterContext filterContext: AnyObject!) {
@@ -321,7 +329,6 @@ class ViewController: UIViewController,CLLocationManagerDelegate,GCDAsyncUdpSock
                 rec = read()
                 }
             }while(rec.count == 0)
-            
                 client.close()
                 jiefeng(rec)
                 var regex = NSRegularExpression(pattern: "(\\d+)兆", options: NSRegularExpressionOptions.allZeros, error: nil)
@@ -586,6 +593,16 @@ class ViewController: UIViewController,CLLocationManagerDelegate,GCDAsyncUdpSock
         }
     }
 
+    @IBAction func force(sender: AnyObject) {
+        var mypost = oc()
+        var rec = mypost.iPOSTwithurl("http://self.btbu.edu.cn/cgi-bin/nacgi.cgi", withpost: "textfield=" + numtext.text+"&textfield2=" + pswtext.text + "&Submit=%CC%E1%BD%BB&nacgicmd=9&radio=1&jsidx=1")
+        println(rec)
+        if let range = rec.rangeOfString("成功断开本帐号的当前的所有连接"){
+            println("成功断开本帐号的当前的所有连接")
+        }else{
+            println("断开失败")
+        }
+    }
     
     func show(show:String){
         ui({
