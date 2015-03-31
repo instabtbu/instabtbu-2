@@ -8,7 +8,7 @@
 
 import UIKit
 
-class MapViewController: UIViewController, UIScrollViewDelegate {
+class MapViewController: UIViewController, UIScrollViewDelegate, UITabBarDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -16,30 +16,30 @@ class MapViewController: UIViewController, UIScrollViewDelegate {
         // Do any additional setup after loading the view.
         self.view.backgroundColor = UIColor.whiteColor()
         
-        var scrollview = UIScrollView(frame: CGRect(x: 0, y: 0, width: self.view.frame.width, height: self.view.frame.height))
+        var tabbar = UITabBar(frame:CGRectMake(0, self.view.frame.height-49, self.view.frame.width, 49))
+        var item1 = UITabBarItem(title: "地铁线路", image: nil, tag: 0)
+        var item2 = UITabBarItem(title: "公交线路", image: nil, tag: 1)
+        tabbar.setItems([item1,item2], animated: true)
+        self.view.addSubview(tabbar)
+        tabbar.delegate = self
+        
+        var scrollview = UIScrollView(frame: CGRect(x: 0, y: 64, width: self.view.frame.width, height: self.view.frame.height-113))
         scrollview.backgroundColor = UIColor.whiteColor()
         self.view.addSubview(scrollview)
         scrollview.delegate = self
+        scrollview.tag = 10
         
-        var subway = UIImageView(image: UIImage(named: "ditie_bjsubway"))
+        var pic = UIImageView(image: UIImage(named: "ditie_bjsubway"))
         var width = self.view.frame.width
-        subway.frame = CGRect(x: 0, y: 0, width: width, height: width/450*399)
-        scrollview.addSubview(subway)
+        pic.frame = CGRect(x: 0, y: 0, width: width, height: width/450*399)
+        scrollview.addSubview(pic)
+        pic.tag = 11
         
         scrollview.maximumZoomScale = 10
         scrollview.minimumZoomScale = 1
         scrollview.bouncesZoom = false
-//        scrollview.bounces = false
-        scrollview.contentSize = subway.frame.size
+        scrollview.contentSize = pic.frame.size
     }
-    //只有左侧滑动
-    //    override func viewDidAppear(animated: Bool) {
-    //        drawerController.openDrawerGestureModeMask = OpenDrawerGestureMode.BezelPanningCenterView
-    //    }
-    //
-    //    override func viewWillDisappear(animated: Bool) {
-    //        drawerController.openDrawerGestureModeMask = OpenDrawerGestureMode.All
-    //    }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -51,6 +51,10 @@ class MapViewController: UIViewController, UIScrollViewDelegate {
     }
     
     func scrollViewDidEndZooming(scrollView: UIScrollView, withView view: UIView!, atScale scale: CGFloat) {
+        
+    }
+    
+    func tabBar(tabBar: UITabBar, didSelectItem item: UITabBarItem!) {
         
     }
     
