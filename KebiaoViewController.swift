@@ -57,7 +57,7 @@ class KebiaoViewController: UIViewController, UIAlertViewDelegate {
         var myView = UIView(frame: CGRectMake(0, 0, self.view.frame.width, y[2]*6))
         scrollview.addSubview(myView)
         scrollview.contentSize = myView.frame.size
-        
+        //有委托学期则证明查过课表 生成ui
         if delegate.xueqi != "" {
             for i in 0...5 {
                 for j in 0...6 {
@@ -83,6 +83,7 @@ class KebiaoViewController: UIViewController, UIAlertViewDelegate {
                     }
                 }
             }
+            //存档bool为假 储存新的课表和学期 另外学期和课表同时储存不用在jw中进行单一判断
             if !delegate.cundang {
                 iSave?.setObject(delegate.kebiao, forKey: "kebiao")
                 iSave?.setObject(delegate.xueqi, forKey: "xueqi")
@@ -200,19 +201,27 @@ class KebiaoViewController: UIViewController, UIAlertViewDelegate {
         }
         else {
             var aAl = UIAlertView(title: "选择学期失败", message: "请确认和教务系统间通讯无碍", delegate: self, cancelButtonTitle: "确定")
+            aAl.show()
         }
     }
     
     func alertView(alertView: UIAlertView, clickedButtonAtIndex buttonIndex: Int) {
         if (buttonIndex != alertView.cancelButtonIndex) {
+            //确定委托学期
             delegate.xueqi = alertView.buttonTitleAtIndex(buttonIndex)
+            //重置课表数组
             delegate.kebiao = NSMutableArray(capacity: 100)
+            //选完学期->查课表 成功更新ui 不成功说明连接有误或者无课表
             if JWGLViewController().schedule() {
                 delegate.cundang = false
                 for i in self.view.subviews {
                     i.removeFromSuperview()
                 }
                 self.viewDidLoad()
+            }
+            else {
+                var aAl = UIAlertView(title: "选择学期失败", message: "该学期无课表时间信息!", delegate: self, cancelButtonTitle: "确定")
+                aAl.show()
             }
         }
     }

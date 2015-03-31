@@ -16,8 +16,8 @@ var stb: UIStoryboard!
 class AppDelegate: UIResponder, UIApplicationDelegate {
     
     var window: UIWindow?
-    var jwusn:NSString?
-    var jwpsw:NSString?
+    var jwusn: NSString?
+    var jwpsw: NSString?
     var kecheng = NSMutableArray(capacity: 100)
     var chengji = NSMutableArray(capacity: 100)
     var xuefen = NSMutableArray(capacity: 100)
@@ -27,6 +27,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var jidian: NSString?
     var chenggong: Bool?
     var cundang: Bool = false
+    var pangting: Bool = false
     
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
