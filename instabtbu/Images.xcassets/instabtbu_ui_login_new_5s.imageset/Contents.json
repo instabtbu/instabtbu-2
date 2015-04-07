@@ -2,13 +2,12 @@
   "images" : [
     {
       "idiom" : "iphone",
-      "scale" : "1x",
-      "filename" : "instabtbu_ui_login_new_5s.png"
+      "scale" : "1x"
     },
     {
       "idiom" : "iphone",
       "scale" : "2x",
-      "filename" : "instabtbu_ui_login_new_6.png"
+      "filename" : "instabtbu_ui_login_new_5s.png"
     },
     {
       "idiom" : "iphone",
