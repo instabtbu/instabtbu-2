@@ -16,14 +16,14 @@ class MapViewController: UIViewController, UIScrollViewDelegate, UITabBarDelegat
         // Do any additional setup after loading the view.
         self.view.backgroundColor = UIColor.whiteColor()
         
-        var tabbar = UITabBar(frame:CGRectMake(0, self.view.frame.height-49, self.view.frame.width, 49))
-        var item1 = UITabBarItem(title: "地铁线路", image: nil, tag: 0)
-        var item2 = UITabBarItem(title: "公交线路", image: nil, tag: 1)
-        tabbar.setItems([item1,item2], animated: true)
-        self.view.addSubview(tabbar)
-        tabbar.delegate = self
+//        var tabbar = UITabBar(frame:CGRectMake(0, self.view.frame.height-49, self.view.frame.width, 49))
+//        var item1 = UITabBarItem(title: "地铁线路", image: nil, tag: 0)
+//        var item2 = UITabBarItem(title: "公交线路", image: nil, tag: 1)
+//        tabbar.setItems([item1,item2], animated: true)
+//        self.view.addSubview(tabbar)
+//        tabbar.delegate = self
         
-        var scrollview = UIScrollView(frame: CGRect(x: 0, y: 64, width: self.view.frame.width, height: self.view.frame.height-113))
+        var scrollview = UIScrollView(frame: CGRect(x: 0, y: 64, width: self.view.frame.width, height: self.view.frame.height-64))
         scrollview.backgroundColor = UIColor.whiteColor()
         self.view.addSubview(scrollview)
         scrollview.delegate = self
