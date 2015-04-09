@@ -287,20 +287,6 @@ class JWGLViewController: UIViewController, UITextFieldDelegate {
         return s
     }
     
-    func reg(regTags:NSString ,retStr:String) {
-        var regex = NSRegularExpression(pattern: regTags, options: NSRegularExpressionOptions.allZeros, error: nil)
-        var len = countElements(retStr)
-        var match = regex?.matchesInString(retStr, options: NSMatchingOptions.allZeros, range: NSMakeRange(0, len))
-        var liuliang = 0
-        for a in match! {
-            let range = NSMakeRange(a.range.location, a.range.length)
-            let tmp = (retStr as NSString).substringWithRange(range)
-            if let temp = tmp.toInt(){
-                liuliang+=temp
-            }
-        }
-    }
-    
     func getyzm(img:UIImage) -> String {
         let cg = img.CGImage
         let w = Int(CGImageGetWidth(cg))
