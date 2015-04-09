@@ -105,7 +105,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="feedback:" destination="BYZ-38-t0r" eventType="touchUpInside" id="oNA-Fl-96C"/>
+                                    <segue destination="zW0-gA-kpP" kind="push" id="Wao-jR-75R"/>
                                 </connections>
                             </button>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" minimumFontSize="17" background="shangwang_num_right" translatesAutoresizingMaskIntoConstraints="NO" id="5Wf-pv-FeZ">
@@ -243,6 +243,68 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-610" y="-1256"/>
+        </scene>
+        <!--办理校园网-->
+        <scene sceneID="vY4-N9-MHM">
+            <objects>
+                <viewController id="zW0-gA-kpP" customClass="LiuliangGoumaiViewController" customModule="instabtbu" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="faT-Rj-DCA"/>
+                        <viewControllerLayoutGuide type="bottom" id="PkH-gn-JSY"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="BzK-IN-INl">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="liulianggoumai_yue" translatesAutoresizingMaskIntoConstraints="NO" id="rer-cr-QwV">
+                                <rect key="frame" x="0.0" y="60" width="320" height="181"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="rer-cr-QwV" secondAttribute="height" multiplier="320:181" id="Uur-l2-ZeF"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ive-ZR-Rce">
+                                <rect key="frame" x="42" y="273" width="236" height="107.5"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="ive-ZR-Rce" secondAttribute="height" multiplier="35:16" id="u7u-r2-UML"/>
+                                </constraints>
+                                <state key="normal" backgroundImage="liulianggoumai_button_8">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="bagb:" destination="zW0-gA-kpP" eventType="touchUpInside" id="1HU-IE-8uW"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0Lb-eG-Qu2">
+                                <rect key="frame" x="42" y="412.5" width="236" height="107.5"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="0Lb-eG-Qu2" secondAttribute="height" multiplier="35:16" id="Hsw-7W-qv4"/>
+                                </constraints>
+                                <state key="normal" backgroundImage="liulianggoumai_button_20">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="ershigb:" destination="zW0-gA-kpP" eventType="touchUpInside" id="EVp-vz-5qi"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="0.30196078431372547" green="0.30196078431372547" blue="0.30196078431372547" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="rer-cr-QwV" secondAttribute="trailing" id="03F-Ey-Gng"/>
+                            <constraint firstItem="ive-ZR-Rce" firstAttribute="leading" secondItem="0Lb-eG-Qu2" secondAttribute="leading" id="82Y-Tk-AcQ"/>
+                            <constraint firstItem="0Lb-eG-Qu2" firstAttribute="top" secondItem="ive-ZR-Rce" secondAttribute="bottom" constant="32" id="ClJ-JO-vFZ"/>
+                            <constraint firstItem="ive-ZR-Rce" firstAttribute="top" secondItem="rer-cr-QwV" secondAttribute="bottom" constant="32" id="FkZ-Bp-OD9"/>
+                            <constraint firstItem="rer-cr-QwV" firstAttribute="top" secondItem="BzK-IN-INl" secondAttribute="topMargin" constant="60" id="Uqn-vG-EiQ"/>
+                            <constraint firstItem="ive-ZR-Rce" firstAttribute="leading" secondItem="BzK-IN-INl" secondAttribute="leadingMargin" constant="26" id="WRd-ff-Zga"/>
+                            <constraint firstItem="rer-cr-QwV" firstAttribute="leading" secondItem="BzK-IN-INl" secondAttribute="leading" id="XqJ-6w-6xe"/>
+                            <constraint firstItem="ive-ZR-Rce" firstAttribute="centerX" secondItem="rer-cr-QwV" secondAttribute="centerX" id="ZCL-st-EWT"/>
+                            <constraint firstItem="0Lb-eG-Qu2" firstAttribute="trailing" secondItem="ive-ZR-Rce" secondAttribute="trailing" id="vin-Ml-xOd"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="办理校园网" id="O4u-CK-TjU"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="e6O-sX-tJ1" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-206" y="-1256"/>
         </scene>
         <!--教务查询-->
         <scene sceneID="o7B-2j-yLl">
@@ -397,6 +459,9 @@
         <image name="jiaowu_kebiao" width="150" height="152"/>
         <image name="jiaowu_qingkongziliao" width="152" height="39"/>
         <image name="jiaowu_xiaoli" width="152" height="39"/>
+        <image name="liulianggoumai_button_20" width="589" height="269"/>
+        <image name="liulianggoumai_button_8" width="589" height="269"/>
+        <image name="liulianggoumai_yue" width="720" height="408"/>
         <image name="shangwang_baritem0" width="30" height="30"/>
         <image name="shangwang_baritem1" width="30" height="30"/>
         <image name="shangwang_chaliuliang" width="450" height="456"/>

@@ -23,6 +23,7 @@
 		C03F71761A42CE2D0096E923 /* libMobClickLibrary.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C03F71741A42CE2D0096E923 /* libMobClickLibrary.a */; };
 		C03F71781A42CE7F0096E923 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = C03F71771A42CE7F0096E923 /* libz.dylib */; };
 		C03F717E1A42DF650096E923 /* libUMFeedback.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C03F717C1A42DF650096E923 /* libUMFeedback.a */; };
+		C069BE431AD6CD5100080844 /* LiuliangGoumaiViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C069BE421AD6CD5100080844 /* LiuliangGoumaiViewController.swift */; };
 		C07755EC1A448BC6003BD4E4 /* UMFeedbackLocalizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = C07755EA1A448BC6003BD4E4 /* UMFeedbackLocalizable.strings */; };
 		C07756251A45F185003BD4E4 /* GCDAsyncUdpSocket.m in Sources */ = {isa = PBXBuildFile; fileRef = C07756241A45F185003BD4E4 /* GCDAsyncUdpSocket.m */; };
 		C0BE592F1A405B690099DE32 /* libcrypto.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C0BE592D1A405B690099DE32 /* libcrypto.a */; };
@@ -69,6 +70,7 @@
 		C03F71771A42CE7F0096E923 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
 		C03F717C1A42DF650096E923 /* libUMFeedback.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libUMFeedback.a; sourceTree = "<group>"; };
 		C03F717D1A42DF650096E923 /* UMFeedback.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UMFeedback.h; sourceTree = "<group>"; };
+		C069BE421AD6CD5100080844 /* LiuliangGoumaiViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LiuliangGoumaiViewController.swift; sourceTree = "<group>"; };
 		C07755EB1A448BC6003BD4E4 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = UMFeedbackLocalizable.strings; sourceTree = "<group>"; };
 		C07756231A45F185003BD4E4 /* GCDAsyncUdpSocket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GCDAsyncUdpSocket.h; sourceTree = "<group>"; };
 		C07756241A45F185003BD4E4 /* GCDAsyncUdpSocket.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GCDAsyncUdpSocket.m; sourceTree = "<group>"; };
@@ -337,6 +339,7 @@
 				C03F717D1A42DF650096E923 /* UMFeedback.h */,
 				C0DAD4B31A3E7F9F00BE24A8 /* AppDelegate.swift */,
 				C0DAD4B51A3E7F9F00BE24A8 /* ViewController.swift */,
+				C069BE421AD6CD5100080844 /* LiuliangGoumaiViewController.swift */,
 				AB2FA56D1A8E0B84000609E1 /* LeftViewController.swift */,
 				AB129AE81AADEB570044759D /* AboutViewController.swift */,
 				AB129AE61AADEB330044759D /* MapViewController.swift */,
@@ -493,6 +496,7 @@
 				AB2FA5361A8DF7FF000609E1 /* DrawerBarButtonItem.swift in Sources */,
 				C0DAD4B41A3E7F9F00BE24A8 /* AppDelegate.swift in Sources */,
 				C0DAD4DC1A3EFD5C00BE24A8 /* testc.c in Sources */,
+				C069BE431AD6CD5100080844 /* LiuliangGoumaiViewController.swift in Sources */,
 				AB2FA56E1A8E0B84000609E1 /* LeftViewController.swift in Sources */,
 				C0C2CABC1A408C8F00DC84A9 /* ytcpsocket.c in Sources */,
 				AB2FA5371A8DF7FF000609E1 /* DrawerController.swift in Sources */,
