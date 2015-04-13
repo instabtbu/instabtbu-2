@@ -31,6 +31,16 @@ class JWGLViewController: UIViewController, UITextFieldDelegate {
         // Dispose of any resources that can be recreated.
     }
     
+    override func viewWillDisappear(animated: Bool) {
+        drawerController.openDrawerGestureModeMask = OpenDrawerGestureMode.None
+        drawerController.closeDrawerGestureModeMask = CloseDrawerGestureMode.None
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        drawerController.openDrawerGestureModeMask = OpenDrawerGestureMode.All
+        drawerController.closeDrawerGestureModeMask = CloseDrawerGestureMode.All
+    }
+    
     @IBAction func pswdid(sender: AnyObject) {
         usn.resignFirstResponder()
     }
