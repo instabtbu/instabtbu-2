@@ -39,6 +39,8 @@ class MapViewController: UIViewController, UIScrollViewDelegate, UITabBarDelegat
         scrollview.minimumZoomScale = 1
         scrollview.bouncesZoom = false
         scrollview.contentSize = pic.frame.size
+        
+        self.navigationItem.title = "地铁"
     }
     
     override func didReceiveMemoryWarning() {
