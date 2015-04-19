@@ -10,7 +10,7 @@ import UIKit
 import Foundation
 
 class KebiaoViewController: UIViewController, UIAlertViewDelegate {
-    var delegate:AppDelegate = UIApplication.sharedApplication().delegate as AppDelegate
+    var delegate:AppDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
     var chuli:NSMutableArray = NSMutableArray(capacity: 100)
     let iSave = NSUserDefaults(suiteName: "iSaveJW")
     var xueqiA:NSMutableArray = NSMutableArray(capacity: 30)
@@ -42,7 +42,7 @@ class KebiaoViewController: UIViewController, UIAlertViewDelegate {
         dangqian.text = "当前学期：" + delegate.xueqi
         self.view.addSubview(dangqian)
         //选学期按钮
-        var xuanxueqi: UIButton = UIButton.buttonWithType(UIButtonType.System) as UIButton
+        var xuanxueqi: UIButton = UIButton.buttonWithType(UIButtonType.System) as! UIButton
         xuanxueqi.frame = CGRectMake(x[1], y[0], w[1], h[0])
         xuanxueqi.setTitle("学期", forState: UIControlState.Normal)
         xuanxueqi.backgroundColor = UIColor.whiteColor()
@@ -61,8 +61,8 @@ class KebiaoViewController: UIViewController, UIAlertViewDelegate {
         if delegate.xueqi != "" {
             for i in 0...5 {
                 for j in 0...6 {
-                    if !(delegate.kebiao.objectAtIndex(i*7+j) as NSString).isEqualToString(""){
-                        var chulihou = chuli((delegate.kebiao.objectAtIndex(i*7+j) as NSString))
+                    if (delegate.kebiao.objectAtIndex(i*7+j)as! String) != ""{
+                        var chulihou = chuli((delegate.kebiao.objectAtIndex(i*7+j) as! String))
                         var aCgf = self.view.frame.width * CGFloat(j)
                         var kechengT = UITextView(frame: CGRectMake(aCgf/5+self.view.frame.width/100, CGFloat(i)*y[2], self.view.frame.width*9/50, y[2]))
                         //kechengT.scrollEnabled = false
@@ -134,42 +134,20 @@ class KebiaoViewController: UIViewController, UIAlertViewDelegate {
         // Dispose of any resources that can be recreated.
     }
     
-    func chuli(instr:NSString) -> NSString{
-        var a1 = sReplace(instr, findstr: "<nobr><br>", repstr: "\n")
-        var a2 = sReplace(a1, findstr: "<br><nobr>", repstr: "\n")
-        var a3 = sReplace(a2, findstr: "<br><br>", repstr: "\n")
-        var a4 = sReplace(a3, findstr: "<br>", repstr: "\n")
+    func chuli(instr:String) -> String{
+        var a1 = instr.stringByReplacingOccurrencesOfString("<nobr><br>", withString: "\n")
+        var a2 = a1.stringByReplacingOccurrencesOfString("<br><nobr>", withString: "\n")
+        var a3 = a2.stringByReplacingOccurrencesOfString("<br><br>", withString: "\n")
+        var a4 = a3.stringByReplacingOccurrencesOfString("<br>", withString: "\n")
         var s1 = a4.rangeOfString("&nbsp;")
-        var r1 = Range(start: (s1.toRange()?.endIndex)! , end: a4.length)
-        var a5:NSString = a4.substringWithRange(NSRange(r1))
+        var r1 = Range(start: (s1?.endIndex)! , end: a4.endIndex)
+        var a5 = a4.substringWithRange(r1)
         var s2 = a5.rangeOfString("</div>")
-        var r2 = Range(start: 0, end: (s2.toRange()?.startIndex)!)
-        var a6 = a5.substringWithRange(NSRange(r2))
-        var a7 = sReplace(a6, findstr: " ", repstr: "")
-        a7 = a7.substringToIndex(a7.length-1)
+        var r2 = Range(start: a1.startIndex, end: (s2?.startIndex)!)
+        var a6 = a5.substringWithRange(r2)
+        var a7 = a6.stringByReplacingOccurrencesOfString(" ", withString: "")
+        a7 = a7.substringToIndex(a7.endIndex.predecessor())
         return a7
-    }
-    
-    func sReplace(instr:NSString,findstr:NSString,repstr:NSString) -> NSString {
-        var aRange = instr.rangeOfString(findstr)
-        var inM = NSMutableString(string: instr)
-        while aRange.toRange() != nil {
-            inM.replaceCharactersInRange(aRange, withString: repstr)
-            aRange = inM.rangeOfString(findstr)
-        }
-        return inM
-    }
-    
-    func sCount(instr:NSString,findstr:NSString) -> NSNumber {
-        var iC = 0
-        var aRange = instr.rangeOfString(findstr)
-        var inM = NSMutableString(string: instr)
-        while aRange.toRange() != nil {
-            inM.replaceCharactersInRange(aRange, withString: "")
-            aRange = inM.rangeOfString(findstr)
-            iC++
-        }
-        return iC
     }
     
     func btnBackClicked(sender:AnyObject) {
@@ -187,7 +165,7 @@ class KebiaoViewController: UIViewController, UIAlertViewDelegate {
             for i in a {
                 var nian = iSave?.stringForKey("SaveUsn")
                 var nianqian = 2000 + ((nian! as NSString).substringToIndex(2) as NSString).integerValue
-                var xuehaonian = (i as NSString).integerValue
+                var xuehaonian = i.integerValue
                 if xuehaonian >= nianqian {
                     xueqiA.addObject(i)
                     println("\(xuehaonian)")

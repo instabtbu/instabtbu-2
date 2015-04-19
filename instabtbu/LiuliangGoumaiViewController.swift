@@ -18,9 +18,9 @@ class LiuliangGoumaiViewController: UIViewController, UIAlertViewDelegate {
             var rec = foc.iPOSTwithurl("https://self.btbu.edu.cn/cgi-bin/nacgi.cgi", withpost: post)
             var m:NSArray = foc.iRegular("align=\"center\">(.*)<br>", and: rec, withx: 1)
             if m.count > 0{
-                var rec2 = m.objectAtIndex(0) as NSString
+                var rec2 = m.objectAtIndex(0) as! NSString
                 rec2 = rec2.stringByReplacingOccurrencesOfString("<br>", withString: "\n")
-                var alert = UIAlertView(title: "提示", message: rec2, delegate: nil, cancelButtonTitle: "确定")
+                var alert = UIAlertView(title: "提示", message: rec2 as String, delegate: nil, cancelButtonTitle: "确定")
                 alert.show()
             }else{
                 var alert = UIAlertView(title: "提示", message: "申请包月失败", delegate: nil, cancelButtonTitle: "确定")

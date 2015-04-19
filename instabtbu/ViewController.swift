@@ -64,7 +64,7 @@ class ViewController: UIViewController,CLLocationManagerDelegate,GCDAsyncUdpSock
     }
     
     func locationManager(manager: CLLocationManager!, didUpdateLocations locations: [AnyObject]!) {
-        var location:CLLocation = locations[locations.count-1] as CLLocation
+        var location:CLLocation = locations[locations.count-1] as! CLLocation
         if(location.horizontalAccuracy>0){
             let gps="GPS信息:\n经度:\(location.coordinate.latitude)\n纬度:\(location.coordinate.longitude)"
             println(gps)
@@ -87,7 +87,7 @@ class ViewController: UIViewController,CLLocationManagerDelegate,GCDAsyncUdpSock
         pswtext.becomeFirstResponder()
     }
     
-    override func touchesBegan(touches: NSSet, withEvent event: UIEvent) {
+    override func touchesBegan(touches: Set<NSObject>, withEvent event: UIEvent) {
         numtext.resignFirstResponder()
         pswtext.resignFirstResponder()
     }
@@ -139,9 +139,9 @@ class ViewController: UIViewController,CLLocationManagerDelegate,GCDAsyncUdpSock
     func denglu2(){
         var ip = oc().getIP()
         if ip != nil{
-            var buf:[Byte] = [0x7E,0x11,0x00,0x00,0x54,0x01,0x7E]
+            var buf:[UInt8] = [0x7E,0x11,0x00,0x00,0x54,0x01,0x7E]
             var trytime = 0
-            var rec = [Byte]()
+            var rec = [UInt8]()
             
             do{
             do
@@ -159,7 +159,7 @@ class ViewController: UIViewController,CLLocationManagerDelegate,GCDAsyncUdpSock
             }while(rec.count != 23)
             
             if rec.count==23 {
-                verify=[Byte]()
+                verify=[UInt8]()
                 for i in 0...15
                 {
                     verify.append(rec[i+4])
@@ -273,7 +273,7 @@ class ViewController: UIViewController,CLLocationManagerDelegate,GCDAsyncUdpSock
         while always{
             var rec = jwgl.sGet("http://baidu.com")
             println(rec)
-            if rec.length == 0{
+            if count(rec) == 0{
                 denglu2()
             }
             sleep(30)
@@ -281,7 +281,7 @@ class ViewController: UIViewController,CLLocationManagerDelegate,GCDAsyncUdpSock
     }
     
     func udpSocket(sock: GCDAsyncUdpSocket!, didReceiveData data: NSData!, fromAddress address: NSData!, withFilterContext filterContext: AnyObject!) {
-        var s = [Byte](count:27,repeatedValue:0x0)
+        var s = [UInt8](count:27,repeatedValue:0x0)
         data.getBytes(&s, length: 27)
         println("recr:\(t(s))")
     }
@@ -295,8 +295,8 @@ class ViewController: UIViewController,CLLocationManagerDelegate,GCDAsyncUdpSock
         println("开始连接");
         var ip = oc().getIP()
         if ip != nil{
-            var buf:[Byte] = [0x7E,0x11,0x00,0x00,0x54,0x01,0x7E]
-            var rec = [Byte]()
+            var buf:[UInt8] = [0x7E,0x11,0x00,0x00,0x54,0x01,0x7E]
+            var rec = [UInt8]()
             var trytime = 0
             do{
                 do{
@@ -313,7 +313,7 @@ class ViewController: UIViewController,CLLocationManagerDelegate,GCDAsyncUdpSock
                 }while(rec.count != 23)
             
             if rec.count==23 {
-                verify=[Byte]()
+                verify=[UInt8]()
                 for i in 0...15
                 {
                     verify.append(rec[i+4])
@@ -332,7 +332,7 @@ class ViewController: UIViewController,CLLocationManagerDelegate,GCDAsyncUdpSock
                 client.close()
                 jiefeng(rec)
                 var regex = NSRegularExpression(pattern: "(\\d+)兆", options: NSRegularExpressionOptions.allZeros, error: nil)
-                var len = countElements(recString)
+                var len = count(recString)
                 var match = regex?.matchesInString(recString, options: NSMatchingOptions.allZeros, range: NSMakeRange(0,len))
                 var liuliang = 0
                 for a in match!{
@@ -363,7 +363,7 @@ class ViewController: UIViewController,CLLocationManagerDelegate,GCDAsyncUdpSock
                 
                 
                 regex = NSRegularExpression(pattern: "在线:\\d+", options: NSRegularExpressionOptions.allZeros, error: nil)
-                len = countElements(recString)
+                len = count(recString)
                 if let tmp = regex?.firstMatchInString(recString, options: NSMatchingOptions.allZeros, range: NSMakeRange(0,len)){
                     let range = NSMakeRange(tmp.range.location+3, tmp.range.length-3)
                     let tmp2 = (recString as NSString).substringWithRange(range)
@@ -386,23 +386,23 @@ class ViewController: UIViewController,CLLocationManagerDelegate,GCDAsyncUdpSock
         chaliuliang2()
     }
     
-    var verify:[Byte] = []
-    var remain:[Byte] = []
+    var verify:[UInt8] = []
+    var remain:[UInt8] = []
     var recString:String = ""
     
-    func jiami(buf:[Byte])->[Byte]{
+    func jiami(buf:[UInt8])->[UInt8]{
         var re:[UInt8] = [UInt8](count:128,repeatedValue:0x0)
-        rsajiami(buf,CInt(countElements(buf)),&re)
+        rsajiami(buf,CInt(count(buf)),&re)
         return re
     }
     
-    func jiefeng(buf:[Byte])->Bool{
+    func jiefeng(buf:[UInt8])->Bool{
         var buf2 = fanzhuanyi(buf)
         var len1 = Int(buf[2])
         var len2 = Int(buf[3])*256
         var len = len1+len2
         var f = false
-        var re = [Byte]()
+        var re = [UInt8]()
         for var i=0;i<Int(len);i=i+1{
             re.append(buf2[i+4])
         }
@@ -412,11 +412,11 @@ class ViewController: UIViewController,CLLocationManagerDelegate,GCDAsyncUdpSock
             rsajiemi(re,&remain)
             f=true
         }else{
-            var data = NSData(bytes: &re, length: re.count)
+            var data = NSData(bytes: re, length: count(re))
             
             var gbk = CFStringConvertEncodingToNSStringEncoding(0x0632)
             if let rec = NSString(bytes: &re, length: re.count, encoding: gbk){
-                recString = rec
+                recString = rec as String
                 println("返回文本:\(recString)")
             }else{
                 println("转码失败")
@@ -426,62 +426,62 @@ class ViewController: UIViewController,CLLocationManagerDelegate,GCDAsyncUdpSock
         return f
     }
 
-    func feng(buf:[Byte],cmd:Int)->[Byte]{
-        var jiamibytes = jiami(buf)
-        var crcbytes = [Byte(cmd),Byte(jiamibytes.count&0xff),Byte(jiamibytes.count>>8)] + jiamibytes
-        var crc = getCRC16(crcbytes)
-        crcbytes = [Byte(0x7E)] + crcbytes + [Byte(crc&0xFF),Byte(crc>>8),Byte(0x7E)]
-        return crcbytes
+    func feng(buf:[UInt8],cmd:Int)->[UInt8]{
+        var jiamiUInt8s = jiami(buf)
+        var crcUInt8s = [UInt8(cmd),UInt8(jiamiUInt8s.count&0xff),UInt8(jiamiUInt8s.count>>8)] + jiamiUInt8s
+        var crc = getCRC16(crcUInt8s)
+        crcUInt8s = [UInt8(0x7E)] + crcUInt8s + [UInt8(crc&0xFF),UInt8(crc>>8),UInt8(0x7E)]
+        return crcUInt8s
     }
     
-    func getcmd(cmd:Int)->[Byte]{
+    func getcmd(cmd:Int)->[UInt8]{
         if remain.count==20 {
-            var re:[Byte] = [Byte(cmd),0x14,0x00]+remain
+            var re:[UInt8] = [UInt8(cmd),0x14,0x00]+remain
             var crc = getCRC16(re)
-            re=[0x7E]+re+[Byte(crc&0xFF),Byte(crc>>8),Byte(0x7E)]
+            re=[0x7E]+re+[UInt8(crc&0xFF),UInt8(crc>>8),UInt8(0x7E)]
             return re
         }else{
             return []
         }
     }
     
-    func user(num:String,psw:String)->[Byte]{
-        var msg = [Byte](count: 82, repeatedValue: 0)
+    func user(num:String,psw:String)->[UInt8]{
+        var msg = [UInt8](count: 82, repeatedValue: 0)
         var ip = oc().getIP();
         var i = 0
         for c in num.cStringUsingEncoding(NSASCIIStringEncoding)!{
-            msg[i]=Byte(c)
+            msg[i]=UInt8(c)
             i++
         }
         i=23
         for c in psw.cStringUsingEncoding(NSASCIIStringEncoding)!{
-            msg[i]=Byte(c)
+            msg[i]=UInt8(c)
             i++
         }
         i=23+23
         for c in ip.cStringUsingEncoding(NSASCIIStringEncoding)!{
-            msg[i]=Byte(c)
+            msg[i]=UInt8(c)
             i++
         }
         i=23+23+20
         for c in verify{
-            msg[i]=Byte(c)
+            msg[i]=UInt8(c)
             i++
         }
         return msg;
     }
     
-    func user_noip(num:String , psw:String)->[Byte]{
-        var msg = [Byte](count: 62, repeatedValue: 0)
+    func user_noip(num:String , psw:String)->[UInt8]{
+        var msg = [UInt8](count: 62, repeatedValue: 0)
         var ip = oc().getIP();
         var i = 0
         for c in num.cStringUsingEncoding(NSASCIIStringEncoding)!{
-            msg[i]=Byte(c)
+            msg[i]=UInt8(c)
             i++
         }
         i=23
         for c in psw.cStringUsingEncoding(NSASCIIStringEncoding)!{
-            msg[i]=Byte(c)
+            msg[i]=UInt8(c)
             i++
         }
         for i in 0..<verify.count{
@@ -490,8 +490,8 @@ class ViewController: UIViewController,CLLocationManagerDelegate,GCDAsyncUdpSock
         return msg;
     }
     
-    func zhuanyi(buf:[Byte])->[Byte]{
-        var re = [Byte]()
+    func zhuanyi(buf:[UInt8])->[UInt8]{
+        var re = [UInt8]()
         re.append(0x7E)
         for var i=1;i<buf.count-1;i++ {
             if buf[i]==0x7D||buf[i]==0x7E{
@@ -505,8 +505,8 @@ class ViewController: UIViewController,CLLocationManagerDelegate,GCDAsyncUdpSock
         return re;
     }
     
-    func fanzhuanyi(buf:[Byte])->[Byte]{
-        var re = [Byte]()
+    func fanzhuanyi(buf:[UInt8])->[UInt8]{
+        var re = [UInt8]()
         for var i=0;i<buf.count;i++ {
             if buf[i]==0x7D{
                 re.append(buf[++i]^0x40)
@@ -517,7 +517,7 @@ class ViewController: UIViewController,CLLocationManagerDelegate,GCDAsyncUdpSock
         return re;
     }
     
-    func getCRC16(bytes:[Byte])->Int{
+    func getCRC16(UInt8s:[UInt8])->Int{
         var table = [0x0000,0x8005,0x800F,0x000A,0x801B,0x001E,0x0014,0x8011,0x8033,0x0036,0x003C,0x8039,0x0028,0x802D,0x8027,
             0x0022,0x8063,0x0066,0x006C,0x8069,0x0078,0x807D,0x8077,0x0072,0x0050,0x8055,0x805F,0x005A,0x804B,0x004E,0x0044,
             0x8041,0x80C3,0x00C6,0x00CC,0x80C9,0x00D8,0x80DD,0x80D7,0x00D2,0x00F0,0x80F5,0x80FF,0x00FA,0x80EB,0x00EE,0x00E4,
@@ -536,19 +536,16 @@ class ViewController: UIViewController,CLLocationManagerDelegate,GCDAsyncUdpSock
             0x8261,0x0220,0x8225,0x822F,0x022A,0x823B,0x023E,0x0234,0x8231,0x8213,0x0216,0x021C,0x8219,0x0208,0x820D,0x8207,
             0x0202]
         var i = 0;
-        var len = bytes.count;
+        var len = UInt8s.count;
         var crc = 0;
         while(i<len){
-            var index = Byte(crc>>8)^bytes[i++];
-            if(index<0){
-               index+=Int(256);
-            }
+            var index = UInt8(crc>>8)^UInt8s[i++];
             crc = ((crc&0xFF)<<8) ^ table[Int(index)]
         }
         return crc;
     }
     
-    func t(buf:[Byte])->String{
+    func t(buf:[UInt8])->String{
         var re = ""
         for b in buf{
             re+=bts(b)+" "
@@ -557,7 +554,7 @@ class ViewController: UIViewController,CLLocationManagerDelegate,GCDAsyncUdpSock
         return re
     }
     
-    func bts(b:Byte)->String{
+    func bts(b:UInt8)->String{
         var table = ["0","1","2","3","4","5","6","7","8","9","A","B","C","D","E","F"]
         return "\(table[Int(b/16)])\(table[Int(b%16)])"
     }
@@ -572,7 +569,7 @@ class ViewController: UIViewController,CLLocationManagerDelegate,GCDAsyncUdpSock
         return success
     }
     
-    func send(buf:[Byte]){
+    func send(buf:[UInt8]){
         println("开始发送数据:\(t(buf))")
         let (succeed,error) = client.send(data: buf)
         if succeed{
@@ -582,7 +579,7 @@ class ViewController: UIViewController,CLLocationManagerDelegate,GCDAsyncUdpSock
         }
     }
     
-    func read()->[Byte]{
+    func read()->[UInt8]{
         println("开始读取数据")
         if let re = client.read(1024*10){
             println("获取数据成功:\(t(re))")

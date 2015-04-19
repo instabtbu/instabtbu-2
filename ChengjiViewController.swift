@@ -9,7 +9,7 @@
 import UIKit
 
 class ChengjiViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
-    var delegate:AppDelegate = UIApplication.sharedApplication().delegate as AppDelegate
+    var delegate:AppDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
     var tableview:UITableView?
     
     override func viewDidLoad() {
@@ -47,7 +47,7 @@ class ChengjiViewController: UIViewController, UITableViewDelegate, UITableViewD
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let identify:String = "swiftcell"
-        let cell = tableview?.dequeueReusableCellWithIdentifier(identify, forIndexPath: indexPath) as UITableViewCell
+        let cell = tableview?.dequeueReusableCellWithIdentifier(identify, forIndexPath: indexPath) as! UITableViewCell
         cell.accessoryType = UITableViewCellAccessoryType.None
         
         var xuefen = UILabel(frame: CGRectMake(cell.frame.maxX*7/10, cell.frame.minY, 100, cell.frame.height))
@@ -57,7 +57,7 @@ class ChengjiViewController: UIViewController, UITableViewDelegate, UITableViewD
         self.tableview?.addSubview(chengjiL)
         
         cell.textLabel?.font = UIFont(name: "Helvetica", size: 16)
-        cell.textLabel?.text = " " + (delegate.kecheng.objectAtIndex(indexPath.row) as NSString)
+        cell.textLabel?.text = " " + (delegate.kecheng.objectAtIndex(indexPath.row) as! String)
         
         xuefen.font = UIFont(name: "Helvetica", size: 16)
         xuefen.text = "\(delegate.xuefen.objectAtIndex(indexPath.row))"
@@ -69,7 +69,7 @@ class ChengjiViewController: UIViewController, UITableViewDelegate, UITableViewD
             
         }
         else {
-            cell.textLabel?.text = "       " + (delegate.kecheng.objectAtIndex(indexPath.row) as NSString)
+            cell.textLabel?.text = "       " + (delegate.kecheng.objectAtIndex(indexPath.row) as! String)
         }
         
         return cell
@@ -77,14 +77,14 @@ class ChengjiViewController: UIViewController, UITableViewDelegate, UITableViewD
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         self.tableview?.deselectRowAtIndexPath(indexPath, animated: true)
-        var result = JWGLViewController().sGet(delegate.urlList.objectAtIndex(indexPath.row) as NSString)
+        var result = JWGLViewController().sGet(delegate.urlList.objectAtIndex(indexPath.row) as! String)
         var fen:NSArray = oc().iRegular("70\" title=.+?>(.+?)</td>", and: result, withx: 1)
         if fen.count == 3 {
-            var detail = UIAlertView(title: delegate.kecheng.objectAtIndex(indexPath.row) as NSString, message: "平时成绩：\(fen.objectAtIndex(0))，期末成绩：\(fen.objectAtIndex(1))，总成绩：\(fen.objectAtIndex(2))", delegate: self, cancelButtonTitle: "确定")
+            var detail = UIAlertView(title: delegate.kecheng.objectAtIndex(indexPath.row) as! String as String, message: "平时成绩：\(fen.objectAtIndex(0))，期末成绩：\(fen.objectAtIndex(1))，总成绩：\(fen.objectAtIndex(2))", delegate: self, cancelButtonTitle: "确定")
             detail.show()
         }
         else {
-            var detail = UIAlertView(title: delegate.kecheng.objectAtIndex(indexPath.row) as NSString, message: "该科目只有总成绩！", delegate: self, cancelButtonTitle: "确定")
+            var detail = UIAlertView(title: delegate.kecheng.objectAtIndex(indexPath.row) as? String, message: "该科目只有总成绩！", delegate: self, cancelButtonTitle: "确定")
             detail.show()
         }
     }

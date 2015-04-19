@@ -9,7 +9,7 @@
 import UIKit
 
 class JWGLViewController: UIViewController, UITextFieldDelegate {
-    var delegate:AppDelegate = UIApplication.sharedApplication().delegate as AppDelegate
+    var delegate:AppDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
     
     func textFieldShouldReturn(textField: UITextField) -> Bool {
         textField.resignFirstResponder()
@@ -49,7 +49,7 @@ class JWGLViewController: UIViewController, UITextFieldDelegate {
         psw.becomeFirstResponder()
     }
     
-    override func touchesBegan(touches: NSSet, withEvent event: UIEvent) {
+    override func touchesBegan(touches: Set<NSObject>, withEvent event: UIEvent) {
         usn.resignFirstResponder()
         psw.resignFirstResponder()
     }
@@ -88,7 +88,7 @@ class JWGLViewController: UIViewController, UITextFieldDelegate {
         delegate.kebiao = NSMutableArray(capacity: 100)
         if let iSave = NSUserDefaults(suiteName: "iSaveJW") {
             //判断是否有存档
-            delegate.cundang = (iSave.objectForKey("kebiao") != nil)&&((iSave.objectForKey("xueqi") as NSString) != ""&&(usn.text == iSave.stringForKey("SaveUsn"))&&(psw.text == iSave.stringForKey("SavePsw")))
+            delegate.cundang = (iSave.objectForKey("kebiao") != nil)&&((iSave.objectForKey("xueqi") as! NSString) != ""&&(usn.text == iSave.stringForKey("SaveUsn"))&&(psw.text == iSave.stringForKey("SavePsw")))
             //有存档不用登陆
             if delegate.cundang {
                 delegate.kebiao = iSave.mutableArrayValueForKey("kebiao")
@@ -106,7 +106,7 @@ class JWGLViewController: UIViewController, UITextFieldDelegate {
         self.navigationController?.pushViewController(XiaoliViewController(), animated: true)
     }
     
-    func logon(sendusn:NSString, sendpsw:NSString)->Bool {
+    func logon(sendusn:String, sendpsw:String)->Bool {
         var url = NSURL(string: "http://jwgl.btbu.edu.cn/verifycode.servlet")
         var request = NSURLRequest(URL: url!)
         var data = NSURLConnection.sendSynchronousRequest(request, returningResponse: nil, error: nil)
@@ -142,7 +142,7 @@ class JWGLViewController: UIViewController, UITextFieldDelegate {
     
     func mark()->Bool {
         var result = sGet("http://jwgl.btbu.edu.cn/xszqcjglAction.do?method=queryxscj&PageNum=1")
-        if (result.isEqualToString("")) {
+        if result == "" {
             return false
         }
         else {
@@ -152,38 +152,38 @@ class JWGLViewController: UIViewController, UITextFieldDelegate {
             var firstreg:NSArray = foc.iRegular("<tr heigth = 23.+?>.+?</tr>", and: result, withx: 0)
             println("\(result as String)")
             for j in 0..<firstreg.count {
-                var test:NSArray = foc.iRegular("<td.+?>(.*?(\\w*)(</a>)?)</td>", and: firstreg.objectAtIndex(j) as NSString, withx: 1)
+                var test:NSArray = foc.iRegular("<td.+?>(.*?(\\w*)(</a>)?)</td>", and: firstreg.objectAtIndex(j) as! String, withx: 1)
                 if delegate.pangting {
                     for i in 0..<test.count {
                         if (i % 10 == 2) {
-                            if foc.iFind("<div id", inthe: test.objectAtIndex(i) as NSString) {}
+                            if foc.iFind("<div id", inthe: test.objectAtIndex(i) as! String) {}
                             else {
-                                delegate.kecheng.addObject(test.objectAtIndex(i) as NSString)
+                                delegate.kecheng.addObject(test.objectAtIndex(i) as! String)
                             }
                         }
                         else if (i % 10 == 3) {
-                            delegate.chengji.addObject(zhongjian((test.objectAtIndex(i) as? NSString)!, str1: ")\">", str2: "</a>"))
-                            delegate.urlList.addObject("http://jwgl.btbu.edu.cn"+zhongjian((test.objectAtIndex(i) as? NSString)!, str1: "JsMod('", str2: "\">"))
+                            delegate.chengji.addObject(zhongjian((test.objectAtIndex(i) as? String)!, str1: ")\">", str2: "</a>"))
+                            delegate.urlList.addObject("http://jwgl.btbu.edu.cn"+zhongjian((test.objectAtIndex(i) as! String), str1: "JsMod('", str2: "\">"))
                         }
                         else if (i % 10 == 8) {
-                            delegate.xuefen.addObject(test.objectAtIndex(i) as NSString)
+                            delegate.xuefen.addObject(test.objectAtIndex(i) as! String)
                         }
                     }
                 }
                 else {
                     for i in 0..<test.count {
                         if (i % 13 == 4) {
-                            if foc.iFind("<div id", inthe: test.objectAtIndex(i) as NSString) {}
+                            if foc.iFind("<div id", inthe: test.objectAtIndex(i) as! String) {}
                             else {
-                                delegate.kecheng.addObject(test.objectAtIndex(i) as NSString)
+                                delegate.kecheng.addObject(test.objectAtIndex(i) as! String)
                             }
                         }
                         else if (i % 13 == 5) {
-                            delegate.chengji.addObject(zhongjian((test.objectAtIndex(i) as? NSString)!, str1: ")\">", str2: "</a>"))
-                            delegate.urlList.addObject("http://jwgl.btbu.edu.cn"+zhongjian((test.objectAtIndex(i) as? NSString)!, str1: "JsMod('", str2: "\">"))
+                            delegate.chengji.addObject(zhongjian((test.objectAtIndex(i) as? String)!, str1: ")\">", str2: "</a>"))
+                            delegate.urlList.addObject("http://jwgl.btbu.edu.cn"+zhongjian((test.objectAtIndex(i) as? String)!, str1: "JsMod('", str2: "\">"))
                         }
                         else if (i % 13 == 10) {
-                            delegate.xuefen.addObject(test.objectAtIndex(i) as NSString)
+                            delegate.xuefen.addObject(test.objectAtIndex(i) as! String)
                         }
                     }
                 }
@@ -194,48 +194,47 @@ class JWGLViewController: UIViewController, UITextFieldDelegate {
                 ye = 1
             }
             else {
-                ye = (getye.objectAtIndex(0) as NSString).integerValue
+                ye = (getye.objectAtIndex(0) as! String).toInt()
             }
             println("\(ye)页")
             var xh = 2
             while xh<=ye {
                 result = sGet("http://jwgl.btbu.edu.cn/xszqcjglAction.do?method=queryxscj&PageNum=\(xh)")
-                if (result.isEqualToString("")) {}
-                else {
+                if result != "" {
                     var firstreg:NSArray = foc.iRegular("<tr heigth = 23.+?>.+?</tr>", and: result, withx: 0)
                     for j in 0..<firstreg.count {
-                        var test:NSArray = foc.iRegular("<td.+?>(.*?(\\w*)(</a>)?)</td>", and: firstreg.objectAtIndex(j) as NSString, withx: 1)
+                        var test:NSArray = foc.iRegular("<td.+?>(.*?(\\w*)(</a>)?)</td>", and: firstreg.objectAtIndex(j) as! String, withx: 1)
                         if delegate.pangting {
                             for i in 0..<test.count {
                                 if (i % 10 == 2) {
-                                    if foc.iFind("<div id", inthe: test.objectAtIndex(i) as NSString) {}
+                                    if foc.iFind("<div id", inthe: test.objectAtIndex(i) as! String) {}
                                     else {
-                                        delegate.kecheng.addObject(test.objectAtIndex(i) as NSString)
+                                        delegate.kecheng.addObject(test.objectAtIndex(i) as! String)
                                     }
                                 }
                                 else if (i % 10 == 3) {
-                                    delegate.chengji.addObject(zhongjian((test.objectAtIndex(i) as? NSString)!, str1: ")\">", str2: "</a>"))
-                                    delegate.urlList.addObject("http://jwgl.btbu.edu.cn"+zhongjian((test.objectAtIndex(i) as? NSString)!, str1: "JsMod('", str2: "\">"))
+                                    delegate.chengji.addObject(zhongjian((test.objectAtIndex(i) as! String), str1: ")\">", str2: "</a>"))
+                                    delegate.urlList.addObject("http://jwgl.btbu.edu.cn"+zhongjian((test.objectAtIndex(i) as! String), str1: "JsMod('", str2: "\">"))
                                 }
                                 else if (i % 10 == 8) {
-                                    delegate.xuefen.addObject(test.objectAtIndex(i) as NSString)
+                                    delegate.xuefen.addObject(test.objectAtIndex(i) as! String)
                                 }
                             }
                         }
                         else {
                             for i in 0..<test.count {
                                 if (i % 13 == 4) {
-                                    if foc.iFind("<div id", inthe: test.objectAtIndex(i) as NSString) {}
+                                    if foc.iFind("<div id", inthe: test.objectAtIndex(i) as! String) {}
                                     else {
-                                        delegate.kecheng.addObject(test.objectAtIndex(i) as NSString)
+                                        delegate.kecheng.addObject(test.objectAtIndex(i) as! String)
                                     }
                                 }
                                 else if (i % 13 == 5) {
-                                    delegate.chengji.addObject(zhongjian((test.objectAtIndex(i) as? NSString)!, str1: ")\">", str2: "</a>"))
-                                    delegate.urlList.addObject("http://jwgl.btbu.edu.cn"+zhongjian((test.objectAtIndex(i) as? NSString)!, str1: "JsMod('", str2: "\">"))
+                                    delegate.chengji.addObject(zhongjian((test.objectAtIndex(i) as! String), str1: ")\">", str2: "</a>"))
+                                    delegate.urlList.addObject("http://jwgl.btbu.edu.cn"+zhongjian((test.objectAtIndex(i) as! String), str1: "JsMod('", str2: "\">"))
                                 }
                                 else if (i % 13 == 10) {
-                                    delegate.xuefen.addObject(test.objectAtIndex(i) as NSString)
+                                    delegate.xuefen.addObject(test.objectAtIndex(i) as! String)
                                 }
                             }
                         }
@@ -261,7 +260,7 @@ class JWGLViewController: UIViewController, UITextFieldDelegate {
             var i = 0
             
             for (i = 0;i<b.count;i++) {
-                var c = foc.iRegular("&nbsp;(.*?)<br>(.+?)<br>(.*?)<br><nobr> *(.*?)<nobr><br>(.*?)<br>(.*?)<br>", and: b.objectAtIndex(i) as NSString, withx: 0)
+                var c = foc.iRegular("&nbsp;(.*?)<br>(.+?)<br>(.*?)<br><nobr> *(.*?)<nobr><br>(.*?)<br>(.*?)<br>", and: b.objectAtIndex(i) as! String, withx: 0)
                 println("\(c)")
                 if c.count == 0{
                     delegate.kebiao.addObject("")
@@ -276,24 +275,24 @@ class JWGLViewController: UIViewController, UITextFieldDelegate {
         }
     }
     
-    func sGet(string:NSString) ->NSString {
+    func sGet(string:String) ->String {
         var url = NSURL(string: string)
         var request = NSURLRequest(URL: url!)
         var data = NSURLConnection.sendSynchronousRequest(request, returningResponse: nil, error: nil)
         if (data != nil) {
             var result = NSString(data: data!, encoding: NSUTF8StringEncoding)
-            return result!
+            return result as! String
         }
         else {
             return ""
         }
     }
     
-    func zhongjian(str:NSString,str1:NSString,str2:NSString)->NSString {
+    func zhongjian(str:String,str1:String,str2:String)->String {
         var left = str.rangeOfString(str1)
         var right = str.rangeOfString(str2)
-        var r = Range(start: (left.toRange()?.endIndex)! , end: (right.toRange()?.startIndex)!)
-        var s = str.substringWithRange(NSRange(r))
+        var r = Range(start: (left?.endIndex)! , end: (right?.startIndex)!)
+        var s = str.substringWithRange(r)
         return s
     }
     

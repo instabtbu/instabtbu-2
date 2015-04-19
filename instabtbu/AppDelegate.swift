@@ -12,19 +12,20 @@ var drawerController: DrawerController!
 var navigation: UINavigationController!
 var stb: UIStoryboard!
 
+
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
     
     var window: UIWindow?
-    var jwusn: NSString?
-    var jwpsw: NSString?
+    var jwusn: String?
+    var jwpsw: String?
     var kecheng = NSMutableArray(capacity: 100)
     var chengji = NSMutableArray(capacity: 100)
     var xuefen = NSMutableArray(capacity: 100)
     var urlList = NSMutableArray(capacity: 100)
     var kebiao = NSMutableArray(capacity: 100)
-    var xueqi: NSString = ""
-    var jidian: NSString?
+    var xueqi = ""
+    var jidian: String?
     var chenggong: Bool?
     var cundang: Bool = false
     var pangting: Bool = false
@@ -45,7 +46,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
         println("\(UIDevice.currentDevice().model)")
         let leftSideDrawerViewController = LeftViewController()
-        let centerViewController = stb.instantiateViewControllerWithIdentifier("navigationController") as UINavigationController
+        let centerViewController = stb.instantiateViewControllerWithIdentifier("navigationController") as! UINavigationController
         drawerController = DrawerController(centerViewController: centerViewController, leftDrawerViewController: leftSideDrawerViewController)
         drawerController.maximumLeftDrawerWidth = centerViewController.view.frame.width*20/32
         drawerController.openDrawerGestureModeMask = .All
