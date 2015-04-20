@@ -8,7 +8,7 @@
 
 import UIKit
 
-var drawerController: DrawerController!
+var drawerController: MMDrawerController!
 var navigation: UINavigationController!
 var stb: UIStoryboard!
 
@@ -47,7 +47,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         println("\(UIDevice.currentDevice().model)")
         let leftSideDrawerViewController = LeftViewController()
         let centerViewController = stb.instantiateViewControllerWithIdentifier("navigationController") as! UINavigationController
-        drawerController = DrawerController(centerViewController: centerViewController, leftDrawerViewController: leftSideDrawerViewController)
+        drawerController = MMDrawerController(centerViewController: centerViewController, leftDrawerViewController: leftSideDrawerViewController)
         drawerController.maximumLeftDrawerWidth = centerViewController.view.frame.width*20/32
         drawerController.openDrawerGestureModeMask = .All
         drawerController.closeDrawerGestureModeMask = .All

@@ -32,13 +32,13 @@ class JWGLViewController: UIViewController, UITextFieldDelegate {
     }
     
     override func viewWillDisappear(animated: Bool) {
-        drawerController.openDrawerGestureModeMask = OpenDrawerGestureMode.None
-        drawerController.closeDrawerGestureModeMask = CloseDrawerGestureMode.None
+        drawerController.openDrawerGestureModeMask = MMOpenDrawerGestureMode.None
+        drawerController.closeDrawerGestureModeMask = .None
     }
     
     override func viewWillAppear(animated: Bool) {
-        drawerController.openDrawerGestureModeMask = OpenDrawerGestureMode.All
-        drawerController.closeDrawerGestureModeMask = CloseDrawerGestureMode.All
+        drawerController.openDrawerGestureModeMask = .All
+        drawerController.closeDrawerGestureModeMask = .All
     }
     
     @IBAction func pswdid(sender: AnyObject) {

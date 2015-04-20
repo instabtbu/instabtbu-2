@@ -9,11 +9,11 @@
 /* Begin PBXBuildFile section */
 		AB129AE71AADEB330044759D /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB129AE61AADEB330044759D /* MapViewController.swift */; };
 		AB129AE91AADEB570044759D /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB129AE81AADEB570044759D /* AboutViewController.swift */; };
-		AB2FA5351A8DF7FF000609E1 /* AnimatedMenuButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB2FA5311A8DF7FF000609E1 /* AnimatedMenuButton.swift */; };
-		AB2FA5361A8DF7FF000609E1 /* DrawerBarButtonItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB2FA5321A8DF7FF000609E1 /* DrawerBarButtonItem.swift */; };
-		AB2FA5371A8DF7FF000609E1 /* DrawerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB2FA5331A8DF7FF000609E1 /* DrawerController.swift */; };
-		AB2FA5381A8DF7FF000609E1 /* DrawerVisualState.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB2FA5341A8DF7FF000609E1 /* DrawerVisualState.swift */; };
 		AB2FA56E1A8E0B84000609E1 /* LeftViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB2FA56D1A8E0B84000609E1 /* LeftViewController.swift */; };
+		ABC3647D1AE524920091ADBE /* MMDrawerBarButtonItem.m in Sources */ = {isa = PBXBuildFile; fileRef = ABC364751AE524920091ADBE /* MMDrawerBarButtonItem.m */; };
+		ABC3647E1AE524920091ADBE /* MMDrawerController.m in Sources */ = {isa = PBXBuildFile; fileRef = ABC364771AE524920091ADBE /* MMDrawerController.m */; };
+		ABC3647F1AE524920091ADBE /* MMDrawerVisualState.m in Sources */ = {isa = PBXBuildFile; fileRef = ABC3647A1AE524920091ADBE /* MMDrawerVisualState.m */; };
+		ABC364801AE524920091ADBE /* UIViewController+MMDrawerController.m in Sources */ = {isa = PBXBuildFile; fileRef = ABC3647C1AE524920091ADBE /* UIViewController+MMDrawerController.m */; };
 		ABE6C1D71A74EBBE00163C01 /* NU.m in Sources */ = {isa = PBXBuildFile; fileRef = ABE6C1D61A74EBBE00163C01 /* NU.m */; };
 		ABE6C1DB1A74EBE500163C01 /* ChengjiViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABE6C1D81A74EBE500163C01 /* ChengjiViewController.swift */; };
 		ABE6C1DC1A74EBE500163C01 /* KebiaoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABE6C1D91A74EBE500163C01 /* KebiaoViewController.swift */; };
@@ -53,11 +53,16 @@
 /* Begin PBXFileReference section */
 		AB129AE61AADEB330044759D /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		AB129AE81AADEB570044759D /* AboutViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
-		AB2FA5311A8DF7FF000609E1 /* AnimatedMenuButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnimatedMenuButton.swift; sourceTree = "<group>"; };
-		AB2FA5321A8DF7FF000609E1 /* DrawerBarButtonItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DrawerBarButtonItem.swift; sourceTree = "<group>"; };
-		AB2FA5331A8DF7FF000609E1 /* DrawerController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DrawerController.swift; sourceTree = "<group>"; };
-		AB2FA5341A8DF7FF000609E1 /* DrawerVisualState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DrawerVisualState.swift; sourceTree = "<group>"; };
 		AB2FA56D1A8E0B84000609E1 /* LeftViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LeftViewController.swift; sourceTree = "<group>"; };
+		ABC364741AE524920091ADBE /* MMDrawerBarButtonItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MMDrawerBarButtonItem.h; path = MMDrawerController/MMDrawerBarButtonItem.h; sourceTree = "<group>"; };
+		ABC364751AE524920091ADBE /* MMDrawerBarButtonItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MMDrawerBarButtonItem.m; path = MMDrawerController/MMDrawerBarButtonItem.m; sourceTree = "<group>"; };
+		ABC364761AE524920091ADBE /* MMDrawerController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MMDrawerController.h; path = MMDrawerController/MMDrawerController.h; sourceTree = "<group>"; };
+		ABC364771AE524920091ADBE /* MMDrawerController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MMDrawerController.m; path = MMDrawerController/MMDrawerController.m; sourceTree = "<group>"; };
+		ABC364781AE524920091ADBE /* MMDrawerController+Subclass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "MMDrawerController+Subclass.h"; path = "MMDrawerController/MMDrawerController+Subclass.h"; sourceTree = "<group>"; };
+		ABC364791AE524920091ADBE /* MMDrawerVisualState.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MMDrawerVisualState.h; path = MMDrawerController/MMDrawerVisualState.h; sourceTree = "<group>"; };
+		ABC3647A1AE524920091ADBE /* MMDrawerVisualState.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MMDrawerVisualState.m; path = MMDrawerController/MMDrawerVisualState.m; sourceTree = "<group>"; };
+		ABC3647B1AE524920091ADBE /* UIViewController+MMDrawerController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIViewController+MMDrawerController.h"; path = "MMDrawerController/UIViewController+MMDrawerController.h"; sourceTree = "<group>"; };
+		ABC3647C1AE524920091ADBE /* UIViewController+MMDrawerController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIViewController+MMDrawerController.m"; path = "MMDrawerController/UIViewController+MMDrawerController.m"; sourceTree = "<group>"; };
 		ABE6C1D51A74EBBE00163C01 /* NU.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NU.h; path = ../NU.h; sourceTree = "<group>"; };
 		ABE6C1D61A74EBBE00163C01 /* NU.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NU.m; path = ../NU.m; sourceTree = "<group>"; };
 		ABE6C1D81A74EBE500163C01 /* ChengjiViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ChengjiViewController.swift; path = ../ChengjiViewController.swift; sourceTree = "<group>"; };
@@ -193,17 +198,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		AB2FA5301A8DF7FF000609E1 /* DrawerController */ = {
-			isa = PBXGroup;
-			children = (
-				AB2FA5311A8DF7FF000609E1 /* AnimatedMenuButton.swift */,
-				AB2FA5321A8DF7FF000609E1 /* DrawerBarButtonItem.swift */,
-				AB2FA5331A8DF7FF000609E1 /* DrawerController.swift */,
-				AB2FA5341A8DF7FF000609E1 /* DrawerVisualState.swift */,
-			);
-			path = DrawerController;
-			sourceTree = "<group>";
-		};
 		C07755E91A448BC6003BD4E4 /* zh-Hans.lproj */ = {
 			isa = PBXGroup;
 			children = (
@@ -318,9 +312,17 @@
 			children = (
 				C07755E91A448BC6003BD4E4 /* zh-Hans.lproj */,
 				C0BE58951A402C930099DE32 /* openssl */,
-				AB2FA5301A8DF7FF000609E1 /* DrawerController */,
 				C0BE592E1A405B690099DE32 /* libssl.a */,
 				C0BE592D1A405B690099DE32 /* libcrypto.a */,
+				ABC364741AE524920091ADBE /* MMDrawerBarButtonItem.h */,
+				ABC364751AE524920091ADBE /* MMDrawerBarButtonItem.m */,
+				ABC364761AE524920091ADBE /* MMDrawerController.h */,
+				ABC364771AE524920091ADBE /* MMDrawerController.m */,
+				ABC364781AE524920091ADBE /* MMDrawerController+Subclass.h */,
+				ABC364791AE524920091ADBE /* MMDrawerVisualState.h */,
+				ABC3647A1AE524920091ADBE /* MMDrawerVisualState.m */,
+				ABC3647B1AE524920091ADBE /* UIViewController+MMDrawerController.h */,
+				ABC3647C1AE524920091ADBE /* UIViewController+MMDrawerController.m */,
 				C0DAD4D41A3EB7B000BE24A8 /* oc.h */,
 				C0DAD4D51A3EB7B000BE24A8 /* oc.m */,
 				ABE6C1D51A74EBBE00163C01 /* NU.h */,
@@ -488,22 +490,22 @@
 				C0C2CABD1A408C8F00DC84A9 /* ytcpsocket.swift in Sources */,
 				ABE6C1DF1A74EC2B00163C01 /* JWGLViewController.swift in Sources */,
 				C0DAD4D61A3EB7B000BE24A8 /* oc.m in Sources */,
+				ABC364801AE524920091ADBE /* UIViewController+MMDrawerController.m in Sources */,
 				ABE6C1DB1A74EBE500163C01 /* ChengjiViewController.swift in Sources */,
 				C0DAD4B61A3E7F9F00BE24A8 /* ViewController.swift in Sources */,
-				AB2FA5351A8DF7FF000609E1 /* AnimatedMenuButton.swift in Sources */,
 				C07756251A45F185003BD4E4 /* GCDAsyncUdpSocket.m in Sources */,
 				AB129AE71AADEB330044759D /* MapViewController.swift in Sources */,
-				AB2FA5361A8DF7FF000609E1 /* DrawerBarButtonItem.swift in Sources */,
 				C0DAD4B41A3E7F9F00BE24A8 /* AppDelegate.swift in Sources */,
+				ABC3647D1AE524920091ADBE /* MMDrawerBarButtonItem.m in Sources */,
 				C0DAD4DC1A3EFD5C00BE24A8 /* testc.c in Sources */,
 				C069BE431AD6CD5100080844 /* LiuliangGoumaiViewController.swift in Sources */,
 				AB2FA56E1A8E0B84000609E1 /* LeftViewController.swift in Sources */,
 				C0C2CABC1A408C8F00DC84A9 /* ytcpsocket.c in Sources */,
-				AB2FA5371A8DF7FF000609E1 /* DrawerController.swift in Sources */,
-				AB2FA5381A8DF7FF000609E1 /* DrawerVisualState.swift in Sources */,
 				ABE6C1DC1A74EBE500163C01 /* KebiaoViewController.swift in Sources */,
 				ABE6C1DD1A74EBE500163C01 /* XiaoliViewController.swift in Sources */,
 				AB129AE91AADEB570044759D /* AboutViewController.swift in Sources */,
+				ABC3647F1AE524920091ADBE /* MMDrawerVisualState.m in Sources */,
+				ABC3647E1AE524920091ADBE /* MMDrawerController.m in Sources */,
 				ABE6C1D71A74EBBE00163C01 /* NU.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
