@@ -459,7 +459,7 @@
 					};
 					C0DAD4C21A3E7F9F00BE24A8 = {
 						CreatedOnToolsVersion = 6.1.1;
-						DevelopmentTeam = ME6769WAA3;
+						DevelopmentTeam = W26WBSVK66;
 						TestTargetID = C0DAD4AD1A3E7F9F00BE24A8;
 					};
 				};
@@ -736,8 +736,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_IDENTITY = "iPhone Distribution: yuzhi Chen (ME6769WAA3)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: yuzhi Chen (ME6769WAA3)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
@@ -749,7 +749,7 @@
 				INFOPLIST_FILE = instabtbuTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "17ea6c58-53e0-494b-b4e8-ce76c1de3c5f";
+				PROVISIONING_PROFILE = "";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/instabtbu.app/instabtbu";
 			};
 			name = Debug;
@@ -758,8 +758,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_IDENTITY = "iPhone Distribution: yuzhi Chen (ME6769WAA3)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: yuzhi Chen (ME6769WAA3)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
@@ -767,7 +767,7 @@
 				INFOPLIST_FILE = instabtbuTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "17ea6c58-53e0-494b-b4e8-ce76c1de3c5f";
+				PROVISIONING_PROFILE = "";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/instabtbu.app/instabtbu";
 			};
 			name = Release;
