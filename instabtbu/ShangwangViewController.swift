@@ -15,22 +15,24 @@ class ShangwangViewController: UIViewController,CLLocationManagerDelegate,GCDAsy
     override func viewDidLoad() {
         super.viewDidLoad()
         navigation = self.navigationController
-//        self.navigationController?.navigationBar.barStyle=UIBarStyle.BlackTranslucent
-        self.navigationItem.title="instabtbu"
+        //        self.navigationController?.navigationBar.barStyle=UIBarStyle.BlackTranslucent
+//        self.navigationItem.title="instabtbu"
         //        scroll.contentSize=CGSize(width: 240, height: 320)
-//        sleep(1)
-        var image = UIImage(named: "shangwang_baritem1")
-        image?.imageWithRenderingMode(UIImageRenderingMode.AlwaysOriginal)
-        tabBarItem.selectedImage=image
+        //        sleep(1)
+        //上网的房子图标
+//        var image = UIImage(named: "shangwang_baritem1")
+//        image?.imageWithRenderingMode(UIImageRenderingMode.AlwaysOriginal)
+//        tabBarItem.selectedImage=image
         
+        //配置流量和设备数的label,不同机型不一样
         var width = UIScreen.mainScreen().bounds.width
         println(width)
         if width == 320{
-            liulianglabel.frame = CGRect(x: 188.0*width/320, y: 138.0*width/320, width: 220, height: 21)
-            zaixianlabel.frame = CGRect(x: 275.0*width/320, y: 138.0*width/320, width: 100, height: 21)
+            liulianglabel.frame = CGRect(x: 188.0, y: 138.0, width: 220, height: 21)
+            zaixianlabel.frame = CGRect(x: 275.0, y: 138.0, width: 100, height: 21)
         }else if width == 375{
-            liulianglabel.frame = CGRect(x: 192.0*width/320, y: 130.0*width/320, width: 220, height: 21)
-            zaixianlabel.frame = CGRect(x: 278.0*width/320, y: 130.0*width/320, width: 100, height: 21)
+            liulianglabel.frame = CGRect(x: 225, y: 152, width: 220, height: 21)
+            zaixianlabel.frame = CGRect(x: 325, y: 152, width: 100, height: 21)
             liulianglabel.font = UIFont(name: "Helvetica", size: 20)
             zaixianlabel.font = UIFont(name: "Helvetica", size: 20)
         }else if width == 414{
@@ -38,7 +40,6 @@ class ShangwangViewController: UIViewController,CLLocationManagerDelegate,GCDAsy
             zaixianlabel.frame = CGRect(x: 360, y: 160, width: 100, height: 21)
             liulianglabel.font = UIFont(name: "Helvetica", size: 22)
             zaixianlabel.font = UIFont(name: "Helvetica", size: 22)
-            
         }
         else {
             liulianglabel.frame = CGRect(x: 441.0, y: 203.0, width: 220, height: 45)
@@ -54,7 +55,7 @@ class ShangwangViewController: UIViewController,CLLocationManagerDelegate,GCDAsy
         println(liulianglabel.frame)
         println(zaixianlabel.frame)
         
-/*
+        /*
         iPhone 5s
         320.0
         (188.0, 138.0, 220.0, 21.0)
@@ -74,13 +75,16 @@ class ShangwangViewController: UIViewController,CLLocationManagerDelegate,GCDAsy
         768.0
         (441.0, 203.0, 220.0, 45.0)
         (620.0, 203.0, 100.0, 45.0)
-*/
-
+        */
+        
+        //配置locationManager,精度是三千米,防止使用GPS过度耗电
         locationManager.desiredAccuracy = kCLLocationAccuracyThreeKilometers
         locationManager.delegate=self
         if UIDevice.currentDevice().systemVersion.toInt() >= 8 {
             locationManager.requestAlwaysAuthorization()
         }
+        
+        //读取储存在本地的用户名和密码等配置信息
         if let data = NSUserDefaults(suiteName: "data")
         {
             numtext.text=data.stringForKey("num")
@@ -103,21 +107,23 @@ class ShangwangViewController: UIViewController,CLLocationManagerDelegate,GCDAsy
                 zidongdenglubutton.setImage(UIImage(named: "shangwang_zidongdenglu0.png"), forState: UIControlState.Normal)
             }
         }
+        
     }
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
-        MobClick.beginLogPageView("shangwang")
+//        MobClick.beginLogPageView("shangwang")
     }
     
     override func viewDidDisappear(animated: Bool) {
         super.viewDidDisappear(animated)
-        MobClick.endLogPageView("shangwang")
+//        MobClick.endLogPageView("shangwang")
     }
     
     func locationManager(manager: CLLocationManager!, didUpdateLocations locations: [AnyObject]!) {
         var location:CLLocation = locations[locations.count-1] as! CLLocation
         if(location.horizontalAccuracy>0){
+            //获取到gps信息
             let gps="GPS信息:\n经度:\(location.coordinate.latitude)\n纬度:\(location.coordinate.longitude)"
             println(gps)
         }
@@ -128,10 +134,11 @@ class ShangwangViewController: UIViewController,CLLocationManagerDelegate,GCDAsy
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
+    
     @IBAction func pswdid(sender: AnyObject) {
         println("pswdid")
         numtext.resignFirstResponder()
+        //把键盘弹下去
     }
     
     @IBAction func numdid(sender: AnyObject) {
@@ -142,6 +149,7 @@ class ShangwangViewController: UIViewController,CLLocationManagerDelegate,GCDAsy
     override func touchesBegan(touches: Set<NSObject>, withEvent event: UIEvent) {
         numtext.resignFirstResponder()
         pswtext.resignFirstResponder()
+        //触摸其他地方的时候也把键盘弹下去
     }
     
     @IBAction func zidongcha(sender: AnyObject) {
@@ -171,24 +179,29 @@ class ShangwangViewController: UIViewController,CLLocationManagerDelegate,GCDAsy
             data.setInteger(zddl, forKey: "zidongdenglu")
         }
     }
-
+    
     @IBAction func feedback(sender: AnyObject) {
+        //反馈
         navigationController?.pushViewController(UMFeedback.feedbackViewController(), animated: true)
     }
     
     var liulianglabel = UILabel()
     var zaixianlabel = UILabel()
+    //上面两个用代码生成,因为不用代码就没办法修改位置
     
-//    @IBOutlet weak var zaixianlabel: UILabel!
-//    @IBOutlet weak var liulianglabel: UILabel!
+    //    @IBOutlet weak var zaixianlabel: UILabel!
+    //    @IBOutlet weak var liulianglabel: UILabel!
     @IBOutlet weak var zhuangtai: UIImageView!
     @IBOutlet weak var numtext: UITextField!
     @IBOutlet weak var pswtext: UITextField!
     @IBOutlet weak var denglubutton: UIButton!
     @IBOutlet weak var zidongchabutton: UIButton!
     @IBOutlet weak var zidongdenglubutton: UIButton!
+    
     @IBAction func denglu(sender: AnyObject) {
-        ui({self.denglu2()})
+        xiancheng({
+            self.denglu2()
+        })
     }
     
     func denglu2(){
@@ -207,10 +220,15 @@ class ShangwangViewController: UIViewController,CLLocationManagerDelegate,GCDAsy
                     rec=fanzhuanyi(rec)
                     trytime++
                     println("第\(trytime)次")
-                    if trytime > 10{
-                        show("登录失败")
+                    if trytime > 20{
+                        red()
+                        //show("登录失败")
+                        
+                        //只要失败次数超过指定次数就直接return
                         return
                     }
+                    NSThread.sleepForTimeInterval(0.1)
+                    //防止服务器一直丢弃连接,我们需要一定的延时
                 }while(rec.count != 23)
                 
                 if rec.count==23 {
@@ -228,33 +246,35 @@ class ShangwangViewController: UIViewController,CLLocationManagerDelegate,GCDAsy
                 }
             }while(rec.count == 0)
             
-                client.close()
-                if jiefeng(rec){
-                    println("保持在线数据:\(t(remain))")
-                    ui({
-                        self.locationManager.startUpdatingLocation()
-                        let data = NSUserDefaults(suiteName: "data")
-                        data?.setObject(self.numtext.text, forKey: "num")
-                        data?.setObject(self.pswtext.text, forKey: "psw")
-                        self.zhuangtai.image=UIImage(named: "shangwang_yilianjie5.png")
-                        self.denglubutton.setImage(UIImage(named: "shangwang_denglu0.png"), forState: UIControlState.Normal)
-                        self.zidongchaliuliang()
-                    })
-                    always = true
-                    xiancheng({
-                        self.baochi()
-                    })
-//                    xiancheng({
-//                        self.testonline()
-//                    })
-                }else {
-                    show(recString)
-                    println(recString)
-                }
+            client.close()
+            if jiefeng(rec){
+                println("保持在线数据:\(t(remain))")
+                ui({
+                    self.locationManager.startUpdatingLocation()
+                    let data = NSUserDefaults(suiteName: "data")
+                    data?.setObject(self.numtext.text, forKey: "num")
+                    data?.setObject(self.pswtext.text, forKey: "psw")
+                    self.zhuangtai.image=UIImage(named: "shangwang_yilianjie5.png")
+                    self.denglubutton.setImage(UIImage(named: "shangwang_denglu0.png"), forState: UIControlState.Normal)
+                    self.zidongchaliuliang()
+                })
+                always = true
+                //保持在线线程
+                xiancheng({
+                    self.baochi()
+                })
+                //测试是否在线线程
+                xiancheng({
+                    self.testonline()
+                })
             }else {
-                show("获取数据出错");
+                show(recString)
+                println(recString)
             }
-
+        }else {
+            show("获取数据出错");
+        }
+        
     }
     var always = false
     
@@ -278,11 +298,11 @@ class ShangwangViewController: UIViewController,CLLocationManagerDelegate,GCDAsy
         var data = NSData(bytes: cmd, length: cmd.count)
         
         udp.sendData(data, withTimeout: 15, tag: 0)
-        NSThread.sleepForTimeInterval(0.05)
+        NSThread.sleepForTimeInterval(0.1)
         udp.sendData(data, withTimeout: 15, tag: 0)
-        NSThread.sleepForTimeInterval(0.05)
+        NSThread.sleepForTimeInterval(0.1)
         udp.sendData(data, withTimeout: 15, tag: 0)
-        NSThread.sleepForTimeInterval(0.05)
+        NSThread.sleepForTimeInterval(0.1)
         udp.sendData(data, withTimeout: 15, tag: 0)
         println("断开成功")
         always = false
@@ -295,9 +315,11 @@ class ShangwangViewController: UIViewController,CLLocationManagerDelegate,GCDAsy
         })
     }
     
+    //线程执行代码,可以随意丢入任务,线程池自动管理
     func xiancheng(code:dispatch_block_t){
         dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), code)
     }
+    //主线程,也就是UI线程,不可放耗时任务
     func ui(code:dispatch_block_t){
         dispatch_async(dispatch_get_main_queue(), code)
     }
@@ -361,33 +383,42 @@ class ShangwangViewController: UIViewController,CLLocationManagerDelegate,GCDAsy
                     rec=fanzhuanyi(rec)
                     trytime++
                     println("第\(trytime)次")
-                    if trytime > 10{
-                        show("查询流量失败")
+                    if trytime > 20{
+                        //show("查询流量失败")
+                        red()
                         return
                     }
+                    NSThread.sleepForTimeInterval(0.1)
                 }while(rec.count != 23)
-            
-            if rec.count==23 {
-                verify=[UInt8]()
-                for i in 0...15
-                {
-                    verify.append(rec[i+4])
-                }
-                println("获取到验证码:\(t(verify))")
-                var num = numtext.text
-                var psw = pswtext.text
-                var msg = user_noip(num, psw: psw)
-                println("构造发送数据:\(t(msg))")
-                msg=feng(msg, cmd: 0x03)
-                msg=zhuanyi(msg)
-                send(msg)
-                rec = read()
+                
+                if rec.count==23 {
+                    verify=[UInt8]()
+                    for i in 0...15
+                    {
+                        verify.append(rec[i+4])
+                    }
+                    println("获取到验证码:\(t(verify))")
+                    var num = numtext.text
+                    var psw = pswtext.text
+                    var msg = user_noip(num, psw: psw)
+                    println("构造发送数据:\(t(msg))")
+                    msg=feng(msg, cmd: 0x03)
+                    msg=zhuanyi(msg)
+                    send(msg)
+                    rec = read()
                 }
             }while(rec.count == 0)
-                client.close()
-                jiefeng(rec)
-                var regex = NSRegularExpression(pattern: "(\\d+)兆", options: NSRegularExpressionOptions.allZeros, error: nil)
-                var len = count(recString)
+            
+            client.close()
+            jiefeng(rec)
+            var regex = NSRegularExpression(pattern: "(\\d+)兆", options: NSRegularExpressionOptions.allZeros, error: nil)
+            var len = count(recString)
+            println(len)
+            
+            if len < 100{
+                show(recString)
+            }
+            else {
                 var match = regex?.matchesInString(recString, options: NSMatchingOptions.allZeros, range: NSMakeRange(0,len))
                 var liuliang = 0
                 for a in match!{
@@ -398,29 +429,14 @@ class ShangwangViewController: UIViewController,CLLocationManagerDelegate,GCDAsy
                     }
                 }
                 println(liuliang)
-            
+                
                 let data = NSUserDefaults(suiteName: "data")
                 data?.setObject(self.numtext.text, forKey: "num")
                 data?.setObject(self.pswtext.text, forKey: "psw")
-            
+                
                 self.liulianglabel.text="\(liuliang)M"
-                xiancheng({
-                        var color = UIColor(red: 1, green: 1, blue: 0, alpha: 1)
-                        self.liulianglabel.textColor=color
-                        self.zaixianlabel.textColor=color
-                    
-                    for var i:CGFloat=0;i<255;i+=5{
-                        var color = UIColor(red: 1, green: 1, blue: (i/255.0), alpha: 1)
-                        self.ui({
-                            self.liulianglabel.textColor=color
-                            self.zaixianlabel.textColor=color
-                        })
-                        NSThread.sleepForTimeInterval(0.02)
-                    }
-                    
-                })
                 
-                
+                self.yellow()
                 
                 regex = NSRegularExpression(pattern: "在线:\\d+", options: NSRegularExpressionOptions.allZeros, error: nil)
                 len = count(recString)
@@ -434,21 +450,63 @@ class ShangwangViewController: UIViewController,CLLocationManagerDelegate,GCDAsy
                     data.setObject(liulianglabel.text, forKey: "liuliang")
                     data.setObject(zaixianlabel.text, forKey: "zaixian")
                 }
-                
-            }else {
-                show("获取数据出错");
             }
 
+        }else {
 
+        }
+        
+    }
+    
+    func yellow(){
+        xiancheng({
+            var color = UIColor(red: 1, green: 1, blue: 0, alpha: 1)
+            self.liulianglabel.textColor=color
+            self.zaixianlabel.textColor=color
+            
+            for var i:CGFloat=0;i<255;i+=5{
+                var color = UIColor(red: 1, green: 1, blue: (i/255.0), alpha: 1)
+                self.ui({
+                    self.liulianglabel.textColor=color
+                    self.zaixianlabel.textColor=color
+                })
+                NSThread.sleepForTimeInterval(0.02)
+            }
+            
+        })
+    }
+    
+    func red(){
+        xiancheng({
+            var color = UIColor(red: 1, green: 0, blue: 0, alpha: 1)
+            self.liulianglabel.textColor=color
+            self.zaixianlabel.textColor=color
+            
+            for var i:CGFloat=0;i<255;i+=5{
+                var color = UIColor(red: 1, green: (i/255.0), blue: (i/255.0), alpha: 1)
+                self.ui({
+                    self.liulianglabel.textColor=color
+                    self.zaixianlabel.textColor=color
+                })
+                NSThread.sleepForTimeInterval(0.02)
+            }
+            
+        })
     }
     
     @IBAction func chaliuliang(sender: AnyObject) {
-        chaliuliang2()
+        //使用线程查询流量
+        xiancheng({
+            self.chaliuliang2()
+        })
     }
     
     var verify:[UInt8] = []
+    //首次空包返回的随机验证码
     var remain:[UInt8] = []
+    //登录成功之后保存的保持在线数据
     var recString:String = ""
+    //查流量或者登录失败的时候取出的纯文本信息
     
     func jiami(buf:[UInt8])->[UInt8]{
         var re:[UInt8] = [UInt8](count:128,repeatedValue:0x0)
@@ -485,7 +543,7 @@ class ShangwangViewController: UIViewController,CLLocationManagerDelegate,GCDAsy
         
         return f
     }
-
+    
     func feng(buf:[UInt8],cmd:Int)->[UInt8]{
         var jiamiUInt8s = jiami(buf)
         var crcUInt8s = [UInt8(cmd),UInt8(jiamiUInt8s.count&0xff),UInt8(jiamiUInt8s.count>>8)] + jiamiUInt8s
@@ -649,15 +707,17 @@ class ShangwangViewController: UIViewController,CLLocationManagerDelegate,GCDAsy
             return []
         }
     }
-
+    
     @IBAction func force(sender: AnyObject) {
         var mypost = oc()
         var rec = mypost.iPOSTwithurl("http://self.btbu.edu.cn/cgi-bin/nacgi.cgi", withpost: "textfield=" + numtext.text+"&textfield2=" + pswtext.text + "&Submit=%CC%E1%BD%BB&nacgicmd=9&radio=1&jsidx=1")
         println(rec)
         if let range = rec.rangeOfString("成功断开本帐号的当前的所有连接"){
             println("成功断开本帐号的当前的所有连接")
+            show("成功断开本帐号的当前的所有连接")
         }else{
             println("断开失败")
+            show("断开失败")
         }
     }
     
@@ -666,6 +726,6 @@ class ShangwangViewController: UIViewController,CLLocationManagerDelegate,GCDAsy
             UIAlertView(title: "", message: show, delegate: nil, cancelButtonTitle: "确定").show()
         })
     }
-
+    
 }
 
