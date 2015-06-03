@@ -254,9 +254,13 @@ class ShangwangViewController: UIViewController,CLLocationManagerDelegate,GCDAsy
                     let data = NSUserDefaults(suiteName: "data")
                     data?.setObject(self.numtext.text, forKey: "num")
                     data?.setObject(self.pswtext.text, forKey: "psw")
+                    
+                    //登录成功之后调整UI
                     self.zhuangtai.image=UIImage(named: "shangwang_yilianjie5.png")
                     self.denglubutton.setImage(UIImage(named: "shangwang_denglu0.png"), forState: UIControlState.Normal)
                     self.zidongchaliuliang()
+                    self.numtext.enabled = true
+                    self.pswtext.enabled = true
                 })
                 always = true
                 //保持在线线程
@@ -309,6 +313,8 @@ class ShangwangViewController: UIViewController,CLLocationManagerDelegate,GCDAsy
         zhuangtai.image=UIImage(named: "shangwang_weilianjie.png")
         denglubutton.setImage(UIImage(named: "shangwang_denglu1.png"), forState: UIControlState.Normal)
         locationManager.stopUpdatingLocation()
+        numtext.enabled = true
+        pswtext.enabled = true
         xiancheng({
             sleep(1)
             self.zidongchaliuliang()
@@ -346,13 +352,14 @@ class ShangwangViewController: UIViewController,CLLocationManagerDelegate,GCDAsy
     }
     
     func testonline(){
-        var jwgl = JWGLViewController()
+        var testclient = TCPClient(addr: "baidu.com", port: 80)
         while always{
-            var rec = jwgl.sGet("http://baidu.com")
-            println(rec)
-            if count(rec) == 0{
+            var (success, error) = testclient.connect(timeout: 15)
+            println("\(success),\(error)")
+            if success == false{
                 denglu2()
             }
+            testclient.close()
             sleep(30)
         }
     }
