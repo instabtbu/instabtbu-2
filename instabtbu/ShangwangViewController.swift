@@ -77,10 +77,10 @@ class ShangwangViewController: UIViewController,CLLocationManagerDelegate,GCDAsy
         (620.0, 203.0, 100.0, 45.0)
         */
         
-        //配置locationManager,精度是三千米,防止使用GPS过度耗电
-        locationManager.desiredAccuracy = kCLLocationAccuracyThreeKilometers
+        //配置locationManager,精度稍低,防止使用GPS过度耗电
+        locationManager.desiredAccuracy = kCLLocationAccuracyHundredMeters
         locationManager.delegate=self
-        if UIDevice.currentDevice().systemVersion.toInt() >= 8 {
+        if (UIDevice.currentDevice().systemVersion as NSString).floatValue >= 8 {
             locationManager.requestAlwaysAuthorization()
         }
         
@@ -108,6 +108,8 @@ class ShangwangViewController: UIViewController,CLLocationManagerDelegate,GCDAsy
             }
         }
         
+        //self.locationManager.startUpdatingLocation()
+        
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -122,6 +124,7 @@ class ShangwangViewController: UIViewController,CLLocationManagerDelegate,GCDAsy
     
     func locationManager(manager: CLLocationManager!, didUpdateLocations locations: [AnyObject]!) {
         var location:CLLocation = locations[locations.count-1] as! CLLocation
+        
         if(location.horizontalAccuracy>0){
             //获取到gps信息
             let gps="GPS信息:\n经度:\(location.coordinate.latitude)\n纬度:\(location.coordinate.longitude)"
@@ -251,6 +254,8 @@ class ShangwangViewController: UIViewController,CLLocationManagerDelegate,GCDAsy
                 println("保持在线数据:\(t(remain))")
                 ui({
                     self.locationManager.startUpdatingLocation()
+                    //通过locationManager保持后台
+                    
                     let data = NSUserDefaults(suiteName: "data")
                     data?.setObject(self.numtext.text, forKey: "num")
                     data?.setObject(self.pswtext.text, forKey: "psw")
@@ -310,6 +315,8 @@ class ShangwangViewController: UIViewController,CLLocationManagerDelegate,GCDAsy
         udp.sendData(data, withTimeout: 15, tag: 0)
         println("断开成功")
         always = false
+        isBaochi = false
+        istestOnline = false
         zhuangtai.image=UIImage(named: "shangwang_weilianjie.png")
         denglubutton.setImage(UIImage(named: "shangwang_denglu1.png"), forState: UIControlState.Normal)
         locationManager.stopUpdatingLocation()
@@ -330,6 +337,8 @@ class ShangwangViewController: UIViewController,CLLocationManagerDelegate,GCDAsy
         dispatch_async(dispatch_get_main_queue(), code)
     }
     
+    var isBaochi = false
+    
     func baochi(){
         MobClick.beginEvent("service")
         var udp = GCDAsyncUdpSocket(delegate: self, delegateQueue: dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0))
@@ -341,26 +350,33 @@ class ShangwangViewController: UIViewController,CLLocationManagerDelegate,GCDAsy
         }
         udp.beginReceiving(nil)
         
-        var cmd = getcmd(0)
-        var data = NSData(bytes: cmd, length: cmd.count)
-        while always{
-            sleep(30)
-            udp.sendData(data, withTimeout: 30000, tag: 0)
-            println("发送保持数据:\(t(cmd))")
+        if !isBaochi{
+            isBaochi = true
+            while always{
+                var cmd = getcmd(0)
+                var data = NSData(bytes: cmd, length: cmd.count)
+                sleep(30)
+                udp.sendData(data, withTimeout: 30000, tag: 0)
+                println("发送保持数据:\(t(cmd))")
+            }
         }
         MobClick.endEvent("service")
     }
     
+    var istestOnline = false
     func testonline(){
-        var testclient = TCPClient(addr: "baidu.com", port: 80)
-        while always{
-            var (success, error) = testclient.connect(timeout: 15)
-            println("\(success),\(error)")
-            if success == false{
-                denglu2()
+        if !istestOnline{
+            istestOnline = true
+            while always{
+                sleep(30)
+                var testclient = TCPClient(addr: "baidu.com", port: 80)
+                var (success, error) = testclient.connect(timeout: 15)
+                println("\(success),\(error)")
+                if success == false{
+                    denglu2()
+                }
+                testclient.close()
             }
-            testclient.close()
-            sleep(30)
         }
     }
     
