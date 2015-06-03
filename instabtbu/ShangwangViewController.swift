@@ -10,7 +10,7 @@ import UIKit
 import CoreLocation
 import Foundation
 
-class ViewController: UIViewController,CLLocationManagerDelegate,GCDAsyncUdpSocketDelegate{
+class ShangwangViewController: UIViewController,CLLocationManagerDelegate,GCDAsyncUdpSocketDelegate{
     let locationManager = CLLocationManager()
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,6 +23,58 @@ class ViewController: UIViewController,CLLocationManagerDelegate,GCDAsyncUdpSock
         image?.imageWithRenderingMode(UIImageRenderingMode.AlwaysOriginal)
         tabBarItem.selectedImage=image
         
+        var width = UIScreen.mainScreen().bounds.width
+        println(width)
+        if width == 320{
+            liulianglabel.frame = CGRect(x: 188.0*width/320, y: 138.0*width/320, width: 220, height: 21)
+            zaixianlabel.frame = CGRect(x: 275.0*width/320, y: 138.0*width/320, width: 100, height: 21)
+        }else if width == 375{
+            liulianglabel.frame = CGRect(x: 192.0*width/320, y: 130.0*width/320, width: 220, height: 21)
+            zaixianlabel.frame = CGRect(x: 278.0*width/320, y: 130.0*width/320, width: 100, height: 21)
+            liulianglabel.font = UIFont(name: "Helvetica", size: 20)
+            zaixianlabel.font = UIFont(name: "Helvetica", size: 20)
+        }else if width == 414{
+            liulianglabel.frame = CGRect(x: 248, y: 160, width: 220, height: 21)
+            zaixianlabel.frame = CGRect(x: 360, y: 160, width: 100, height: 21)
+            liulianglabel.font = UIFont(name: "Helvetica", size: 22)
+            zaixianlabel.font = UIFont(name: "Helvetica", size: 22)
+            
+        }
+        else {
+            liulianglabel.frame = CGRect(x: 441.0, y: 203.0, width: 220, height: 45)
+            zaixianlabel.frame = CGRect(x: 620.0, y: 203.0, width: 100, height: 45)
+            liulianglabel.font = UIFont(name: "Helvetica", size: 36)
+            zaixianlabel.font = UIFont(name: "Helvetica", size: 36)
+        }
+        
+        liulianglabel.textColor = UIColor.whiteColor()
+        zaixianlabel.textColor = UIColor.whiteColor()
+        self.view.addSubview(liulianglabel)
+        self.view.addSubview(zaixianlabel)
+        println(liulianglabel.frame)
+        println(zaixianlabel.frame)
+        
+/*
+        iPhone 5s
+        320.0
+        (188.0, 138.0, 220.0, 21.0)
+        (275.0, 138.0, 100.0, 21.0)
+        
+        iPhone 6
+        375.0
+        (225.0, 152.34375, 220.0, 21.0)
+        (325.78125, 152.34375, 100.0, 21.0)
+        
+        iPhone 6 Plus
+        414.0
+        (248.4, 160.425, 220.0, 21.0)
+        (359.6625, 160.425, 100.0, 21.0)
+        
+        iPad Simulator
+        768.0
+        (441.0, 203.0, 220.0, 45.0)
+        (620.0, 203.0, 100.0, 45.0)
+*/
 
         locationManager.desiredAccuracy = kCLLocationAccuracyThreeKilometers
         locationManager.delegate=self
@@ -124,8 +176,11 @@ class ViewController: UIViewController,CLLocationManagerDelegate,GCDAsyncUdpSock
         navigationController?.pushViewController(UMFeedback.feedbackViewController(), animated: true)
     }
     
-    @IBOutlet weak var zaixianlabel: UILabel!
-    @IBOutlet weak var liulianglabel: UILabel!
+    var liulianglabel = UILabel()
+    var zaixianlabel = UILabel()
+    
+//    @IBOutlet weak var zaixianlabel: UILabel!
+//    @IBOutlet weak var liulianglabel: UILabel!
     @IBOutlet weak var zhuangtai: UIImageView!
     @IBOutlet weak var numtext: UITextField!
     @IBOutlet weak var pswtext: UITextField!
@@ -144,33 +199,33 @@ class ViewController: UIViewController,CLLocationManagerDelegate,GCDAsyncUdpSock
             var rec = [UInt8]()
             
             do{
-            do
-            {
-                connect()
-                send(buf)
-                rec = read()
-                rec=fanzhuanyi(rec)
-                trytime++
-                println("第\(trytime)次")
-                if trytime > 10{
-                    show("登录失败")
-                    return
-                }
-            }while(rec.count != 23)
-            
-            if rec.count==23 {
-                verify=[UInt8]()
-                for i in 0...15
+                do
                 {
-                    verify.append(rec[i+4])
+                    connect()
+                    send(buf)
+                    rec = read()
+                    rec=fanzhuanyi(rec)
+                    trytime++
+                    println("第\(trytime)次")
+                    if trytime > 10{
+                        show("登录失败")
+                        return
+                    }
+                }while(rec.count != 23)
+                
+                if rec.count==23 {
+                    verify=[UInt8]()
+                    for i in 0...15
+                    {
+                        verify.append(rec[i+4])
+                    }
+                    println("获取到验证码:\(t(verify))")
+                    var msg = user(numtext.text, psw: pswtext.text)
+                    msg=feng(msg, cmd: 0x01)
+                    msg=zhuanyi(msg)
+                    send(msg)
+                    rec = read()
                 }
-                println("获取到验证码:\(t(verify))")
-                var msg = user(numtext.text, psw: pswtext.text)
-                msg=feng(msg, cmd: 0x01)
-                msg=zhuanyi(msg)
-                send(msg)
-                rec = read()
-            }
             }while(rec.count == 0)
             
                 client.close()
@@ -343,6 +398,11 @@ class ViewController: UIViewController,CLLocationManagerDelegate,GCDAsyncUdpSock
                     }
                 }
                 println(liuliang)
+            
+                let data = NSUserDefaults(suiteName: "data")
+                data?.setObject(self.numtext.text, forKey: "num")
+                data?.setObject(self.pswtext.text, forKey: "psw")
+            
                 self.liulianglabel.text="\(liuliang)M"
                 xiancheng({
                         var color = UIColor(red: 1, green: 1, blue: 0, alpha: 1)

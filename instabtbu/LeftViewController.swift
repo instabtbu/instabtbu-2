@@ -44,7 +44,7 @@ class LeftViewController: UIViewController {
         var i = sender.tag+1
         println("\(sender.tag)")
         if i == 1 {
-            navigation.viewControllers = [(stb.instantiateViewControllerWithIdentifier("SW") as! ViewController)]
+            navigation.viewControllers = [(stb.instantiateViewControllerWithIdentifier("SW") as! ShangwangViewController)]
         }
         else if i == 2 {
             navigation.viewControllers = [(stb.instantiateViewControllerWithIdentifier("JW") as! JWGLViewController)]

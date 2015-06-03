@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6751" systemVersion="14C1514" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="oIX-ks-njo">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14D2134" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="oIX-ks-njo">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6736"/>
-        <capability name="Alignment constraints to the first baseline" minToolsVersion="6.0"/>
-        <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
@@ -27,7 +25,7 @@
         <!--instabtbu-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController storyboardIdentifier="SW" id="BYZ-38-t0r" customClass="ViewController" customModule="instabtbu" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SW" id="BYZ-38-t0r" customClass="ShangwangViewController" customModule="instabtbu" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="eaJ-Lh-ddE"/>
                         <viewControllerLayoutGuide type="bottom" id="Yzu-7e-2WK"/>
@@ -131,24 +129,6 @@
                                     <action selector="zidongcha:" destination="BYZ-38-t0r" eventType="touchUpInside" id="3SU-bq-h0v"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zgG-Qo-mPD">
-                                <rect key="frame" x="275" y="138" width="14" height="21"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" secondItem="zgG-Qo-mPD" secondAttribute="height" multiplier="2:3" id="0cA-uQ-NCU"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.95294117649999999" green="0.95294117649999999" blue="0.95294117649999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bhU-cZ-nGN">
-                                <rect key="frame" x="184" y="138" width="65" height="21"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="65" id="b26-fG-W88"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.95294117649999999" green="0.95294117649999999" blue="0.95294117649999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="shangwang_num_left" translatesAutoresizingMaskIntoConstraints="NO" id="l1R-sm-KEd">
                                 <rect key="frame" x="16" y="185" width="35" height="35"/>
                                 <constraints>
@@ -168,7 +148,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="19n-Ke-gFP">
-                                <rect key="frame" x="16" y="521" width="288" height="36"/>
+                                <rect key="frame" x="16" y="521" width="288" height="35.5"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="19n-Ke-gFP" secondAttribute="height" multiplier="476:59" constant="1.5932203389830306" id="RP1-uu-w0g"/>
                                 </constraints>
@@ -201,17 +181,12 @@
                             <constraint firstItem="l1R-sm-KEd" firstAttribute="top" secondItem="JSU-VL-nPH" secondAttribute="bottom" id="QDf-CR-FO3"/>
                             <constraint firstItem="JSU-VL-nPH" firstAttribute="leading" secondItem="G6h-ff-tG3" secondAttribute="leadingMargin" id="R0F-cj-ipe"/>
                             <constraint firstItem="NZE-Pf-5cm" firstAttribute="top" secondItem="eCL-7h-k5i" secondAttribute="bottom" constant="8" id="SUZ-sD-2sf"/>
-                            <constraint firstItem="bhU-cZ-nGN" firstAttribute="firstBaseline" secondItem="zgG-Qo-mPD" secondAttribute="baseline" id="SgW-cj-2V4"/>
-                            <constraint firstItem="bhU-cZ-nGN" firstAttribute="top" secondItem="zgG-Qo-mPD" secondAttribute="top" id="SzS-eL-3Cm"/>
                             <constraint firstItem="9J2-ET-dPB" firstAttribute="top" secondItem="5Wf-pv-FeZ" secondAttribute="bottom" id="Tcs-Of-LMD"/>
                             <constraint firstItem="19n-Ke-gFP" firstAttribute="top" secondItem="NZE-Pf-5cm" secondAttribute="bottom" constant="8" symbolic="YES" id="WoD-eX-t6z"/>
                             <constraint firstItem="hyN-Hj-Bzq" firstAttribute="trailing" secondItem="G6h-ff-tG3" secondAttribute="trailingMargin" id="c2E-0f-VSZ"/>
                             <constraint firstItem="yJJ-cD-LVc" firstAttribute="leading" secondItem="G6h-ff-tG3" secondAttribute="leadingMargin" id="c8D-9c-hu1"/>
                             <constraint firstItem="JSU-VL-nPH" firstAttribute="top" secondItem="eaJ-Lh-ddE" secondAttribute="bottom" constant="16" id="eCQ-md-Tv2"/>
                             <constraint firstItem="5Wf-pv-FeZ" firstAttribute="height" secondItem="l1R-sm-KEd" secondAttribute="height" id="efs-7R-nbY"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="zgG-Qo-mPD" secondAttribute="trailing" constant="15" id="fJL-52-xze"/>
-                            <constraint firstItem="bhU-cZ-nGN" firstAttribute="baseline" secondItem="zgG-Qo-mPD" secondAttribute="baseline" id="flW-tO-Uyf"/>
-                            <constraint firstItem="zgG-Qo-mPD" firstAttribute="leading" secondItem="bhU-cZ-nGN" secondAttribute="trailing" constant="26" id="gi7-O0-hgA"/>
                             <constraint firstItem="yJJ-cD-LVc" firstAttribute="top" secondItem="l1R-sm-KEd" secondAttribute="bottom" id="hff-h1-P39"/>
                             <constraint firstItem="JSU-VL-nPH" firstAttribute="width" secondItem="LBs-gV-iHn" secondAttribute="height" multiplier="72:35" id="jyW-At-WuR"/>
                             <constraint firstItem="JSU-VL-nPH" firstAttribute="width" secondItem="8by-fF-In4" secondAttribute="height" multiplier="9:1" id="mFT-8O-nTg"/>
@@ -224,17 +199,14 @@
                             <constraint firstItem="LBs-gV-iHn" firstAttribute="trailing" secondItem="G6h-ff-tG3" secondAttribute="trailingMargin" id="wNE-wK-6lB"/>
                             <constraint firstItem="NZE-Pf-5cm" firstAttribute="leading" secondItem="19n-Ke-gFP" secondAttribute="leading" id="wot-mU-7uX"/>
                             <constraint firstItem="eCL-7h-k5i" firstAttribute="top" secondItem="yPC-IR-EbB" secondAttribute="bottom" constant="8" id="xFf-0x-Leo"/>
-                            <constraint firstItem="5Wf-pv-FeZ" firstAttribute="top" secondItem="zgG-Qo-mPD" secondAttribute="bottom" constant="26" id="xur-oO-dHj"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="上网登录" image="shangwang_baritem0" selectedImage="shangwang_baritem1" id="bOo-a2-kir"/>
                     <navigationItem key="navigationItem" title="instabtbu" id="dyG-GC-jEd" colorLabel="IBBuiltInLabel-Blue"/>
                     <connections>
                         <outlet property="denglubutton" destination="yPC-IR-EbB" id="K0M-Aw-1ct"/>
-                        <outlet property="liulianglabel" destination="bhU-cZ-nGN" id="MKt-Pn-tmv"/>
                         <outlet property="numtext" destination="5Wf-pv-FeZ" id="AxL-82-ay5"/>
                         <outlet property="pswtext" destination="9J2-ET-dPB" id="wg0-Fw-BCA"/>
-                        <outlet property="zaixianlabel" destination="zgG-Qo-mPD" id="v61-lZ-GG3"/>
                         <outlet property="zhuangtai" destination="JSU-VL-nPH" id="5ze-DS-TWF"/>
                         <outlet property="zidongchabutton" destination="hyN-Hj-Bzq" id="gAB-cy-u1c"/>
                         <outlet property="zidongdenglubutton" destination="eCL-7h-k5i" id="POT-cf-ObX"/>
@@ -262,18 +234,6 @@
                                     <constraint firstAttribute="width" secondItem="rer-cr-QwV" secondAttribute="height" multiplier="320:181" id="Uur-l2-ZeF"/>
                                 </constraints>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ive-ZR-Rce">
-                                <rect key="frame" x="42" y="273" width="236" height="107.5"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" secondItem="ive-ZR-Rce" secondAttribute="height" multiplier="35:16" id="u7u-r2-UML"/>
-                                </constraints>
-                                <state key="normal" backgroundImage="liulianggoumai_button_8">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="bagb:" destination="zW0-gA-kpP" eventType="touchUpInside" id="1HU-IE-8uW"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0Lb-eG-Qu2">
                                 <rect key="frame" x="42" y="412.5" width="236" height="107.5"/>
                                 <constraints>
@@ -284,6 +244,18 @@
                                 </state>
                                 <connections>
                                     <action selector="ershigb:" destination="zW0-gA-kpP" eventType="touchUpInside" id="EVp-vz-5qi"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ive-ZR-Rce">
+                                <rect key="frame" x="42" y="273" width="236" height="107.5"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="ive-ZR-Rce" secondAttribute="height" multiplier="35:16" id="u7u-r2-UML"/>
+                                </constraints>
+                                <state key="normal" backgroundImage="liulianggoumai_button_8">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="bagb:" destination="zW0-gA-kpP" eventType="touchUpInside" id="1HU-IE-8uW"/>
                                 </connections>
                             </button>
                         </subviews>

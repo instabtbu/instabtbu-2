@@ -31,7 +31,7 @@
 		C0C2CABC1A408C8F00DC84A9 /* ytcpsocket.c in Sources */ = {isa = PBXBuildFile; fileRef = C0C2CAB81A408C8F00DC84A9 /* ytcpsocket.c */; };
 		C0C2CABD1A408C8F00DC84A9 /* ytcpsocket.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0C2CAB91A408C8F00DC84A9 /* ytcpsocket.swift */; };
 		C0DAD4B41A3E7F9F00BE24A8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0DAD4B31A3E7F9F00BE24A8 /* AppDelegate.swift */; };
-		C0DAD4B61A3E7F9F00BE24A8 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0DAD4B51A3E7F9F00BE24A8 /* ViewController.swift */; };
+		C0DAD4B61A3E7F9F00BE24A8 /* ShangwangViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0DAD4B51A3E7F9F00BE24A8 /* ShangwangViewController.swift */; };
 		C0DAD4B91A3E7F9F00BE24A8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C0DAD4B71A3E7F9F00BE24A8 /* Main.storyboard */; };
 		C0DAD4BB1A3E7F9F00BE24A8 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C0DAD4BA1A3E7F9F00BE24A8 /* Images.xcassets */; };
 		C0DAD4BE1A3E7F9F00BE24A8 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = C0DAD4BC1A3E7F9F00BE24A8 /* LaunchScreen.xib */; };
@@ -161,7 +161,7 @@
 		C0DAD4AE1A3E7F9F00BE24A8 /* instabtbu.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = instabtbu.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C0DAD4B21A3E7F9F00BE24A8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C0DAD4B31A3E7F9F00BE24A8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		C0DAD4B51A3E7F9F00BE24A8 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		C0DAD4B51A3E7F9F00BE24A8 /* ShangwangViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShangwangViewController.swift; sourceTree = "<group>"; };
 		C0DAD4B81A3E7F9F00BE24A8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		C0DAD4BA1A3E7F9F00BE24A8 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		C0DAD4BD1A3E7F9F00BE24A8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
@@ -232,7 +232,7 @@
 				ABE6C1D81A74EBE500163C01 /* ChengjiViewController.swift */,
 				ABE6C1D91A74EBE500163C01 /* KebiaoViewController.swift */,
 				ABE6C1DA1A74EBE500163C01 /* XiaoliViewController.swift */,
-				C0DAD4B51A3E7F9F00BE24A8 /* ViewController.swift */,
+				C0DAD4B51A3E7F9F00BE24A8 /* ShangwangViewController.swift */,
 				C069BE421AD6CD5100080844 /* LiuliangGoumaiViewController.swift */,
 				AB2FA56D1A8E0B84000609E1 /* LeftViewController.swift */,
 				AB129AE81AADEB570044759D /* AboutViewController.swift */,
@@ -516,7 +516,7 @@
 				C0DAD4D61A3EB7B000BE24A8 /* oc.m in Sources */,
 				ABC364801AE524920091ADBE /* UIViewController+MMDrawerController.m in Sources */,
 				ABE6C1DB1A74EBE500163C01 /* ChengjiViewController.swift in Sources */,
-				C0DAD4B61A3E7F9F00BE24A8 /* ViewController.swift in Sources */,
+				C0DAD4B61A3E7F9F00BE24A8 /* ShangwangViewController.swift in Sources */,
 				C07756251A45F185003BD4E4 /* GCDAsyncUdpSocket.m in Sources */,
 				AB129AE71AADEB330044759D /* MapViewController.swift in Sources */,
 				C0DAD4B41A3E7F9F00BE24A8 /* AppDelegate.swift in Sources */,
