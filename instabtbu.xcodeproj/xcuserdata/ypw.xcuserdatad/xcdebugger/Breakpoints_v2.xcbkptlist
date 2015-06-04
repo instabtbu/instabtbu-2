@@ -26,12 +26,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "instabtbu/ShangwangViewController.swift"
-            timestampString = "455033010.079638"
+            timestampString = "455089773.268728"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "257"
-            endingLineNumber = "257"
-            landmarkName = "denglu2()"
+            startingLineNumber = "254"
+            endingLineNumber = "254"
+            landmarkName = "denglu2(_:)"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -74,28 +74,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "instabtbu/ShangwangViewController.swift"
-            timestampString = "455033513.44883"
+            timestampString = "455089773.268728"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "355"
-            endingLineNumber = "355"
-            landmarkName = "baochi()"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "instabtbu/ShangwangViewController.swift"
-            timestampString = "455033513.44883"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "353"
-            endingLineNumber = "353"
-            landmarkName = "baochi()"
+            startingLineNumber = "210"
+            endingLineNumber = "210"
+            landmarkName = "denglu2(_:)"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>

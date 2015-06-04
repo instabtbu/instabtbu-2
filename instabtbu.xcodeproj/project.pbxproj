@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A1C70FB21B201ACF00C240FD /* Common.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1C70FB11B201ACF00C240FD /* Common.swift */; };
+		A1C974D71B1FFD2700124F1F /* ytcpsocket.c in Sources */ = {isa = PBXBuildFile; fileRef = A1C974D31B1FFD2700124F1F /* ytcpsocket.c */; };
+		A1C974D81B1FFD2700124F1F /* ytcpsocket.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1C974D41B1FFD2700124F1F /* ytcpsocket.swift */; };
+		A1C974D91B1FFD2700124F1F /* yudpsocket.c in Sources */ = {isa = PBXBuildFile; fileRef = A1C974D51B1FFD2700124F1F /* yudpsocket.c */; };
+		A1C974DA1B1FFD2700124F1F /* yudpsocket.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1C974D61B1FFD2700124F1F /* yudpsocket.swift */; };
+		A1C974DC1B1FFD4900124F1F /* ysocket.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1C974DB1B1FFD4900124F1F /* ysocket.swift */; };
 		AB129AE71AADEB330044759D /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB129AE61AADEB330044759D /* MapViewController.swift */; };
 		AB129AE91AADEB570044759D /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB129AE81AADEB570044759D /* AboutViewController.swift */; };
 		AB2FA56E1A8E0B84000609E1 /* LeftViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB2FA56D1A8E0B84000609E1 /* LeftViewController.swift */; };
@@ -28,8 +34,6 @@
 		C07756251A45F185003BD4E4 /* GCDAsyncUdpSocket.m in Sources */ = {isa = PBXBuildFile; fileRef = C07756241A45F185003BD4E4 /* GCDAsyncUdpSocket.m */; };
 		C0BE592F1A405B690099DE32 /* libcrypto.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C0BE592D1A405B690099DE32 /* libcrypto.a */; };
 		C0BE59301A405B690099DE32 /* libssl.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C0BE592E1A405B690099DE32 /* libssl.a */; };
-		C0C2CABC1A408C8F00DC84A9 /* ytcpsocket.c in Sources */ = {isa = PBXBuildFile; fileRef = C0C2CAB81A408C8F00DC84A9 /* ytcpsocket.c */; };
-		C0C2CABD1A408C8F00DC84A9 /* ytcpsocket.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0C2CAB91A408C8F00DC84A9 /* ytcpsocket.swift */; };
 		C0DAD4B41A3E7F9F00BE24A8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0DAD4B31A3E7F9F00BE24A8 /* AppDelegate.swift */; };
 		C0DAD4B61A3E7F9F00BE24A8 /* ShangwangViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0DAD4B51A3E7F9F00BE24A8 /* ShangwangViewController.swift */; };
 		C0DAD4B91A3E7F9F00BE24A8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C0DAD4B71A3E7F9F00BE24A8 /* Main.storyboard */; };
@@ -51,6 +55,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		A1C70FB11B201ACF00C240FD /* Common.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Common.swift; sourceTree = "<group>"; };
+		A1C974D31B1FFD2700124F1F /* ytcpsocket.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = ytcpsocket.c; sourceTree = "<group>"; };
+		A1C974D41B1FFD2700124F1F /* ytcpsocket.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ytcpsocket.swift; sourceTree = "<group>"; };
+		A1C974D51B1FFD2700124F1F /* yudpsocket.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = yudpsocket.c; sourceTree = "<group>"; };
+		A1C974D61B1FFD2700124F1F /* yudpsocket.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = yudpsocket.swift; sourceTree = "<group>"; };
+		A1C974DB1B1FFD4900124F1F /* ysocket.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ysocket.swift; sourceTree = "<group>"; };
 		AB129AE61AADEB330044759D /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		AB129AE81AADEB570044759D /* AboutViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
 		AB2FA56D1A8E0B84000609E1 /* LeftViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LeftViewController.swift; sourceTree = "<group>"; };
@@ -156,8 +166,6 @@
 		C0BE58E01A402C940099DE32 /* x509v3.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = x509v3.h; sourceTree = "<group>"; };
 		C0BE592D1A405B690099DE32 /* libcrypto.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libcrypto.a; sourceTree = "<group>"; };
 		C0BE592E1A405B690099DE32 /* libssl.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libssl.a; sourceTree = "<group>"; };
-		C0C2CAB81A408C8F00DC84A9 /* ytcpsocket.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = ytcpsocket.c; sourceTree = "<group>"; };
-		C0C2CAB91A408C8F00DC84A9 /* ytcpsocket.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ytcpsocket.swift; sourceTree = "<group>"; };
 		C0DAD4AE1A3E7F9F00BE24A8 /* instabtbu.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = instabtbu.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C0DAD4B21A3E7F9F00BE24A8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C0DAD4B31A3E7F9F00BE24A8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -360,10 +368,14 @@
 				C0BE592D1A405B690099DE32 /* libcrypto.a */,
 				ABC364B41AE5338B0091ADBE /* OC */,
 				ABC364B51AE5339A0091ADBE /* ViewController */,
-				C0C2CAB81A408C8F00DC84A9 /* ytcpsocket.c */,
-				C0C2CAB91A408C8F00DC84A9 /* ytcpsocket.swift */,
 				C07756231A45F185003BD4E4 /* GCDAsyncUdpSocket.h */,
+				A1C70FB11B201ACF00C240FD /* Common.swift */,
 				C07756241A45F185003BD4E4 /* GCDAsyncUdpSocket.m */,
+				A1C974D31B1FFD2700124F1F /* ytcpsocket.c */,
+				A1C974D41B1FFD2700124F1F /* ytcpsocket.swift */,
+				A1C974D51B1FFD2700124F1F /* yudpsocket.c */,
+				A1C974D61B1FFD2700124F1F /* yudpsocket.swift */,
+				A1C974DB1B1FFD4900124F1F /* ysocket.swift */,
 				C03F71741A42CE2D0096E923 /* libMobClickLibrary.a */,
 				C03F71751A42CE2D0096E923 /* MobClick.h */,
 				C03F717C1A42DF650096E923 /* libUMFeedback.a */,
@@ -511,11 +523,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C0C2CABD1A408C8F00DC84A9 /* ytcpsocket.swift in Sources */,
+				A1C974DC1B1FFD4900124F1F /* ysocket.swift in Sources */,
 				ABE6C1DF1A74EC2B00163C01 /* JWGLViewController.swift in Sources */,
 				C0DAD4D61A3EB7B000BE24A8 /* oc.m in Sources */,
 				ABC364801AE524920091ADBE /* UIViewController+MMDrawerController.m in Sources */,
 				ABE6C1DB1A74EBE500163C01 /* ChengjiViewController.swift in Sources */,
+				A1C974D81B1FFD2700124F1F /* ytcpsocket.swift in Sources */,
 				C0DAD4B61A3E7F9F00BE24A8 /* ShangwangViewController.swift in Sources */,
 				C07756251A45F185003BD4E4 /* GCDAsyncUdpSocket.m in Sources */,
 				AB129AE71AADEB330044759D /* MapViewController.swift in Sources */,
@@ -524,13 +537,16 @@
 				C0DAD4DC1A3EFD5C00BE24A8 /* testc.c in Sources */,
 				C069BE431AD6CD5100080844 /* LiuliangGoumaiViewController.swift in Sources */,
 				AB2FA56E1A8E0B84000609E1 /* LeftViewController.swift in Sources */,
-				C0C2CABC1A408C8F00DC84A9 /* ytcpsocket.c in Sources */,
 				ABE6C1DC1A74EBE500163C01 /* KebiaoViewController.swift in Sources */,
+				A1C974D71B1FFD2700124F1F /* ytcpsocket.c in Sources */,
+				A1C70FB21B201ACF00C240FD /* Common.swift in Sources */,
 				ABE6C1DD1A74EBE500163C01 /* XiaoliViewController.swift in Sources */,
+				A1C974DA1B1FFD2700124F1F /* yudpsocket.swift in Sources */,
 				AB129AE91AADEB570044759D /* AboutViewController.swift in Sources */,
 				ABC3647F1AE524920091ADBE /* MMDrawerVisualState.m in Sources */,
 				ABC3647E1AE524920091ADBE /* MMDrawerController.m in Sources */,
 				ABE6C1D71A74EBBE00163C01 /* NU.m in Sources */,
+				A1C974D91B1FFD2700124F1F /* yudpsocket.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

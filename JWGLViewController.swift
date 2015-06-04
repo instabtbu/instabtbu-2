@@ -69,14 +69,31 @@ class JWGLViewController: UIViewController, UITextFieldDelegate {
         }
     }
     
+    //线程执行代码,可以随意丢入任务,线程池自动管理
+    func xiancheng(code:dispatch_block_t){
+        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), code)
+    }
+    //主线程,也就是UI线程,不可放耗时任务
+    func ui(code:dispatch_block_t){
+        dispatch_async(dispatch_get_main_queue(), code)
+    }
+    
     @IBAction func ChengjiStart(sender: AnyObject) {
+        xiancheng({
+            self.chengjistart2()
+        })
+    }
+    
+    func chengjistart2(){
         if logon(usn.text, sendpsw: psw.text) {
             delegate.kecheng = NSMutableArray(capacity: 100)
             delegate.chengji = NSMutableArray(capacity: 100)
             delegate.xuefen = NSMutableArray(capacity: 100)
             if mark() {
                 delegate.chenggong = true
-                self.navigationController?.pushViewController(ChengjiViewController(), animated: true)
+                ui({
+                    self.navigationController?.pushViewController(ChengjiViewController(), animated: true)
+                })
             }
             else {
                 delegate.chenggong = false
@@ -85,6 +102,12 @@ class JWGLViewController: UIViewController, UITextFieldDelegate {
     }
     
     @IBAction func KebiaoStart(sender: AnyObject) {
+        xiancheng({
+            self.kebiaostart2()
+        })
+    }
+    
+    func kebiaostart2(){
         delegate.kebiao = NSMutableArray(capacity: 100)
         if let iSave = NSUserDefaults(suiteName: "iSaveJW") {
             //判断是否有存档
@@ -94,10 +117,14 @@ class JWGLViewController: UIViewController, UITextFieldDelegate {
                 delegate.kebiao = iSave.mutableArrayValueForKey("kebiao")
                 delegate.xueqi = iSave.stringForKey("xueqi")!
                 println("\(delegate.xueqi)")
-                self.navigationController?.pushViewController(KebiaoViewController(), animated: true)
+                ui({
+                    self.navigationController?.pushViewController(KebiaoViewController(), animated: true)
+                })
             }
             else if logon(usn.text, sendpsw: psw.text) {
-                self.navigationController?.pushViewController(KebiaoViewController(), animated: true)
+                ui({
+                    self.navigationController?.pushViewController(KebiaoViewController(), animated: true)
+                })
             }
         }
     }
