@@ -91,15 +91,18 @@ class ShangwangViewController: UIViewController,CLLocationManagerDelegate,GCDAsy
             pswtext.text=data.stringForKey("psw")
             liulianglabel.text=data.stringForKey("liuliang")
             zaixianlabel.text=data.stringForKey("zaixian")
+        
+            //砍掉自动查询功能
+//            var zdc = data.integerForKey("zidongcha")
+//            if zdc != 0 {
+//                zidongchabutton.setImage(UIImage(named: "shangwang_zidongcha1.png"), forState: UIControlState.Normal)
+//                zidongchaliuliang()
+//            }else{
+//                zidongchabutton.setImage(UIImage(named: "shangwang_zidongcha0.png"), forState: UIControlState.Normal)
+//            }
             
-            var zdc = data.integerForKey("zidongcha")
             var zddl = data.integerForKey("zidongdenglu")
-            if zdc != 0 {
-                zidongchabutton.setImage(UIImage(named: "shangwang_zidongcha1.png"), forState: UIControlState.Normal)
-                zidongchaliuliang()
-            }else{
-                zidongchabutton.setImage(UIImage(named: "shangwang_zidongcha0.png"), forState: UIControlState.Normal)
-            }
+
             if zddl != 0 {
                 zidongdenglubutton.setImage(UIImage(named: "shangwang_zidongdenglu1.png"), forState: UIControlState.Normal)
                 xiancheng({self.denglu2(false)})
@@ -156,17 +159,17 @@ class ShangwangViewController: UIViewController,CLLocationManagerDelegate,GCDAsy
     }
     
     @IBAction func zidongcha(sender: AnyObject) {
-        if let data = NSUserDefaults(suiteName: "data")
-        {
-            var zdc = data.integerForKey("zidongcha")
-            zdc=1-zdc
-            if zdc != 0 {
-                zidongchabutton.setImage(UIImage(named: "shangwang_zidongcha1.png"), forState: UIControlState.Normal)
-            }else{
-                zidongchabutton.setImage(UIImage(named: "shangwang_zidongcha0.png"), forState: UIControlState.Normal)
-            }
-            data.setInteger(zdc, forKey: "zidongcha")
-        }
+//        if let data = NSUserDefaults(suiteName: "data")
+//        {
+//            var zdc = data.integerForKey("zidongcha")
+//            zdc=1-zdc
+//            if zdc != 0 {
+//                zidongchabutton.setImage(UIImage(named: "shangwang_zidongcha1.png"), forState: UIControlState.Normal)
+//            }else{
+//                zidongchabutton.setImage(UIImage(named: "shangwang_zidongcha0.png"), forState: UIControlState.Normal)
+//            }
+//            data.setInteger(zdc, forKey: "zidongcha")
+//        }
     }
     
     @IBAction func zidongdenglu(sender: AnyObject) {
@@ -259,11 +262,21 @@ class ShangwangViewController: UIViewController,CLLocationManagerDelegate,GCDAsy
                     let data = NSUserDefaults(suiteName: "data")
                     data?.setObject(self.numtext.text, forKey: "num")
                     data?.setObject(self.pswtext.text, forKey: "psw")
+                    if let liuliang = data!.stringForKey("liuliang"){
+                        if let liuliangint = liuliang.toInt(){
+                            if liuliangint > 2560{
+                                //如果流量超过2560就查流量
+                                self.xiancheng({
+                                    self.chaliuliang2()
+                                })
+                            }
+                        }
+                    }
                     
                     //登录成功之后调整UI
                     self.zhuangtai.image=UIImage(named: "shangwang_yilianjie5.png")
                     self.denglubutton.setImage(UIImage(named: "shangwang_denglu0.png"), forState: UIControlState.Normal)
-                    self.zidongchaliuliang()
+//                    self.zidongchaliuliang()
                     self.numtext.enabled = false
                     self.pswtext.enabled = false
                 })
@@ -293,17 +306,17 @@ class ShangwangViewController: UIViewController,CLLocationManagerDelegate,GCDAsy
     
     var always = false
     
-    func zidongchaliuliang(){
-        xiancheng({
-            if let data = NSUserDefaults(suiteName: "data")
-            {
-                var zdc = data.integerForKey("zidongcha")
-                if zdc != 0{
-                    self.xiancheng({self.chaliuliang2()})
-                }
-            }
-        })
-    }
+//    func zidongchaliuliang(){
+//        xiancheng({
+//            if let data = NSUserDefaults(suiteName: "data")
+//            {
+//                var zdc = data.integerForKey("zidongcha")
+//                if zdc != 0{
+//                    self.xiancheng({self.chaliuliang2()})
+//                }
+//            }
+//        })
+//    }
     
     @IBAction func duankai(sender: AnyObject) {
         println("断开中")
@@ -329,7 +342,7 @@ class ShangwangViewController: UIViewController,CLLocationManagerDelegate,GCDAsy
         
         xiancheng({
             sleep(1)
-            self.zidongchaliuliang()
+            self.chaliuliang2()
         })
     }
     
