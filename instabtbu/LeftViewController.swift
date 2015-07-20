@@ -44,16 +44,16 @@ class LeftViewController: UIViewController {
         var i = sender.tag+1
         println("\(sender.tag)")
         if i == 1 {
-            navigation.viewControllers = [(stb.instantiateViewControllerWithIdentifier("SW") as! ShangwangViewController)]
+            centerViewController.viewControllers = [swViewController]
         }
         else if i == 2 {
-            navigation.viewControllers = [(stb.instantiateViewControllerWithIdentifier("JW") as! JWGLViewController)]
+            centerViewController.viewControllers = [jwViewController]
         }
         else if i == 3 {
-            navigation.viewControllers = [MapViewController()]
+            centerViewController.viewControllers = [MapViewController()]
         }
         else if i == 4 {
-            navigation.viewControllers = [AboutViewController()]
+            centerViewController.viewControllers = [AboutViewController()]
         }
         var k = 0
         for j in Buttons {

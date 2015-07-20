@@ -24,6 +24,8 @@ class JWGLViewController: UIViewController, UITextFieldDelegate {
             delegate.jwusn = usn.text
             delegate.jwpsw = psw.text
         }
+        var leftDrawerButton = MMDrawerBarButtonItem(target: self, action: "leftDrawerButtonPress")
+        self.navigationItem.leftBarButtonItem = leftDrawerButton
     }
     
     override func didReceiveMemoryWarning() {
@@ -67,6 +69,10 @@ class JWGLViewController: UIViewController, UITextFieldDelegate {
             usn.text = ""
             psw.text = ""
         }
+    }
+    
+    func leftDrawerButtonPress(){
+        drawerController.toggleDrawerSide(MMDrawerSide.Left, animated: true, completion: nil)
     }
     
     //线程执行代码,可以随意丢入任务,线程池自动管理

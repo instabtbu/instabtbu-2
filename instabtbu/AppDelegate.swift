@@ -11,6 +11,10 @@ import UIKit
 var drawerController: MMDrawerController!
 var navigation: UINavigationController!
 var stb: UIStoryboard!
+let centerViewController = stb.instantiateViewControllerWithIdentifier("navigationController") as! UINavigationController
+let leftSideDrawerViewController = LeftViewController()
+let swViewController = stb.instantiateViewControllerWithIdentifier("SW") as! ShangwangViewController
+let jwViewController = stb.instantiateViewControllerWithIdentifier("JW") as! JWGLViewController
 
 
 @UIApplicationMain
@@ -45,8 +49,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             stb = UIStoryboard(name: "Main_iPad", bundle: nil)
         }
         println("\(UIDevice.currentDevice().model)")
-        let leftSideDrawerViewController = LeftViewController()
-        let centerViewController = stb.instantiateViewControllerWithIdentifier("navigationController") as! UINavigationController
+        
         drawerController = MMDrawerController(centerViewController: centerViewController, leftDrawerViewController: leftSideDrawerViewController)
         drawerController.maximumLeftDrawerWidth = centerViewController.view.frame.width*20/32
         drawerController.openDrawerGestureModeMask = .All

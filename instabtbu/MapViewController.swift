@@ -41,11 +41,18 @@ class MapViewController: UIViewController, UIScrollViewDelegate, UITabBarDelegat
         scrollview.contentSize = pic.frame.size
         
         self.navigationItem.title = "地铁"
+        
+        var leftDrawerButton = MMDrawerBarButtonItem(target: self, action: "leftDrawerButtonPress")
+        self.navigationItem.leftBarButtonItem = leftDrawerButton
     }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    func leftDrawerButtonPress(){
+        drawerController.toggleDrawerSide(MMDrawerSide.Left, animated: true, completion: nil)
     }
     
     func viewForZoomingInScrollView(scrollView: UIScrollView) -> UIView? {

@@ -52,11 +52,18 @@ class AboutViewController: UIViewController {
             scrollview.frame = CGRect(x: (width-512)/2, y: 128 + 512/720*710, width:512, height: sumheight)
         }
         self.navigationItem.title = "关于我们"
+        
+        var leftDrawerButton = MMDrawerBarButtonItem(target: self, action: "leftDrawerButtonPress")
+        self.navigationItem.leftBarButtonItem = leftDrawerButton
     }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    func leftDrawerButtonPress(){
+        drawerController.toggleDrawerSide(MMDrawerSide.Left, animated: true, completion: nil)
     }
     
     
