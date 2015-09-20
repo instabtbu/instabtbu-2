@@ -61,6 +61,16 @@
 		A1C974D51B1FFD2700124F1F /* yudpsocket.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = yudpsocket.c; sourceTree = "<group>"; };
 		A1C974D61B1FFD2700124F1F /* yudpsocket.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = yudpsocket.swift; sourceTree = "<group>"; };
 		A1C974DB1B1FFD4900124F1F /* ysocket.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ysocket.swift; sourceTree = "<group>"; };
+		AB034D341BAEF032004D8033 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		AB034D361BAEF032004D8033 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		AB034D391BAEF032004D8033 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		AB034D3B1BAEF032004D8033 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		AB034D3E1BAEF032004D8033 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		AB034D401BAEF032004D8033 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AB034D491BAEF032004D8033 /* APlayGroundforiOS9Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APlayGroundforiOS9Tests.swift; sourceTree = "<group>"; };
+		AB034D4B1BAEF032004D8033 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AB034D541BAEF033004D8033 /* APlayGroundforiOS9UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APlayGroundforiOS9UITests.swift; sourceTree = "<group>"; };
+		AB034D561BAEF033004D8033 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AB129AE61AADEB330044759D /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		AB129AE81AADEB570044759D /* AboutViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
 		AB2FA56D1A8E0B84000609E1 /* LeftViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LeftViewController.swift; sourceTree = "<group>"; };
@@ -206,6 +216,37 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		AB034D331BAEF032004D8033 /* APlayGroundforiOS9 */ = {
+			isa = PBXGroup;
+			children = (
+				AB034D341BAEF032004D8033 /* AppDelegate.swift */,
+				AB034D361BAEF032004D8033 /* ViewController.swift */,
+				AB034D381BAEF032004D8033 /* Main.storyboard */,
+				AB034D3B1BAEF032004D8033 /* Assets.xcassets */,
+				AB034D3D1BAEF032004D8033 /* LaunchScreen.storyboard */,
+				AB034D401BAEF032004D8033 /* Info.plist */,
+			);
+			path = APlayGroundforiOS9;
+			sourceTree = "<group>";
+		};
+		AB034D481BAEF032004D8033 /* APlayGroundforiOS9Tests */ = {
+			isa = PBXGroup;
+			children = (
+				AB034D491BAEF032004D8033 /* APlayGroundforiOS9Tests.swift */,
+				AB034D4B1BAEF032004D8033 /* Info.plist */,
+			);
+			path = APlayGroundforiOS9Tests;
+			sourceTree = "<group>";
+		};
+		AB034D531BAEF033004D8033 /* APlayGroundforiOS9UITests */ = {
+			isa = PBXGroup;
+			children = (
+				AB034D541BAEF033004D8033 /* APlayGroundforiOS9UITests.swift */,
+				AB034D561BAEF033004D8033 /* Info.plist */,
+			);
+			path = APlayGroundforiOS9UITests;
+			sourceTree = "<group>";
+		};
 		ABC364B41AE5338B0091ADBE /* OC */ = {
 			isa = PBXGroup;
 			children = (
@@ -345,6 +386,9 @@
 				C03F71771A42CE7F0096E923 /* libz.dylib */,
 				C0DAD4B01A3E7F9F00BE24A8 /* instabtbu */,
 				C0DAD4C61A3E7F9F00BE24A8 /* instabtbuTests */,
+				AB034D331BAEF032004D8033 /* APlayGroundforiOS9 */,
+				AB034D481BAEF032004D8033 /* APlayGroundforiOS9Tests */,
+				AB034D531BAEF033004D8033 /* APlayGroundforiOS9UITests */,
 				C0DAD4AF1A3E7F9F00BE24A8 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -571,6 +615,22 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		AB034D381BAEF032004D8033 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				AB034D391BAEF032004D8033 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		AB034D3D1BAEF032004D8033 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				AB034D3E1BAEF032004D8033 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
 		C03F71711A42B71A0096E923 /* Main_iPad.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -759,10 +819,7 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-				);
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
@@ -782,10 +839,7 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-				);
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = instabtbuTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.instabtbu.$(PRODUCT_NAME:rfc1034identifier)";

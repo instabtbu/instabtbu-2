@@ -4,6 +4,11 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
+		<key>APlayGroundforiOS9.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>1</integer>
+		</dict>
 		<key>instabtbu.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
@@ -12,6 +17,21 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
+		<key>AB034D311BAEF032004D8033</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>AB034D441BAEF032004D8033</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>AB034D4F1BAEF032004D8033</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>C0DAD4AD1A3E7F9F00BE24A8</key>
 		<dict>
 			<key>primary</key>
