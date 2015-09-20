@@ -26,7 +26,7 @@ class ChengjiViewController: UIViewController, UITableViewDelegate, UITableViewD
         self.tableview!.registerClass(UITableViewCell.self, forCellReuseIdentifier: "swiftcell")
         self.view.addSubview(self.tableview!)
         
-        var headerLabel = UILabel(frame: CGRectMake(0, 0, self.view.bounds.size.width, 40))
+        let headerLabel = UILabel(frame: CGRectMake(0, 0, self.view.bounds.size.width, 40))
         headerLabel.lineBreakMode = NSLineBreakMode.ByCharWrapping
         headerLabel.text = "   平均绩点：\(delegate.jidian!)"
         self.tableview!.tableHeaderView = headerLabel
@@ -47,13 +47,13 @@ class ChengjiViewController: UIViewController, UITableViewDelegate, UITableViewD
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let identify:String = "swiftcell"
-        let cell = tableview?.dequeueReusableCellWithIdentifier(identify, forIndexPath: indexPath) as! UITableViewCell
+        let cell = tableView.dequeueReusableCellWithIdentifier(identify, forIndexPath: indexPath)
         cell.accessoryType = UITableViewCellAccessoryType.None
         
-        var xuefen = UILabel(frame: CGRectMake(cell.frame.maxX*7/10, cell.frame.minY, 100, cell.frame.height))
+        let xuefen = UILabel(frame: CGRectMake(cell.frame.maxX*7/10, cell.frame.minY, 100, cell.frame.height))
         self.tableview?.addSubview(xuefen)
         
-        var chengjiL = UILabel(frame: CGRectMake(cell.frame.maxX*17/20, cell.frame.minY, 100, cell.frame.height))
+        let chengjiL = UILabel(frame: CGRectMake(cell.frame.maxX*17/20, cell.frame.minY, 100, cell.frame.height))
         self.tableview?.addSubview(chengjiL)
         
         cell.textLabel?.font = UIFont(name: "Helvetica", size: 16)
@@ -77,14 +77,14 @@ class ChengjiViewController: UIViewController, UITableViewDelegate, UITableViewD
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         self.tableview?.deselectRowAtIndexPath(indexPath, animated: true)
-        var result = JWGLViewController().sGet(delegate.urlList.objectAtIndex(indexPath.row) as! String)
-        var fen:NSArray = oc().iRegular("70\" title=.+?>(.+?)</td>", and: result, withx: 1)
+        let result = sGet(delegate.urlList.objectAtIndex(indexPath.row) as! String)
+        let fen:NSArray = oc().iRegular("70\" title=.+?>(.+?)</td>", and: result, withx: 1)
         if fen.count == 3 {
-            var detail = UIAlertView(title: delegate.kecheng.objectAtIndex(indexPath.row) as! String as String, message: "平时成绩：\(fen.objectAtIndex(0))，期末成绩：\(fen.objectAtIndex(1))，总成绩：\(fen.objectAtIndex(2))", delegate: self, cancelButtonTitle: "确定")
+            let detail = UIAlertView(title: delegate.kecheng.objectAtIndex(indexPath.row) as! String as String, message: "平时成绩：\(fen.objectAtIndex(0))，期末成绩：\(fen.objectAtIndex(1))，总成绩：\(fen.objectAtIndex(2))", delegate: self, cancelButtonTitle: "确定")
             detail.show()
         }
         else {
-            var detail = UIAlertView(title: delegate.kecheng.objectAtIndex(indexPath.row) as? String, message: "该科目只有总成绩！", delegate: self, cancelButtonTitle: "确定")
+            let detail = UIAlertView(title: delegate.kecheng.objectAtIndex(indexPath.row) as? String, message: "该科目只有总成绩！", delegate: self, cancelButtonTitle: "确定")
             detail.show()
         }
     }

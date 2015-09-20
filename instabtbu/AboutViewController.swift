@@ -40,7 +40,7 @@ class AboutViewController: UIViewController {
         var name:[String] = ["ypw","lxm","lxw","cyz","lzy"]
         var sumheight:CGFloat = 0
         for i in 0...4 {
-            var poi = UIImageView(frame: CGRect(x: 0, y: sumheight, width: width, height: width*0.15))
+            let poi = UIImageView(frame: CGRect(x: 0, y: sumheight, width: width, height: width*0.15))
             poi.image = UIImage(named: "about_\(name[i])")
             scrollview.addSubview(poi)
             sumheight += width*0.15
@@ -53,7 +53,7 @@ class AboutViewController: UIViewController {
         }
         self.navigationItem.title = "关于我们"
         
-        var leftDrawerButton = MMDrawerBarButtonItem(target: self, action: "leftDrawerButtonPress")
+        let leftDrawerButton = MMDrawerBarButtonItem(target: self, action: "leftDrawerButtonPress")
         self.navigationItem.leftBarButtonItem = leftDrawerButton
     }
     

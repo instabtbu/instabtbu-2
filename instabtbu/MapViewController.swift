@@ -23,14 +23,14 @@ class MapViewController: UIViewController, UIScrollViewDelegate, UITabBarDelegat
 //        self.view.addSubview(tabbar)
 //        tabbar.delegate = self
         
-        var scrollview = UIScrollView(frame: CGRect(x: 0, y: 64, width: self.view.frame.width, height: self.view.frame.height-64))
+        let scrollview = UIScrollView(frame: CGRect(x: 0, y: 64, width: self.view.frame.width, height: self.view.frame.height-64))
         scrollview.backgroundColor = UIColor.whiteColor()
         self.view.addSubview(scrollview)
         scrollview.delegate = self
         scrollview.tag = 10
         
-        var pic = UIImageView(image: UIImage(named: "ditie_bjsubway"))
-        var width = self.view.frame.width
+        let pic = UIImageView(image: UIImage(named: "ditie_bjsubway"))
+        let width = self.view.frame.width
         pic.frame = CGRect(x: 0, y: 0, width: width, height: width/450*399)
         scrollview.addSubview(pic)
         pic.tag = 11
@@ -42,7 +42,7 @@ class MapViewController: UIViewController, UIScrollViewDelegate, UITabBarDelegat
         
         self.navigationItem.title = "地铁"
         
-        var leftDrawerButton = MMDrawerBarButtonItem(target: self, action: "leftDrawerButtonPress")
+        let leftDrawerButton = MMDrawerBarButtonItem(target: self, action: "leftDrawerButtonPress")
         self.navigationItem.leftBarButtonItem = leftDrawerButton
     }
     
@@ -56,14 +56,14 @@ class MapViewController: UIViewController, UIScrollViewDelegate, UITabBarDelegat
     }
     
     func viewForZoomingInScrollView(scrollView: UIScrollView) -> UIView? {
-        return scrollView.subviews[0] as? UIView
+        return scrollView.subviews[0] as UIView
     }
     
-    func scrollViewDidEndZooming(scrollView: UIScrollView, withView view: UIView!, atScale scale: CGFloat) {
+    func scrollViewDidEndZooming(scrollView: UIScrollView, withView view: UIView?, atScale scale: CGFloat) {
         
     }
     
-    func tabBar(tabBar: UITabBar, didSelectItem item: UITabBarItem!) {
+    func tabBar(tabBar: UITabBar, didSelectItem item: UITabBarItem) {
         
     }
     

@@ -38,23 +38,23 @@ class KebiaoViewController: UIViewController, UIAlertViewDelegate {
             x = [20,290,32]
         }
         //显示学期
-        var dangqian = UILabel(frame: CGRectMake(x[0], y[0], w[0], h[0]))
+        let dangqian = UILabel(frame: CGRectMake(x[0], y[0], w[0], h[0]))
         dangqian.text = "当前学期：" + delegate.xueqi
         self.view.addSubview(dangqian)
         //选学期按钮
-        var xuanxueqi: UIButton = UIButton.buttonWithType(UIButtonType.System) as! UIButton
+        let xuanxueqi: UIButton = UIButton(type: UIButtonType.System)
         xuanxueqi.frame = CGRectMake(x[1], y[0], w[1], h[0])
         xuanxueqi.setTitle("学期", forState: UIControlState.Normal)
         xuanxueqi.backgroundColor = UIColor.whiteColor()
         xuanxueqi.addTarget(self, action: "xuanXQ", forControlEvents: UIControlEvents.TouchUpInside)
         self.view.addSubview(xuanxueqi)
         //整体滑动
-        var scrollview = UIScrollView(frame: CGRectMake(0, y[1], self.view.frame.width, self.view.frame.height-y[1]))
+        let scrollview = UIScrollView(frame: CGRectMake(0, y[1], self.view.frame.width, self.view.frame.height-y[1]))
         scrollview.backgroundColor = UIColor.whiteColor()
         scrollview.bounces = false
         self.view.addSubview(scrollview)
         //滑动内容
-        var myView = UIView(frame: CGRectMake(0, 0, self.view.frame.width, y[2]*6))
+        let myView = UIView(frame: CGRectMake(0, 0, self.view.frame.width, y[2]*6))
         scrollview.addSubview(myView)
         scrollview.contentSize = myView.frame.size
         //有委托学期则证明查过课表 生成ui
@@ -62,9 +62,9 @@ class KebiaoViewController: UIViewController, UIAlertViewDelegate {
             for i in 0...5 {
                 for j in 0...6 {
                     if (delegate.kebiao.objectAtIndex(i*7+j)as! String) != ""{
-                        var chulihou = chuli((delegate.kebiao.objectAtIndex(i*7+j) as! String))
-                        var aCgf = self.view.frame.width * CGFloat(j)
-                        var kechengT = UITextView(frame: CGRectMake(aCgf/5+self.view.frame.width/100, CGFloat(i)*y[2], self.view.frame.width*9/50, y[2]))
+                        let chulihou = chuli((delegate.kebiao.objectAtIndex(i*7+j) as! String))
+                        let aCgf = self.view.frame.width * CGFloat(j)
+                        let kechengT = UITextView(frame: CGRectMake(aCgf/5+self.view.frame.width/100, CGFloat(i)*y[2], self.view.frame.width*9/50, y[2]))
                         //kechengT.scrollEnabled = false
                         kechengT.bounces = false
                         chuli.addObject(chulihou)
@@ -92,13 +92,13 @@ class KebiaoViewController: UIViewController, UIAlertViewDelegate {
         }
         else {
             xuanXQ()
-            println("xuanxueqi")
+            print("xuanxueqi")
         }
         //星期
         var xingqi = ["一","二","三","四","五"]
         for i in 0...4 {
-            var aCgf = myView.frame.width * CGFloat(i)
-            var xingqiji = UILabel(frame: CGRectMake(aCgf/5 + myView.frame.width/x[2], y[3], w[2], h[0]))
+            let aCgf = myView.frame.width * CGFloat(i)
+            let xingqiji = UILabel(frame: CGRectMake(aCgf/5 + myView.frame.width/x[2], y[3], w[2], h[0]))
             xingqiji.text = "星期\(xingqi[i])"
             if view.frame.width == 768 {
                 xingqiji.font = UIFont(name: "Helvetica", size: 34)
@@ -107,21 +107,21 @@ class KebiaoViewController: UIViewController, UIAlertViewDelegate {
         }
         //表格纵线
         for i in 1...4 {
-            var xian = UIView(frame: CGRectMake(myView.frame.width*CGFloat(i)/5, y[3], 1, self.view.frame.height))
+            let xian = UIView(frame: CGRectMake(myView.frame.width*CGFloat(i)/5, y[3], 1, self.view.frame.height))
             xian.backgroundColor = UIColor.blackColor()
             self.view.addSubview(xian)
         }
         //表格横线
         for i in 1...5 {
-            var hengxian = UIView(frame: CGRectMake(0, CGFloat(i)*y[2], view.frame.width, 1))
+            let hengxian = UIView(frame: CGRectMake(0, CGFloat(i)*y[2], view.frame.width, 1))
             hengxian.backgroundColor = UIColor.blackColor()
             scrollview.addSubview(hengxian)
         }
         //表头线
-        var xian = UIView(frame: CGRectMake(0, y[1], view.frame.width, 1))
+        let xian = UIView(frame: CGRectMake(0, y[1], view.frame.width, 1))
         xian.backgroundColor = UIColor.blackColor()
         self.view.addSubview(xian)
-        println("\(view.frame.width)")
+        print("\(view.frame.width)")
         //ipad文字
         if view.frame.width == 768 {
             dangqian.font = UIFont(name: "Helvetica", size: 34)
@@ -135,16 +135,16 @@ class KebiaoViewController: UIViewController, UIAlertViewDelegate {
     }
     
     func chuli(instr:String) -> String{
-        var a1 = instr.stringByReplacingOccurrencesOfString("<nobr><br>", withString: "\n")
-        var a2 = a1.stringByReplacingOccurrencesOfString("<br><nobr>", withString: "\n")
-        var a3 = a2.stringByReplacingOccurrencesOfString("<br><br>", withString: "\n")
-        var a4 = a3.stringByReplacingOccurrencesOfString("<br>", withString: "\n")
-        var s1 = a4.rangeOfString("&nbsp;")
-        var r1 = Range(start: (s1?.endIndex)! , end: a4.endIndex)
-        var a5 = a4.substringWithRange(r1)
-        var s2 = a5.rangeOfString("</div>")
-        var r2 = Range(start: a1.startIndex, end: (s2?.startIndex)!)
-        var a6 = a5.substringWithRange(r2)
+        let a1 = instr.stringByReplacingOccurrencesOfString("<nobr><br>", withString: "\n")
+        let a2 = a1.stringByReplacingOccurrencesOfString("<br><nobr>", withString: "\n")
+        let a3 = a2.stringByReplacingOccurrencesOfString("<br><br>", withString: "\n")
+        let a4 = a3.stringByReplacingOccurrencesOfString("<br>", withString: "\n")
+        let s1 = a4.rangeOfString("&nbsp;")
+        let r1 = Range(start: (s1?.endIndex)! , end: a4.endIndex)
+        let a5 = a4.substringWithRange(r1)
+        let s2 = a5.rangeOfString("</div>")
+        let r2 = Range(start: a1.startIndex, end: (s2?.startIndex)!)
+        let a6 = a5.substringWithRange(r2)
         var a7 = a6.stringByReplacingOccurrencesOfString(" ", withString: "")
         a7 = a7.substringToIndex(a7.endIndex.predecessor())
         return a7
@@ -158,27 +158,27 @@ class KebiaoViewController: UIViewController, UIAlertViewDelegate {
         if delegate.cundang {
             JWGLViewController().logon(delegate.jwusn!, sendpsw: delegate.jwpsw!)
         }
-        var result = JWGLViewController().sGet("http://jwgl.btbu.edu.cn/tkglAction.do?method=kbxxXs")
+        let result = sGet("http://jwgl.btbu.edu.cn/tkglAction.do?method=kbxxXs")
         if result != "" {
-            var a = oc().iRegular("<option value=\".*?\".*?>(.*?)</option>", and: result, withx: 1)
+            let a = oc().iRegular("<option value=\".*?\".*?>(.*?)</option>", and: result, withx: 1)
             xueqiA = NSMutableArray(capacity: 30)
             for i in a {
-                var nian = iSave?.stringForKey("SaveUsn")
-                var nianqian = 2000 + ((nian! as NSString).substringToIndex(2) as NSString).integerValue
-                var xuehaonian = i.integerValue
+                let nian = iSave?.stringForKey("SaveUsn")
+                let nianqian = 2000 + ((nian! as NSString).substringToIndex(2) as NSString).integerValue
+                let xuehaonian = i.integerValue
                 if xuehaonian >= nianqian {
                     xueqiA.addObject(i)
-                    println("\(xuehaonian)")
+                    print("\(xuehaonian)")
                 }
             }
-            var aAl = UIAlertView(title: "选择学期", message: "", delegate: self, cancelButtonTitle: "取消")
+            let aAl = UIAlertView(title: "选择学期", message: "", delegate: self, cancelButtonTitle: "取消")
             for i in xueqiA {
                 aAl.addButtonWithTitle("\(i)")
             }
             aAl.show()
         }
         else {
-            var aAl = UIAlertView(title: "选择学期失败", message: "请确认和教务系统间通讯无碍", delegate: self, cancelButtonTitle: "确定")
+            let aAl = UIAlertView(title: "选择学期失败", message: "请确认和教务系统间通讯无碍", delegate: self, cancelButtonTitle: "确定")
             aAl.show()
         }
     }
@@ -186,7 +186,7 @@ class KebiaoViewController: UIViewController, UIAlertViewDelegate {
     func alertView(alertView: UIAlertView, clickedButtonAtIndex buttonIndex: Int) {
         if (buttonIndex != alertView.cancelButtonIndex) {
             //确定委托学期
-            delegate.xueqi = alertView.buttonTitleAtIndex(buttonIndex)
+            delegate.xueqi = alertView.buttonTitleAtIndex(buttonIndex)!
             //重置课表数组
             delegate.kebiao = NSMutableArray(capacity: 100)
             //选完学期->查课表 成功更新ui 不成功说明连接有误或者无课表
@@ -198,7 +198,7 @@ class KebiaoViewController: UIViewController, UIAlertViewDelegate {
                 self.viewDidLoad()
             }
             else {
-                var aAl = UIAlertView(title: "选择学期失败", message: "该学期无课表时间信息!", delegate: self, cancelButtonTitle: "确定")
+                let aAl = UIAlertView(title: "选择学期失败", message: "该学期无课表时间信息!", delegate: self, cancelButtonTitle: "确定")
                 aAl.show()
             }
         }

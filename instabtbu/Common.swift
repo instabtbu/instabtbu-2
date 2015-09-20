@@ -18,15 +18,15 @@ class Common: NSObject {
     
     static func jiami(buf:[UInt8])->[UInt8]{
         var re:[UInt8] = [UInt8](count:128,repeatedValue:0x0)
-        rsajiami(buf,CInt(count(buf)),&re)
+        rsajiami(buf,CInt(buf.count),&re)
         return re
     }
     
     static func jiefeng(buf:[UInt8])->Bool{
         var buf2 = fanzhuanyi(buf)
-        var len1 = Int(buf[2])
-        var len2 = Int(buf[3])*256
-        var len = len1+len2
+        let len1 = Int(buf[2])
+        let len2 = Int(buf[3])*256
+        let len = len1+len2
         var f = false
         var re = [UInt8]()
         for var i=0;i<Int(len);i=i+1{
@@ -38,14 +38,14 @@ class Common: NSObject {
             rsajiemi(re,&remain)
             f=true
         }else{
-            var data = NSData(bytes: re, length: count(re))
+            //var data = NSData(bytes: re, length: re.count)
             
-            var gbk = CFStringConvertEncodingToNSStringEncoding(0x0632)
+            let gbk = CFStringConvertEncodingToNSStringEncoding(0x0632)
             if let rec = NSString(bytes: &re, length: re.count, encoding: gbk){
                 recString = rec as String
-                println("返回文本:\(recString)")
+                print("返回文本:\(recString)")
             }else{
-                println("转码失败")
+                print("转码失败")
             }
         }
         
@@ -53,17 +53,19 @@ class Common: NSObject {
     }
     
     static func feng(buf:[UInt8],cmd:Int)->[UInt8]{
-        var jiamiUInt8s = jiami(buf)
+        let jiamiUInt8s = jiami(buf)
         var crcUInt8s = [UInt8(cmd),UInt8(jiamiUInt8s.count&0xff),UInt8(jiamiUInt8s.count>>8)] + jiamiUInt8s
-        var crc = getCRC16(crcUInt8s)
-        crcUInt8s = [UInt8(0x7E)] + crcUInt8s + [UInt8(crc&0xFF),UInt8(crc>>8),UInt8(0x7E)]
+        let crc = getCRC16(crcUInt8s)
+        let a = UInt8(crc&0xFF)
+        let b = UInt8(crc>>8)
+        crcUInt8s = [UInt8(0x7E)] + crcUInt8s + [a,b,UInt8(0x7E)]
         return crcUInt8s
     }
     
     static func getcmd(cmd:Int)->[UInt8]{
         if remain.count==20 {
             var re:[UInt8] = [UInt8(cmd),0x14,0x00]+remain
-            var crc = getCRC16(re)
+            let crc = getCRC16(re)
             re=[0x7E]+re+[UInt8(crc&0xFF),UInt8(crc>>8),UInt8(0x7E)]
             return re
         }else{
@@ -73,7 +75,7 @@ class Common: NSObject {
     
     static func user(num:String,psw:String)->[UInt8]{
         var msg = [UInt8](count: 82, repeatedValue: 0)
-        var ip = oc().getIP();
+        let ip = oc().getIP();
         var i = 0
         for c in num.cStringUsingEncoding(NSASCIIStringEncoding)!{
             msg[i]=UInt8(c)
@@ -99,7 +101,7 @@ class Common: NSObject {
     
     static func user_noip(num:String , psw:String)->[UInt8]{
         var msg = [UInt8](count: 62, repeatedValue: 0)
-        var ip = oc().getIP();
+        //var ip = oc().getIP();
         var i = 0
         for c in num.cStringUsingEncoding(NSASCIIStringEncoding)!{
             msg[i]=UInt8(c)
@@ -162,10 +164,10 @@ class Common: NSObject {
             0x8261,0x0220,0x8225,0x822F,0x022A,0x823B,0x023E,0x0234,0x8231,0x8213,0x0216,0x021C,0x8219,0x0208,0x820D,0x8207,
             0x0202]
         var i = 0;
-        var len = UInt8s.count;
+        let len = UInt8s.count;
         var crc = 0;
         while(i<len){
-            var index = UInt8(crc>>8)^UInt8s[i++];
+            let index = UInt8(crc>>8)^UInt8s[i++];
             crc = ((crc&0xFF)<<8) ^ table[Int(index)]
         }
         return crc;
@@ -188,30 +190,31 @@ class Common: NSObject {
     static var client = TCPClient(addr: "192.168.8.8", port: 21098)
     
     static func connect()->Bool{
-        var (success,error) = client.connect(timeout: 7)
+        let (success,_) = client.connect(timeout: 7)
+        //var (success,error) = client.connect(timeout: 7)
         if !success{
         }
-        println("连接服务器成功")
+        print("连接服务器成功")
         return success
     }
     
     static func send(buf:[UInt8]){
-        println("开始发送数据:\(t(buf))")
+        print("开始发送数据:\(t(buf))")
         let (succeed,error) = client.send(data: buf)
         if succeed{
-            println("发送数据成功")
+            print("发送数据成功")
         }else{
-            println("发送数据失败:\(error)")
+            print("发送数据失败:\(error)")
         }
     }
     
     static func read()->[UInt8]{
-        println("开始读取数据")
+        print("开始读取数据")
         if let re = client.read(1024*10){
-            println("获取数据成功:\(t(re))")
+            print("获取数据成功:\(t(re))")
             return re
         }else{
-            println("获取数据失败")
+            print("获取数据失败")
             return []
         }
     }

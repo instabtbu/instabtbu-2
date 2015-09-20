@@ -14,14 +14,14 @@ class XiaoliViewController: UIViewController, UIScrollViewDelegate {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         self.view.backgroundColor = UIColor.whiteColor()
-        var scrollview = UIScrollView(frame: CGRect(x: 0, y: 0, width: self.view.frame.width, height: self.view.frame.height))
+        let scrollview = UIScrollView(frame: CGRect(x: 0, y: 0, width: self.view.frame.width, height: self.view.frame.height))
         self.view.addSubview(scrollview)
         var XLheight:CGFloat = 0
         var SUMheight:CGFloat = 0
         var Pixheight:[CGFloat] = [2124,1398,1674,1426,1392]
         for i in 1...5 {
             XLheight = self.view.frame.width/1440*Pixheight[i-1]
-            var XL = UIImageView(frame: CGRect(x: 0, y: SUMheight, width: self.view.frame.width, height: XLheight))
+            let XL = UIImageView(frame: CGRect(x: 0, y: SUMheight, width: self.view.frame.width, height: XLheight))
             XL.image = UIImage(named: "xiaoli_0\(i)")
             SUMheight += XLheight
             scrollview.addSubview(XL)

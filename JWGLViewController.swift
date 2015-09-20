@@ -24,7 +24,7 @@ class JWGLViewController: UIViewController, UITextFieldDelegate {
             delegate.jwusn = usn.text
             delegate.jwpsw = psw.text
         }
-        var leftDrawerButton = MMDrawerBarButtonItem(target: self, action: "leftDrawerButtonPress")
+        let leftDrawerButton = MMDrawerBarButtonItem(target: self, action: "leftDrawerButtonPress")
         self.navigationItem.leftBarButtonItem = leftDrawerButton
     }
     
@@ -51,7 +51,7 @@ class JWGLViewController: UIViewController, UITextFieldDelegate {
         psw.becomeFirstResponder()
     }
     
-    override func touchesBegan(touches: Set<NSObject>, withEvent event: UIEvent) {
+    override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
         usn.resignFirstResponder()
         psw.resignFirstResponder()
     }
@@ -91,7 +91,7 @@ class JWGLViewController: UIViewController, UITextFieldDelegate {
     }
     
     func chengjistart2(){
-        if logon(usn.text, sendpsw: psw.text) {
+        if logon(usn.text!, sendpsw: psw.text!) {
             delegate.kecheng = NSMutableArray(capacity: 100)
             delegate.chengji = NSMutableArray(capacity: 100)
             delegate.xuefen = NSMutableArray(capacity: 100)
@@ -122,12 +122,12 @@ class JWGLViewController: UIViewController, UITextFieldDelegate {
             if delegate.cundang {
                 delegate.kebiao = iSave.mutableArrayValueForKey("kebiao")
                 delegate.xueqi = iSave.stringForKey("xueqi")!
-                println("\(delegate.xueqi)")
+                print("\(delegate.xueqi)")
                 ui({
                     self.navigationController?.pushViewController(KebiaoViewController(), animated: true)
                 })
             }
-            else if logon(usn.text, sendpsw: psw.text) {
+            else if logon(usn.text!, sendpsw: psw.text!) {
                 ui({
                     self.navigationController?.pushViewController(KebiaoViewController(), animated: true)
                 })
@@ -140,16 +140,16 @@ class JWGLViewController: UIViewController, UITextFieldDelegate {
     }
     
     func logon(sendusn:String, sendpsw:String)->Bool {
-        var url = NSURL(string: "http://jwgl.btbu.edu.cn/verifycode.servlet")
-        var request = NSURLRequest(URL: url!)
-        var data = NSURLConnection.sendSynchronousRequest(request, returningResponse: nil, error: nil)
+        let url = NSURL(string: "http://jwgl.btbu.edu.cn/verifycode.servlet")
+        let request = NSURLRequest(URL: url!)
+        let data = try? NSURLConnection.sendSynchronousRequest(request, returningResponse: nil)
         if (data != nil) {
-            var animage = UIImage(data: data!)
-            var yzm = getyzm(animage!)
-            var retstr = foc.iPOSTwithurl("http://jwgl.btbu.edu.cn/Logon.do", withpost: "method=logon&USERNAME="+sendusn+"&PASSWORD="+sendpsw+"&RANDOMCODE="+yzm)
+            let animage = UIImage(data: data!)
+            let yzm = getyzm(animage!)
+            let retstr = foc.iPOSTwithurl("http://jwgl.btbu.edu.cn/Logon.do", withpost: "method=logon&USERNAME="+sendusn+"&PASSWORD="+sendpsw+"&RANDOMCODE="+yzm)
             if foc.iFind("http://jwgl.btbu.edu.cn/framework/main.jsp", inthe: retstr) {
                 //获取权限
-                var a = foc.iPOSTwithurl("http://jwgl.btbu.edu.cn/Logon.do?method=logonBySSO", withpost: "")
+                foc.iPOSTwithurl("http://jwgl.btbu.edu.cn/Logon.do?method=logonBySSO", withpost: "")
                 //储存账户密码在本地以及委托
                 let iSave = NSUserDefaults(suiteName: "iSaveJW")
                 iSave?.setObject(sendusn, forKey: "SaveUsn")
@@ -159,7 +159,7 @@ class JWGLViewController: UIViewController, UITextFieldDelegate {
                 //判断旁听生 目前只有成绩需要用旁听生bool 成绩必须要登陆
                 if foc.iFind("P", inthe: sendusn) {
                     delegate.pangting = true
-                    println("P")
+                    print("P")
                 }
                 return true
             }
@@ -182,10 +182,10 @@ class JWGLViewController: UIViewController, UITextFieldDelegate {
             //绩点
             delegate.jidian = zhongjian(result, str1: "平均学分绩点<span>", str2: "。</span>")
             
-            var firstreg:NSArray = foc.iRegular("<tr heigth = 23.+?>.+?</tr>", and: result, withx: 0)
-            println("\(result as String)")
+            let firstreg:NSArray = foc.iRegular("<tr heigth = 23.+?>.+?</tr>", and: result, withx: 0)
+            print("\(result as String)")
             for j in 0..<firstreg.count {
-                var test:NSArray = foc.iRegular("<td.+?>(.*?(\\w*)(</a>)?)</td>", and: firstreg.objectAtIndex(j) as! String, withx: 1)
+                let test:NSArray = foc.iRegular("<td.+?>(.*?(\\w*)(</a>)?)</td>", and: firstreg.objectAtIndex(j) as! String, withx: 1)
                 if delegate.pangting {
                     for i in 0..<test.count {
                         if (i % 10 == 2) {
@@ -221,22 +221,22 @@ class JWGLViewController: UIViewController, UITextFieldDelegate {
                     }
                 }
             }
-            var getye:NSArray = foc.iRegular("value=\\w+.+value=(\\w)+.+末页", and: result, withx: 1)
+            let getye:NSArray = foc.iRegular("value=\\w+.+value=(\\w)+.+末页", and: result, withx: 1)
             var ye:Int?
             if getye.count == 0 {
                 ye = 1
             }
             else {
-                ye = (getye.objectAtIndex(0) as! String).toInt()
+                ye = Int((getye.objectAtIndex(0) as! String))
             }
-            println("\(ye)页")
+            print("\(ye)页")
             var xh = 2
             while xh<=ye {
                 result = sGet("http://jwgl.btbu.edu.cn/xszqcjglAction.do?method=queryxscj&PageNum=\(xh)")
                 if result != "" {
-                    var firstreg:NSArray = foc.iRegular("<tr heigth = 23.+?>.+?</tr>", and: result, withx: 0)
+                    let firstreg:NSArray = foc.iRegular("<tr heigth = 23.+?>.+?</tr>", and: result, withx: 0)
                     for j in 0..<firstreg.count {
-                        var test:NSArray = foc.iRegular("<td.+?>(.*?(\\w*)(</a>)?)</td>", and: firstreg.objectAtIndex(j) as! String, withx: 1)
+                        let test:NSArray = foc.iRegular("<td.+?>(.*?(\\w*)(</a>)?)</td>", and: firstreg.objectAtIndex(j) as! String, withx: 1)
                         if delegate.pangting {
                             for i in 0..<test.count {
                                 if (i % 10 == 2) {
@@ -280,21 +280,21 @@ class JWGLViewController: UIViewController, UITextFieldDelegate {
     }
     
     func schedule() ->Bool {
-        var result1 = sGet("http://jwgl.btbu.edu.cn/tkglAction.do?method=goListKbByXs&sql=&xnxqh="+delegate.xueqi)
+        let result1 = sGet("http://jwgl.btbu.edu.cn/tkglAction.do?method=goListKbByXs&sql=&xnxqh="+delegate.xueqi)
         if foc.iFind("该学期无课表时间信息!", inthe: result1) {
-            println("f")
+            print("f")
             return false
         }
         else {
-            var b:NSArray = foc.iRegular("<div id=\"(.+?)-2\".*?>(.+?)</div>", and: result1, withx: 0)
+            let b:NSArray = foc.iRegular("<div id=\"(.+?)-2\".*?>(.+?)</div>", and: result1, withx: 0)
             for i in b {
-                println("\(i)")
+                print("\(i)")
             }
             var i = 0
             
             for (i = 0;i<b.count;i++) {
-                var c = foc.iRegular("&nbsp;(.*?)<br>(.+?)<br>(.*?)<br><nobr> *(.*?)<nobr><br>(.*?)<br>(.*?)<br>", and: b.objectAtIndex(i) as! String, withx: 0)
-                println("\(c)")
+                let c = foc.iRegular("&nbsp;(.*?)<br>(.+?)<br>(.*?)<br><nobr> *(.*?)<nobr><br>(.*?)<br>(.*?)<br>", and: b.objectAtIndex(i) as! String, withx: 0)
+                print("\(c)")
                 if c.count == 0{
                     delegate.kebiao.addObject("")
                 }
@@ -302,30 +302,17 @@ class JWGLViewController: UIViewController, UITextFieldDelegate {
                     delegate.kebiao.addObject(b.objectAtIndex(i))
                 }
             }
-            println("\(delegate.kebiao.count)")
-            println("\(b.count)")
+            print("\(delegate.kebiao.count)")
+            print("\(b.count)")
             return true
         }
     }
     
-    func sGet(string:String) ->String {
-        var url = NSURL(string: string)
-        var request = NSURLRequest(URL: url!)
-        var data = NSURLConnection.sendSynchronousRequest(request, returningResponse: nil, error: nil)
-        if (data != nil) {
-            var result = NSString(data: data!, encoding: NSUTF8StringEncoding)
-            return result as! String
-        }
-        else {
-            return ""
-        }
-    }
-    
     func zhongjian(str:String,str1:String,str2:String)->String {
-        var left = str.rangeOfString(str1)
-        var right = str.rangeOfString(str2)
-        var r = Range(start: (left?.endIndex)! , end: (right?.startIndex)!)
-        var s = str.substringWithRange(r)
+        let left = str.rangeOfString(str1)
+        let right = str.rangeOfString(str2)
+        let r = Range(start: (left?.endIndex)! , end: (right?.startIndex)!)
+        let s = str.substringWithRange(r)
         return s
     }
     
@@ -335,9 +322,53 @@ class JWGLViewController: UIViewController, UITextFieldDelegate {
         let h = Int(CGImageGetHeight(cg))
         let provider = CGImageGetDataProvider(cg)
         let cfdata = CGDataProviderCopyData(provider)
-        let data = NSData(data: cfdata)
+        let data = NSData(data: cfdata!)
         let yzm = oc().shibie(data, withW: w, withH: h)
-        println(yzm)
+        print(yzm)
         return yzm
     }
+    
+//    @IBAction func VPN(sender: AnyObject) {
+//        var foc = oc()
+//        var result = foc.iPOSTwithurl("https://vpn.btbu.edu.cn/dana-na/auth/url_default/login.cgi", withpost:"tz_offset=480&username=1309010428&password=025827&realm=%E6%95%99%E5%B8%88&btnSubmit=%E7%99%BB%E9%99%86")
+//        println("VPN")
+//        var result1 = sGet("https://vpn.btbu.edu.cn/dana-na/auth/url_default/login.cgi?btnContinue=%E7%BB%A7%E7%BB%AD%E4%BC%9A%E8%AF%9D&FormDataStr=159%3B252%3BJqTqVdQGAQABAAAAQP4bd9P64lOT9%2BgFVbjddlHQKx2OpDAJCJRGDdZV%2BH7JPRPEETPqmPA7AKKsug%2F2vvSehqx3iiT3kOimCnBEYrPIPnrPPUbhjvFmFgpp9hEgh9TWaFrgQBRJVNxzVxWiPqb3hUVrMbG344sZw4vcShxYWMrdi8y3DI%2BhR4VzqakqGhsqJwOq0WwmaCXeixtctcvOPQrnFB83iggl2z6cQ4uQ3R4wer%2BqbDjxXqcYytg%3D")
+//        //println("\(result)")
+//        var rec = sGet("https://vpn.btbu.edu.cn/dana/home/launch.cgi?url=http%3A%2F%2Fjwgl.btbu.edu.cn")
+//        //println("\(rec)")
+//        var url = NSURL(string: "https://vpn.btbu.edu.cn/,DanaInfo=jwgl.btbu.edu.cn+verifycode.servlet")
+//        var request = NSURLRequest(URL: url!)
+//        var data = NSURLConnection.sendSynchronousRequest(request, returningResponse: nil, error: nil)
+//        if (data != nil) {
+//            var animage = UIImage(data: data!)
+//            var yzm = getyzm(animage!)
+//            println("\(yzm)")
+//            var retstr = foc.iPOSTwithurl("https://vpn.btbu.edu.cn/,DanaInfo=jwgl.btbu.edu.cn/Logon.do", withpost: "method=logon&USERNAME="+usn.text+"&PASSWORD="+psw.text+"&RANDOMCODE="+yzm)
+//            if foc.iFind("jwgl.btbu.edu.cn/framework/main.jsp", inthe: retstr) {
+//                //获取权限
+//                var a = foc.iPOSTwithurl("https://vpn.btbu.edu.cn/,DanaInfo=jwgl.btbu.edu.cn/Logon.do?method=logonBySSO", withpost: "")
+////                //储存账户密码在本地以及委托
+////                let iSave = NSUserDefaults(suiteName: "iSaveJW")
+////                iSave?.setObject(sendusn, forKey: "SaveUsn")
+////                iSave?.setObject(sendpsw, forKey: "SavePsw")
+////                delegate.jwusn = sendusn
+////                delegate.jwpsw = sendpsw
+//                //判断旁听生 目前只有成绩需要用旁听生bool 成绩必须要登陆
+//                //println("\(a)")
+//                if foc.iFind("P", inthe: usn.text) {
+//                    delegate.pangting = true
+//                    println("P")
+//                }
+////                return true
+//            }
+//            else {
+//                foc.ShowMessage("登录失败", msg: "请尝试重新登陆或重新输入登陆信息，默认密码为学号或身份证后六位。")
+////                return false
+//            }
+//        }
+//        else {
+////            return false
+//        }
+//    }
+
 }

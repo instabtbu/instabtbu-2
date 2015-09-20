@@ -16,6 +16,19 @@ let leftSideDrawerViewController = LeftViewController()
 let swViewController = stb.instantiateViewControllerWithIdentifier("SW") as! ShangwangViewController
 let jwViewController = stb.instantiateViewControllerWithIdentifier("JW") as! JWGLViewController
 
+func sGet(string:String) ->String {
+    let url = NSURL(string: string)
+    let request = NSURLRequest(URL: url!)
+    let data = try? NSURLConnection.sendSynchronousRequest(request, returningResponse: nil)
+    if (data != nil) {
+        let result = NSString(data: data!, encoding: NSUTF8StringEncoding)
+        return result as! String
+    }
+    else {
+        return ""
+    }
+}
+
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -48,7 +61,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         else {
             stb = UIStoryboard(name: "Main_iPad", bundle: nil)
         }
-        println("\(UIDevice.currentDevice().model)")
+        print("\(UIDevice.currentDevice().model)")
         
         drawerController = MMDrawerController(centerViewController: centerViewController, leftDrawerViewController: leftSideDrawerViewController)
         drawerController.maximumLeftDrawerWidth = centerViewController.view.frame.width*20/32

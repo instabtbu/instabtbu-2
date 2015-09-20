@@ -9,6 +9,15 @@
 #import "oc.h"
 #import "NU.h"
 
+@implementation NSURLRequest(IgnoreSSL)
+
++(BOOL)allowsAnyHTTPSCertificateForHost:(NSString *)host
+{
+    return YES;
+}
+
+@end
+
 @implementation oc
 - (NSString *) getIP
 {

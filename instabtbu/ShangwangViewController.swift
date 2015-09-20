@@ -25,8 +25,8 @@ class ShangwangViewController: UIViewController,CLLocationManagerDelegate,GCDAsy
         //        tabBarItem.selectedImage=image
         
         //配置流量和设备数的label,不同机型不一样
-        var width = UIScreen.mainScreen().bounds.width
-        println(width)
+        let width = UIScreen.mainScreen().bounds.width
+        print(width)
         if width == 320{
             liulianglabel.frame = CGRect(x: 188.0, y: 138.0, width: 220, height: 21)
             zaixianlabel.frame = CGRect(x: 275.0, y: 138.0, width: 100, height: 21)
@@ -52,8 +52,8 @@ class ShangwangViewController: UIViewController,CLLocationManagerDelegate,GCDAsy
         zaixianlabel.textColor = UIColor.whiteColor()
         self.view.addSubview(liulianglabel)
         self.view.addSubview(zaixianlabel)
-        println(liulianglabel.frame)
-        println(zaixianlabel.frame)
+        print(liulianglabel.frame)
+        print(zaixianlabel.frame)
         
         /*
         iPhone 5s
@@ -101,7 +101,7 @@ class ShangwangViewController: UIViewController,CLLocationManagerDelegate,GCDAsy
 //                zidongchabutton.setImage(UIImage(named: "shangwang_zidongcha0.png"), forState: UIControlState.Normal)
 //            }
             
-            var zddl = data.integerForKey("zidongdenglu")
+            let zddl = data.integerForKey("zidongdenglu")
 
             if zddl != 0 {
                 zidongdenglubutton.setImage(UIImage(named: "shangwang_zidongdenglu1.png"), forState: UIControlState.Normal)
@@ -111,7 +111,7 @@ class ShangwangViewController: UIViewController,CLLocationManagerDelegate,GCDAsy
             }
         }
         
-        var leftDrawerButton = MMDrawerBarButtonItem(target: self, action: "leftDrawerButtonPress")
+        let leftDrawerButton = MMDrawerBarButtonItem(target: self, action: "leftDrawerButtonPress")
         self.navigationItem.leftBarButtonItem = leftDrawerButton
         
         //self.locationManager.startUpdatingLocation()
@@ -128,13 +128,13 @@ class ShangwangViewController: UIViewController,CLLocationManagerDelegate,GCDAsy
         //        MobClick.endLogPageView("shangwang")
     }
     
-    func locationManager(manager: CLLocationManager!, didUpdateLocations locations: [AnyObject]!) {
-        var location:CLLocation = locations[locations.count-1] as! CLLocation
+    func locationManager(manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        let location:CLLocation = locations[locations.count-1] 
         
         if(location.horizontalAccuracy>0){
             //获取到gps信息
             let gps="GPS信息:\n经度:\(location.coordinate.latitude)\n纬度:\(location.coordinate.longitude)"
-            //println(gps)
+            print(gps)
             //print("GPS")
         }
     }
@@ -149,17 +149,17 @@ class ShangwangViewController: UIViewController,CLLocationManagerDelegate,GCDAsy
     }
     
     @IBAction func pswdid(sender: AnyObject) {
-        println("pswdid")
+        print("pswdid")
         numtext.resignFirstResponder()
         //把键盘弹下去
     }
     
     @IBAction func numdid(sender: AnyObject) {
-        println("numdid")
+        print("numdid")
         pswtext.becomeFirstResponder()
     }
     
-    override func touchesBegan(touches: Set<NSObject>, withEvent event: UIEvent) {
+    override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
         numtext.resignFirstResponder()
         pswtext.resignFirstResponder()
         //触摸其他地方的时候也把键盘弹下去
@@ -218,21 +218,21 @@ class ShangwangViewController: UIViewController,CLLocationManagerDelegate,GCDAsy
     }
     
     func denglu2(isbackground: Bool){
-        var ip = oc().getIP()
+        let ip = oc().getIP()
         if ip != nil{
-            var buf:[UInt8] = [0x7E,0x11,0x00,0x00,0x54,0x01,0x7E]
+            let buf:[UInt8] = [0x7E,0x11,0x00,0x00,0x54,0x01,0x7E]
             var trytime = 0
             var rec = [UInt8]()
             
-            do{
-                do
+            repeat{
+                repeat
                 {
                     Common.connect()
                     Common.send(buf)
                     rec = Common.read()
                     rec = Common.fanzhuanyi(rec)
                     trytime++
-                    println("第\(trytime)次")
+                    print("第\(trytime)次")
                     if trytime > 20{
                         red()
                         //show("登录失败")
@@ -250,8 +250,8 @@ class ShangwangViewController: UIViewController,CLLocationManagerDelegate,GCDAsy
                     {
                         Common.verify.append(rec[i+4])
                     }
-                    println("获取到验证码:\(Common.t(Common.verify))")
-                    var msg = Common.user(numtext.text, psw: pswtext.text)
+                    print("获取到验证码:\(Common.t(Common.verify))")
+                    var msg = Common.user(numtext.text!, psw: pswtext.text!)
                     msg = Common.feng(msg, cmd: 0x01)
                     msg=Common.zhuanyi(msg)
                     Common.send(msg)
@@ -261,7 +261,7 @@ class ShangwangViewController: UIViewController,CLLocationManagerDelegate,GCDAsy
             
             Common.client.close()
             if Common.jiefeng(rec){
-                println("保持在线数据:\(Common.t(Common.remain))")
+                print("保持在线数据:\(Common.t(Common.remain))")
                 ui({
                     self.locationManager.startUpdatingLocation()
                     //通过locationManager保持后台
@@ -270,7 +270,7 @@ class ShangwangViewController: UIViewController,CLLocationManagerDelegate,GCDAsy
                     data?.setObject(self.numtext.text, forKey: "num")
                     data?.setObject(self.pswtext.text, forKey: "psw")
                     if let liuliang = data!.stringForKey("liuliang"){
-                        if let liuliangint = liuliang.toInt(){
+                        if let liuliangint = Int(liuliang){
                             if liuliangint > 2560{
                                 //如果流量超过2560就查流量
                                 self.xiancheng({
@@ -302,7 +302,7 @@ class ShangwangViewController: UIViewController,CLLocationManagerDelegate,GCDAsy
                 if !isbackground{
                     show(Common.recString)
                 }
-                println(Common.recString)
+                print(Common.recString)
             }
         }else {
             if !isbackground{
@@ -326,11 +326,14 @@ class ShangwangViewController: UIViewController,CLLocationManagerDelegate,GCDAsy
 //    }
     
     @IBAction func duankai(sender: AnyObject) {
-        println("断开中")
-        var udp = GCDAsyncUdpSocket(delegate: self, delegateQueue: dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0))
-        udp.connectToHost("192.168.8.8", onPort: 21099, error: nil)
-        var cmd = Common.getcmd(1)
-        var data = NSData(bytes: cmd, length: cmd.count)
+        print("断开中")
+        let udp = GCDAsyncUdpSocket(delegate: self, delegateQueue: dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0))
+        do {
+            try udp.connectToHost("192.168.8.8", onPort: 21099)
+        } catch _ {
+        }
+        let cmd = Common.getcmd(1)
+        let data = NSData(bytes: cmd, length: cmd.count)
         
         udp.sendData(data, withTimeout: 15, tag: 0)
         NSThread.sleepForTimeInterval(0.1)
@@ -339,7 +342,7 @@ class ShangwangViewController: UIViewController,CLLocationManagerDelegate,GCDAsy
         udp.sendData(data, withTimeout: 15, tag: 0)
         NSThread.sleepForTimeInterval(0.1)
         udp.sendData(data, withTimeout: 15, tag: 0)
-        println("断开成功")
+        print("断开成功")
         always = false
         zhuangtai.image=UIImage(named: "shangwang_weilianjie.png")
         denglubutton.setImage(UIImage(named: "shangwang_denglu1.png"), forState: UIControlState.Normal)
@@ -384,19 +387,20 @@ class ShangwangViewController: UIViewController,CLLocationManagerDelegate,GCDAsy
 //            println("发送保持数据:\(t(cmd))")
 //        }
         
-        var udpclient = UDPClient(addr: "192.168.8.8", port: 21099)
+        let udpclient = UDPClient(addr: "192.168.8.8", port: 21099)
         while always{
             sleep(delaytime)
-            var cmd = Common.getcmd(0)
-            var data = NSData(bytes: cmd, length: cmd.count)
-            var (success,errmsg) = udpclient.send(data: data)
+            let cmd = Common.getcmd(0)
+            let data = NSData(bytes: cmd, length: cmd.count)
+            let (success,errmsg) = udpclient.send(data: data)
+            //var (success,errmsg) = udpclient.send(data: data)
             if success{
                 delaytime = 30
-                println("发送保持数据成功:\(Common.t(cmd))")
+                print("发送保持数据成功:\(Common.t(cmd))")
             }else {
                 //一旦发送失败,加快发送速度
                 delaytime = 2
-                println("发送保持数据失败,原因: \(errmsg)")
+                print("发送保持数据失败,原因: \(errmsg)")
             }
         }
         
@@ -408,9 +412,10 @@ class ShangwangViewController: UIViewController,CLLocationManagerDelegate,GCDAsy
     func testonline(){
         while always{
             sleep(delaytime)
-            var testclient = TCPClient(addr: "baidu.com", port: 80)
-            var (success, error) = testclient.connect(timeout: 15)
-            println("\(success),\(error)")
+            let testclient = TCPClient(addr: "baidu.com", port: 80)
+            let (success, error) = testclient.connect(timeout: 15)
+            //var (success, error) = testclient.connect(timeout: 15)
+            print("\(success),\(error)")
             testclient.close()
             if success == false{
                 if always{
@@ -423,29 +428,29 @@ class ShangwangViewController: UIViewController,CLLocationManagerDelegate,GCDAsy
     func udpSocket(sock: GCDAsyncUdpSocket!, didReceiveData data: NSData!, fromAddress address: NSData!, withFilterContext filterContext: AnyObject!) {
         var s = [UInt8](count:27,repeatedValue:0x0)
         data.getBytes(&s, length: 27)
-        println("recr:\(Common.t(s))")
+        print("recr:\(Common.t(s))")
     }
     
     func udpSocket(sock: GCDAsyncUdpSocket!, didNotSendDataWithTag tag: Int, dueToError error: NSError!) {
-        println("not send data \(tag)")
+        print("not send data \(tag)")
     }
     
     func chaliuliang2(){
         MobClick.event("chaliuliang")
-        println("开始连接");
-        var ip = oc().getIP()
+        print("开始连接");
+        let ip = oc().getIP()
         if ip != nil{
-            var buf:[UInt8] = [0x7E,0x11,0x00,0x00,0x54,0x01,0x7E]
+            let buf:[UInt8] = [0x7E,0x11,0x00,0x00,0x54,0x01,0x7E]
             var rec = [UInt8]()
             var trytime = 0
-            do{
-                do{
+            repeat{
+                repeat{
                     Common.connect()
                     Common.send(buf)
                     rec = Common.read()
                     rec = Common.fanzhuanyi(rec)
                     trytime++
-                    println("第\(trytime)次")
+                    print("第\(trytime)次")
                     if trytime > 20{
                         //show("查询流量失败")
                         red()
@@ -460,11 +465,11 @@ class ShangwangViewController: UIViewController,CLLocationManagerDelegate,GCDAsy
                     {
                         Common.verify.append(rec[i+4])
                     }
-                    println("获取到验证码:\(Common.t(Common.verify))")
-                    var num = numtext.text
-                    var psw = pswtext.text
-                    var msg = Common.user_noip(num, psw: psw)
-                    println("构造发送数据:\(Common.t(msg))")
+                    print("获取到验证码:\(Common.t(Common.verify))")
+                    let num = numtext.text
+                    let psw = pswtext.text
+                    var msg = Common.user_noip(num!, psw: psw!)
+                    print("构造发送数据:\(Common.t(msg))")
                     msg = Common.feng(msg, cmd: 0x03)
                     msg = Common.zhuanyi(msg)
                     Common.send(msg)
@@ -474,24 +479,24 @@ class ShangwangViewController: UIViewController,CLLocationManagerDelegate,GCDAsy
             
             Common.client.close()
             Common.jiefeng(rec)
-            var regex = NSRegularExpression(pattern: "(\\d+)兆", options: NSRegularExpressionOptions.allZeros, error: nil)
-            var len = count(Common.recString)
-            println(len)
+            var regex = try? NSRegularExpression(pattern: "(\\d+)兆", options: NSRegularExpressionOptions())
+            var len = Common.recString.characters.count
+            print(len)
             
             if len < 100{
                 show(Common.recString)
             }
             else {
-                var match = regex?.matchesInString(Common.recString, options: NSMatchingOptions.allZeros, range: NSMakeRange(0,len))
+                let match = regex?.matchesInString(Common.recString, options: NSMatchingOptions(), range: NSMakeRange(0,len))
                 var liuliang = 0
                 for a in match!{
                     let range = NSMakeRange(a.range.location, a.range.length-1)
                     let tmp = (Common.recString as NSString).substringWithRange(range)
-                    if let temp = tmp.toInt(){
+                    if let temp = Int(tmp){
                         liuliang+=temp
                     }
                 }
-                println(liuliang)
+                print(liuliang)
                 
                 let data = NSUserDefaults(suiteName: "data")
                 data?.setObject(self.numtext.text, forKey: "num")
@@ -501,9 +506,9 @@ class ShangwangViewController: UIViewController,CLLocationManagerDelegate,GCDAsy
                 
                 self.yellow()
                 
-                regex = NSRegularExpression(pattern: "在线:\\d+", options: NSRegularExpressionOptions.allZeros, error: nil)
-                len = count(Common.recString)
-                if let tmp = regex?.firstMatchInString(Common.recString, options: NSMatchingOptions.allZeros, range: NSMakeRange(0,len)){
+                regex = try? NSRegularExpression(pattern: "在线:\\d+", options: NSRegularExpressionOptions())
+                len = Common.recString.characters.count
+                if let tmp = regex?.firstMatchInString(Common.recString, options: NSMatchingOptions(), range: NSMakeRange(0,len)){
                     let range = NSMakeRange(tmp.range.location+3, tmp.range.length-3)
                     let tmp2 = (Common.recString as NSString).substringWithRange(range)
                     self.zaixianlabel.text=tmp2
@@ -523,12 +528,12 @@ class ShangwangViewController: UIViewController,CLLocationManagerDelegate,GCDAsy
     
     func yellow(){
         xiancheng({
-            var color = UIColor(red: 1, green: 1, blue: 0, alpha: 1)
+            let color = UIColor(red: 1, green: 1, blue: 0, alpha: 1)
             self.liulianglabel.textColor=color
             self.zaixianlabel.textColor=color
             
             for var i:CGFloat=0;i<255;i+=5{
-                var color = UIColor(red: 1, green: 1, blue: (i/255.0), alpha: 1)
+                let color = UIColor(red: 1, green: 1, blue: (i/255.0), alpha: 1)
                 self.ui({
                     self.liulianglabel.textColor=color
                     self.zaixianlabel.textColor=color
@@ -541,12 +546,12 @@ class ShangwangViewController: UIViewController,CLLocationManagerDelegate,GCDAsy
     
     func red(){
         xiancheng({
-            var color = UIColor(red: 1, green: 0, blue: 0, alpha: 1)
+            let color = UIColor(red: 1, green: 0, blue: 0, alpha: 1)
             self.liulianglabel.textColor=color
             self.zaixianlabel.textColor=color
             
             for var i:CGFloat=0;i<255;i+=5{
-                var color = UIColor(red: 1, green: (i/255.0), blue: (i/255.0), alpha: 1)
+                let color = UIColor(red: 1, green: (i/255.0), blue: (i/255.0), alpha: 1)
                 self.ui({
                     self.liulianglabel.textColor=color
                     self.zaixianlabel.textColor=color
@@ -571,14 +576,14 @@ class ShangwangViewController: UIViewController,CLLocationManagerDelegate,GCDAsy
     }
     
     func force2(){
-        var mypost = oc()
-        var rec = mypost.iPOSTwithurl("http://self.btbu.edu.cn/cgi-bin/nacgi.cgi", withpost: "textfield=" + numtext.text+"&textfield2=" + pswtext.text + "&Submit=%CC%E1%BD%BB&nacgicmd=9&radio=1&jsidx=1")
-        println(rec)
-        if let range = rec.rangeOfString("成功断开本帐号的当前的所有连接"){
-            println("成功断开本帐号的当前的所有连接")
+        let mypost = oc()
+        let rec = mypost.iPOSTwithurl("http://self.btbu.edu.cn/cgi-bin/nacgi.cgi", withpost: "textfield=" + numtext.text!+"&textfield2=" + pswtext.text! + "&Submit=%CC%E1%BD%BB&nacgicmd=9&radio=1&jsidx=1")
+        print(rec)
+        if (rec.rangeOfString("成功断开本帐号的当前的所有连接") != nil){
+            print("成功断开本帐号的当前的所有连接")
             show("成功断开本帐号的当前的所有连接")
         }else{
-            println("断开失败")
+            print("断开失败")
             show("断开失败")
         }
     }
