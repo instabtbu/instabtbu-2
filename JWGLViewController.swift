@@ -10,6 +10,7 @@ import UIKit
 
 class JWGLViewController: UIViewController, UITextFieldDelegate {
     var delegate:AppDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+    var yunxuzairu = true
     
     func textFieldShouldReturn(textField: UITextField) -> Bool {
         textField.resignFirstResponder()
@@ -85,9 +86,13 @@ class JWGLViewController: UIViewController, UITextFieldDelegate {
     }
     
     @IBAction func ChengjiStart(sender: AnyObject) {
-        xiancheng({
-            self.chengjistart2()
-        })
+        if yunxuzairu {
+            yunxuzairu = false
+            xiancheng({
+                self.chengjistart2()
+            })
+            yunxuzairu = true
+        }
     }
     
     func chengjistart2(){
@@ -108,9 +113,13 @@ class JWGLViewController: UIViewController, UITextFieldDelegate {
     }
     
     @IBAction func KebiaoStart(sender: AnyObject) {
-        xiancheng({
-            self.kebiaostart2()
-        })
+        if yunxuzairu {
+            yunxuzairu = false
+            xiancheng({
+                self.kebiaostart2()
+            })
+            yunxuzairu = true
+        }
     }
     
     func kebiaostart2(){

@@ -16,15 +16,16 @@
 		AB129AE71AADEB330044759D /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB129AE61AADEB330044759D /* MapViewController.swift */; };
 		AB129AE91AADEB570044759D /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB129AE81AADEB570044759D /* AboutViewController.swift */; };
 		AB2FA56E1A8E0B84000609E1 /* LeftViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB2FA56D1A8E0B84000609E1 /* LeftViewController.swift */; };
+		AB6BCAA91BAF0B1F005C2ECE /* MMDrawerBarButtonItem.m in Sources */ = {isa = PBXBuildFile; fileRef = AB6BCAA11BAF0B1F005C2ECE /* MMDrawerBarButtonItem.m */; settings = {ASSET_TAGS = (); }; };
+		AB6BCAAA1BAF0B1F005C2ECE /* MMDrawerController.m in Sources */ = {isa = PBXBuildFile; fileRef = AB6BCAA31BAF0B1F005C2ECE /* MMDrawerController.m */; settings = {ASSET_TAGS = (); }; };
+		AB6BCAAB1BAF0B1F005C2ECE /* MMDrawerVisualState.m in Sources */ = {isa = PBXBuildFile; fileRef = AB6BCAA61BAF0B1F005C2ECE /* MMDrawerVisualState.m */; settings = {ASSET_TAGS = (); }; };
+		AB6BCAAC1BAF0B1F005C2ECE /* UIViewController+MMDrawerController.m in Sources */ = {isa = PBXBuildFile; fileRef = AB6BCAA81BAF0B1F005C2ECE /* UIViewController+MMDrawerController.m */; settings = {ASSET_TAGS = (); }; };
+		AB6BCAB21BAF11FD005C2ECE /* libcrypto.a in Frameworks */ = {isa = PBXBuildFile; fileRef = AB6BCAB11BAF11FD005C2ECE /* libcrypto.a */; };
 		ABE6C1D71A74EBBE00163C01 /* NU.m in Sources */ = {isa = PBXBuildFile; fileRef = ABE6C1D61A74EBBE00163C01 /* NU.m */; };
 		ABE6C1DB1A74EBE500163C01 /* ChengjiViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABE6C1D81A74EBE500163C01 /* ChengjiViewController.swift */; };
 		ABE6C1DC1A74EBE500163C01 /* KebiaoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABE6C1D91A74EBE500163C01 /* KebiaoViewController.swift */; };
 		ABE6C1DD1A74EBE500163C01 /* XiaoliViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABE6C1DA1A74EBE500163C01 /* XiaoliViewController.swift */; };
 		ABE6C1DF1A74EC2B00163C01 /* JWGLViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABE6C1DE1A74EC2B00163C01 /* JWGLViewController.swift */; };
-		ABE98F641BA16D3300B29B56 /* MMDrawerBarButtonItem.m in Sources */ = {isa = PBXBuildFile; fileRef = ABE98F5C1BA16D3300B29B56 /* MMDrawerBarButtonItem.m */; };
-		ABE98F651BA16D3300B29B56 /* MMDrawerController.m in Sources */ = {isa = PBXBuildFile; fileRef = ABE98F5E1BA16D3300B29B56 /* MMDrawerController.m */; };
-		ABE98F661BA16D3300B29B56 /* MMDrawerVisualState.m in Sources */ = {isa = PBXBuildFile; fileRef = ABE98F611BA16D3300B29B56 /* MMDrawerVisualState.m */; };
-		ABE98F671BA16D3300B29B56 /* UIViewController+MMDrawerController.m in Sources */ = {isa = PBXBuildFile; fileRef = ABE98F631BA16D3300B29B56 /* UIViewController+MMDrawerController.m */; };
 		C03F71731A42B71A0096E923 /* Main_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C03F71711A42B71A0096E923 /* Main_iPad.storyboard */; };
 		C03F71761A42CE2D0096E923 /* libMobClickLibrary.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C03F71741A42CE2D0096E923 /* libMobClickLibrary.a */; };
 		C03F71781A42CE7F0096E923 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = C03F71771A42CE7F0096E923 /* libz.dylib */; };
@@ -32,7 +33,6 @@
 		C069BE431AD6CD5100080844 /* LiuliangGoumaiViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C069BE421AD6CD5100080844 /* LiuliangGoumaiViewController.swift */; };
 		C07755EC1A448BC6003BD4E4 /* UMFeedbackLocalizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = C07755EA1A448BC6003BD4E4 /* UMFeedbackLocalizable.strings */; };
 		C07756251A45F185003BD4E4 /* GCDAsyncUdpSocket.m in Sources */ = {isa = PBXBuildFile; fileRef = C07756241A45F185003BD4E4 /* GCDAsyncUdpSocket.m */; };
-		C0BE592F1A405B690099DE32 /* libcrypto.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C0BE592D1A405B690099DE32 /* libcrypto.a */; };
 		C0BE59301A405B690099DE32 /* libssl.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C0BE592E1A405B690099DE32 /* libssl.a */; };
 		C0DAD4B41A3E7F9F00BE24A8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0DAD4B31A3E7F9F00BE24A8 /* AppDelegate.swift */; };
 		C0DAD4B61A3E7F9F00BE24A8 /* ShangwangViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0DAD4B51A3E7F9F00BE24A8 /* ShangwangViewController.swift */; };
@@ -61,34 +61,25 @@
 		A1C974D51B1FFD2700124F1F /* yudpsocket.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = yudpsocket.c; sourceTree = "<group>"; };
 		A1C974D61B1FFD2700124F1F /* yudpsocket.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = yudpsocket.swift; sourceTree = "<group>"; };
 		A1C974DB1B1FFD4900124F1F /* ysocket.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ysocket.swift; sourceTree = "<group>"; };
-		AB034D341BAEF032004D8033 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		AB034D361BAEF032004D8033 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		AB034D391BAEF032004D8033 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		AB034D3B1BAEF032004D8033 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		AB034D3E1BAEF032004D8033 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		AB034D401BAEF032004D8033 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		AB034D491BAEF032004D8033 /* APlayGroundforiOS9Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APlayGroundforiOS9Tests.swift; sourceTree = "<group>"; };
-		AB034D4B1BAEF032004D8033 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		AB034D541BAEF033004D8033 /* APlayGroundforiOS9UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APlayGroundforiOS9UITests.swift; sourceTree = "<group>"; };
-		AB034D561BAEF033004D8033 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AB129AE61AADEB330044759D /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		AB129AE81AADEB570044759D /* AboutViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
 		AB2FA56D1A8E0B84000609E1 /* LeftViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LeftViewController.swift; sourceTree = "<group>"; };
+		AB6BCAA01BAF0B1F005C2ECE /* MMDrawerBarButtonItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MMDrawerBarButtonItem.h; path = MMDrawerController/MMDrawerBarButtonItem.h; sourceTree = "<group>"; };
+		AB6BCAA11BAF0B1F005C2ECE /* MMDrawerBarButtonItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MMDrawerBarButtonItem.m; path = MMDrawerController/MMDrawerBarButtonItem.m; sourceTree = "<group>"; };
+		AB6BCAA21BAF0B1F005C2ECE /* MMDrawerController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MMDrawerController.h; path = MMDrawerController/MMDrawerController.h; sourceTree = "<group>"; };
+		AB6BCAA31BAF0B1F005C2ECE /* MMDrawerController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MMDrawerController.m; path = MMDrawerController/MMDrawerController.m; sourceTree = "<group>"; };
+		AB6BCAA41BAF0B1F005C2ECE /* MMDrawerController+Subclass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "MMDrawerController+Subclass.h"; path = "MMDrawerController/MMDrawerController+Subclass.h"; sourceTree = "<group>"; };
+		AB6BCAA51BAF0B1F005C2ECE /* MMDrawerVisualState.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MMDrawerVisualState.h; path = MMDrawerController/MMDrawerVisualState.h; sourceTree = "<group>"; };
+		AB6BCAA61BAF0B1F005C2ECE /* MMDrawerVisualState.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MMDrawerVisualState.m; path = MMDrawerController/MMDrawerVisualState.m; sourceTree = "<group>"; };
+		AB6BCAA71BAF0B1F005C2ECE /* UIViewController+MMDrawerController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIViewController+MMDrawerController.h"; path = "MMDrawerController/UIViewController+MMDrawerController.h"; sourceTree = "<group>"; };
+		AB6BCAA81BAF0B1F005C2ECE /* UIViewController+MMDrawerController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIViewController+MMDrawerController.m"; path = "MMDrawerController/UIViewController+MMDrawerController.m"; sourceTree = "<group>"; };
+		AB6BCAB11BAF11FD005C2ECE /* libcrypto.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libcrypto.a; sourceTree = "<group>"; };
 		ABE6C1D51A74EBBE00163C01 /* NU.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NU.h; path = ../NU.h; sourceTree = "<group>"; };
 		ABE6C1D61A74EBBE00163C01 /* NU.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NU.m; path = ../NU.m; sourceTree = "<group>"; };
 		ABE6C1D81A74EBE500163C01 /* ChengjiViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ChengjiViewController.swift; path = ../ChengjiViewController.swift; sourceTree = "<group>"; };
 		ABE6C1D91A74EBE500163C01 /* KebiaoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = KebiaoViewController.swift; path = ../KebiaoViewController.swift; sourceTree = "<group>"; };
 		ABE6C1DA1A74EBE500163C01 /* XiaoliViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = XiaoliViewController.swift; path = ../XiaoliViewController.swift; sourceTree = "<group>"; };
 		ABE6C1DE1A74EC2B00163C01 /* JWGLViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = JWGLViewController.swift; path = ../JWGLViewController.swift; sourceTree = "<group>"; };
-		ABE98F5B1BA16D3300B29B56 /* MMDrawerBarButtonItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MMDrawerBarButtonItem.h; path = MMDrawerController/MMDrawerBarButtonItem.h; sourceTree = "<group>"; };
-		ABE98F5C1BA16D3300B29B56 /* MMDrawerBarButtonItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MMDrawerBarButtonItem.m; path = MMDrawerController/MMDrawerBarButtonItem.m; sourceTree = "<group>"; };
-		ABE98F5D1BA16D3300B29B56 /* MMDrawerController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MMDrawerController.h; path = MMDrawerController/MMDrawerController.h; sourceTree = "<group>"; };
-		ABE98F5E1BA16D3300B29B56 /* MMDrawerController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MMDrawerController.m; path = MMDrawerController/MMDrawerController.m; sourceTree = "<group>"; };
-		ABE98F5F1BA16D3300B29B56 /* MMDrawerController+Subclass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "MMDrawerController+Subclass.h"; path = "MMDrawerController/MMDrawerController+Subclass.h"; sourceTree = "<group>"; };
-		ABE98F601BA16D3300B29B56 /* MMDrawerVisualState.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MMDrawerVisualState.h; path = MMDrawerController/MMDrawerVisualState.h; sourceTree = "<group>"; };
-		ABE98F611BA16D3300B29B56 /* MMDrawerVisualState.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MMDrawerVisualState.m; path = MMDrawerController/MMDrawerVisualState.m; sourceTree = "<group>"; };
-		ABE98F621BA16D3300B29B56 /* UIViewController+MMDrawerController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIViewController+MMDrawerController.h"; path = "MMDrawerController/UIViewController+MMDrawerController.h"; sourceTree = "<group>"; };
-		ABE98F631BA16D3300B29B56 /* UIViewController+MMDrawerController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIViewController+MMDrawerController.m"; path = "MMDrawerController/UIViewController+MMDrawerController.m"; sourceTree = "<group>"; };
 		C03F71721A42B71A0096E923 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPad.storyboard; sourceTree = "<group>"; };
 		C03F71741A42CE2D0096E923 /* libMobClickLibrary.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libMobClickLibrary.a; sourceTree = "<group>"; };
 		C03F71751A42CE2D0096E923 /* MobClick.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MobClick.h; sourceTree = "<group>"; };
@@ -174,7 +165,6 @@
 		C0BE58DE1A402C940099DE32 /* x509.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = x509.h; sourceTree = "<group>"; };
 		C0BE58DF1A402C940099DE32 /* x509_vfy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = x509_vfy.h; sourceTree = "<group>"; };
 		C0BE58E01A402C940099DE32 /* x509v3.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = x509v3.h; sourceTree = "<group>"; };
-		C0BE592D1A405B690099DE32 /* libcrypto.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libcrypto.a; sourceTree = "<group>"; };
 		C0BE592E1A405B690099DE32 /* libssl.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libssl.a; sourceTree = "<group>"; };
 		C0DAD4AE1A3E7F9F00BE24A8 /* instabtbu.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = instabtbu.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C0DAD4B21A3E7F9F00BE24A8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -198,11 +188,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AB6BCAB21BAF11FD005C2ECE /* libcrypto.a in Frameworks */,
 				C03F71781A42CE7F0096E923 /* libz.dylib in Frameworks */,
 				C03F717E1A42DF650096E923 /* libUMFeedback.a in Frameworks */,
 				C03F71761A42CE2D0096E923 /* libMobClickLibrary.a in Frameworks */,
 				C0BE59301A405B690099DE32 /* libssl.a in Frameworks */,
-				C0BE592F1A405B690099DE32 /* libcrypto.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -216,35 +206,20 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		AB034D331BAEF032004D8033 /* APlayGroundforiOS9 */ = {
+		AB6BCA9F1BAF0AF5005C2ECE /* MMDrawerController */ = {
 			isa = PBXGroup;
 			children = (
-				AB034D341BAEF032004D8033 /* AppDelegate.swift */,
-				AB034D361BAEF032004D8033 /* ViewController.swift */,
-				AB034D381BAEF032004D8033 /* Main.storyboard */,
-				AB034D3B1BAEF032004D8033 /* Assets.xcassets */,
-				AB034D3D1BAEF032004D8033 /* LaunchScreen.storyboard */,
-				AB034D401BAEF032004D8033 /* Info.plist */,
+				AB6BCAA01BAF0B1F005C2ECE /* MMDrawerBarButtonItem.h */,
+				AB6BCAA11BAF0B1F005C2ECE /* MMDrawerBarButtonItem.m */,
+				AB6BCAA21BAF0B1F005C2ECE /* MMDrawerController.h */,
+				AB6BCAA31BAF0B1F005C2ECE /* MMDrawerController.m */,
+				AB6BCAA41BAF0B1F005C2ECE /* MMDrawerController+Subclass.h */,
+				AB6BCAA51BAF0B1F005C2ECE /* MMDrawerVisualState.h */,
+				AB6BCAA61BAF0B1F005C2ECE /* MMDrawerVisualState.m */,
+				AB6BCAA71BAF0B1F005C2ECE /* UIViewController+MMDrawerController.h */,
+				AB6BCAA81BAF0B1F005C2ECE /* UIViewController+MMDrawerController.m */,
 			);
-			path = APlayGroundforiOS9;
-			sourceTree = "<group>";
-		};
-		AB034D481BAEF032004D8033 /* APlayGroundforiOS9Tests */ = {
-			isa = PBXGroup;
-			children = (
-				AB034D491BAEF032004D8033 /* APlayGroundforiOS9Tests.swift */,
-				AB034D4B1BAEF032004D8033 /* Info.plist */,
-			);
-			path = APlayGroundforiOS9Tests;
-			sourceTree = "<group>";
-		};
-		AB034D531BAEF033004D8033 /* APlayGroundforiOS9UITests */ = {
-			isa = PBXGroup;
-			children = (
-				AB034D541BAEF033004D8033 /* APlayGroundforiOS9UITests.swift */,
-				AB034D561BAEF033004D8033 /* Info.plist */,
-			);
-			path = APlayGroundforiOS9UITests;
+			name = MMDrawerController;
 			sourceTree = "<group>";
 		};
 		ABC364B41AE5338B0091ADBE /* OC */ = {
@@ -272,22 +247,6 @@
 				AB129AE61AADEB330044759D /* MapViewController.swift */,
 			);
 			name = ViewController;
-			sourceTree = "<group>";
-		};
-		ABE98F581BA16D1500B29B56 /* MMDrawerController */ = {
-			isa = PBXGroup;
-			children = (
-				ABE98F5B1BA16D3300B29B56 /* MMDrawerBarButtonItem.h */,
-				ABE98F5C1BA16D3300B29B56 /* MMDrawerBarButtonItem.m */,
-				ABE98F5D1BA16D3300B29B56 /* MMDrawerController.h */,
-				ABE98F5E1BA16D3300B29B56 /* MMDrawerController.m */,
-				ABE98F5F1BA16D3300B29B56 /* MMDrawerController+Subclass.h */,
-				ABE98F601BA16D3300B29B56 /* MMDrawerVisualState.h */,
-				ABE98F611BA16D3300B29B56 /* MMDrawerVisualState.m */,
-				ABE98F621BA16D3300B29B56 /* UIViewController+MMDrawerController.h */,
-				ABE98F631BA16D3300B29B56 /* UIViewController+MMDrawerController.m */,
-			);
-			name = MMDrawerController;
 			sourceTree = "<group>";
 		};
 		C07755E91A448BC6003BD4E4 /* zh-Hans.lproj */ = {
@@ -386,9 +345,6 @@
 				C03F71771A42CE7F0096E923 /* libz.dylib */,
 				C0DAD4B01A3E7F9F00BE24A8 /* instabtbu */,
 				C0DAD4C61A3E7F9F00BE24A8 /* instabtbuTests */,
-				AB034D331BAEF032004D8033 /* APlayGroundforiOS9 */,
-				AB034D481BAEF032004D8033 /* APlayGroundforiOS9Tests */,
-				AB034D531BAEF033004D8033 /* APlayGroundforiOS9UITests */,
 				C0DAD4AF1A3E7F9F00BE24A8 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -405,11 +361,11 @@
 		C0DAD4B01A3E7F9F00BE24A8 /* instabtbu */ = {
 			isa = PBXGroup;
 			children = (
-				ABE98F581BA16D1500B29B56 /* MMDrawerController */,
+				AB6BCA9F1BAF0AF5005C2ECE /* MMDrawerController */,
 				C07755E91A448BC6003BD4E4 /* zh-Hans.lproj */,
 				C0BE58951A402C930099DE32 /* openssl */,
 				C0BE592E1A405B690099DE32 /* libssl.a */,
-				C0BE592D1A405B690099DE32 /* libcrypto.a */,
+				AB6BCAB11BAF11FD005C2ECE /* libcrypto.a */,
 				ABC364B41AE5338B0091ADBE /* OC */,
 				ABC364B51AE5339A0091ADBE /* ViewController */,
 				C07756231A45F185003BD4E4 /* GCDAsyncUdpSocket.h */,
@@ -572,7 +528,7 @@
 				A1C974DC1B1FFD4900124F1F /* ysocket.swift in Sources */,
 				ABE6C1DF1A74EC2B00163C01 /* JWGLViewController.swift in Sources */,
 				C0DAD4D61A3EB7B000BE24A8 /* oc.m in Sources */,
-				ABE98F671BA16D3300B29B56 /* UIViewController+MMDrawerController.m in Sources */,
+				AB6BCAAC1BAF0B1F005C2ECE /* UIViewController+MMDrawerController.m in Sources */,
 				ABE6C1DB1A74EBE500163C01 /* ChengjiViewController.swift in Sources */,
 				A1C974D81B1FFD2700124F1F /* ytcpsocket.swift in Sources */,
 				C0DAD4B61A3E7F9F00BE24A8 /* ShangwangViewController.swift in Sources */,
@@ -583,9 +539,9 @@
 				C069BE431AD6CD5100080844 /* LiuliangGoumaiViewController.swift in Sources */,
 				AB2FA56E1A8E0B84000609E1 /* LeftViewController.swift in Sources */,
 				ABE6C1DC1A74EBE500163C01 /* KebiaoViewController.swift in Sources */,
-				ABE98F661BA16D3300B29B56 /* MMDrawerVisualState.m in Sources */,
-				ABE98F641BA16D3300B29B56 /* MMDrawerBarButtonItem.m in Sources */,
-				ABE98F651BA16D3300B29B56 /* MMDrawerController.m in Sources */,
+				AB6BCAAB1BAF0B1F005C2ECE /* MMDrawerVisualState.m in Sources */,
+				AB6BCAA91BAF0B1F005C2ECE /* MMDrawerBarButtonItem.m in Sources */,
+				AB6BCAAA1BAF0B1F005C2ECE /* MMDrawerController.m in Sources */,
 				A1C974D71B1FFD2700124F1F /* ytcpsocket.c in Sources */,
 				A1C70FB21B201ACF00C240FD /* Common.swift in Sources */,
 				ABE6C1DD1A74EBE500163C01 /* XiaoliViewController.swift in Sources */,
@@ -615,22 +571,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		AB034D381BAEF032004D8033 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				AB034D391BAEF032004D8033 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		AB034D3D1BAEF032004D8033 /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				AB034D3E1BAEF032004D8033 /* Base */,
-			);
-			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
 		C03F71711A42B71A0096E923 /* Main_iPad.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -686,6 +626,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
+				ENABLE_BITCODE = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -709,6 +650,7 @@
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				TARGETED_DEVICE_FAMILY = "1,2";
+				VALID_ARCHS = "arm64 armv7 armv7s";
 			};
 			name = Debug;
 		};
@@ -732,6 +674,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = YES;
+				ENABLE_BITCODE = NO;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -747,6 +690,7 @@
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
+				VALID_ARCHS = "arm64 armv7 armv7s";
 			};
 			name = Release;
 		};
@@ -758,6 +702,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				ENABLE_BITCODE = NO;
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
@@ -773,7 +718,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/instabtbu",
 				);
-				ONLY_ACTIVE_ARCH = NO;
+				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
@@ -781,6 +726,7 @@
 				SWIFT_OBJC_BRIDGING_HEADER = "instabtbu-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				"USER_HEADER_SEARCH_PATHS[arch=*]" = "$(inherited) $(PROJECT_DIR)/instabtbu";
+				VALID_ARCHS = "arm64 armv7 armv7s";
 			};
 			name = Debug;
 		};
@@ -792,6 +738,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				ENABLE_BITCODE = NO;
 				"HEADER_SEARCH_PATHS[arch=*]" = (
 					"$(inherited)",
 					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
@@ -810,6 +757,7 @@
 				SCAN_ALL_SOURCE_FILES_FOR_INCLUDES = YES;
 				SWIFT_OBJC_BRIDGING_HEADER = "instabtbu-Bridging-Header.h";
 				"USER_HEADER_SEARCH_PATHS[arch=*]" = "$(inherited) $(PROJECT_DIR)/instabtbu";
+				VALID_ARCHS = "arm64 armv7 armv7s";
 			};
 			name = Release;
 		};
@@ -826,6 +774,10 @@
 				);
 				INFOPLIST_FILE = instabtbuTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/instabtbu",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.instabtbu.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
@@ -842,6 +794,10 @@
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = instabtbuTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/instabtbu",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.instabtbu.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";

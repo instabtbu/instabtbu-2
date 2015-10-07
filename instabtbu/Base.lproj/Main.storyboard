@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="oIX-ks-njo">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8191" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="oIX-ks-njo">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
@@ -163,11 +164,13 @@
                         <color key="backgroundColor" red="0.95294117647058818" green="0.95294117647058818" blue="0.95294117647058818" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="JSU-VL-nPH" firstAttribute="trailing" secondItem="G6h-ff-tG3" secondAttribute="trailingMargin" id="0Wg-Jh-8a1"/>
+                            <constraint firstItem="yJJ-cD-LVc" firstAttribute="height" secondItem="l1R-sm-KEd" secondAttribute="height" id="1Yc-OT-Tuw"/>
                             <constraint firstItem="hyN-Hj-Bzq" firstAttribute="width" secondItem="JSU-VL-nPH" secondAttribute="height" multiplier="4:3" id="1in-FF-xau"/>
                             <constraint firstItem="19n-Ke-gFP" firstAttribute="trailing" secondItem="LBs-gV-iHn" secondAttribute="trailing" id="2rW-FS-eWn"/>
                             <constraint firstItem="yPC-IR-EbB" firstAttribute="top" secondItem="9J2-ET-dPB" secondAttribute="bottom" id="2yD-iE-ecP"/>
                             <constraint firstItem="NZE-Pf-5cm" firstAttribute="leading" secondItem="G6h-ff-tG3" secondAttribute="leadingMargin" id="3gV-sl-RAd"/>
                             <constraint firstItem="hyN-Hj-Bzq" firstAttribute="top" secondItem="8by-fF-In4" secondAttribute="bottom" constant="8" id="4y6-wq-i9U"/>
+                            <constraint firstItem="yJJ-cD-LVc" firstAttribute="width" secondItem="l1R-sm-KEd" secondAttribute="width" id="5M2-7E-M6A"/>
                             <constraint firstItem="JSU-VL-nPH" firstAttribute="width" secondItem="eCL-7h-k5i" secondAttribute="height" multiplier="144:35" id="6ow-Vc-PoV"/>
                             <constraint firstItem="8by-fF-In4" firstAttribute="trailing" secondItem="G6h-ff-tG3" secondAttribute="trailingMargin" id="CrQ-hq-UjR"/>
                             <constraint firstItem="yPC-IR-EbB" firstAttribute="leading" secondItem="G6h-ff-tG3" secondAttribute="leadingMargin" id="DJk-Ot-ddu"/>
@@ -449,9 +452,4 @@
         <image name="shangwang_zidongcha0" width="450" height="225"/>
         <image name="shangwang_zidongdenglu0" width="450" height="225"/>
     </resources>
-    <simulatedMetricsContainer key="defaultSimulatedMetrics">
-        <simulatedStatusBarMetrics key="statusBar"/>
-        <simulatedOrientationMetrics key="orientation"/>
-        <simulatedScreenMetrics key="destination" type="retina4"/>
-    </simulatedMetricsContainer>
 </document>
