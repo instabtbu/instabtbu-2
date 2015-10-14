@@ -7,25 +7,23 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2BDB8B55BD2D49ED5DF2DEEF /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 06C8BD140C807A3A40360D9A /* libPods.a */; };
 		A1C70FB21B201ACF00C240FD /* Common.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1C70FB11B201ACF00C240FD /* Common.swift */; };
 		A1C974D71B1FFD2700124F1F /* ytcpsocket.c in Sources */ = {isa = PBXBuildFile; fileRef = A1C974D31B1FFD2700124F1F /* ytcpsocket.c */; };
 		A1C974D81B1FFD2700124F1F /* ytcpsocket.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1C974D41B1FFD2700124F1F /* ytcpsocket.swift */; };
 		A1C974D91B1FFD2700124F1F /* yudpsocket.c in Sources */ = {isa = PBXBuildFile; fileRef = A1C974D51B1FFD2700124F1F /* yudpsocket.c */; };
 		A1C974DA1B1FFD2700124F1F /* yudpsocket.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1C974D61B1FFD2700124F1F /* yudpsocket.swift */; };
 		A1C974DC1B1FFD4900124F1F /* ysocket.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1C974DB1B1FFD4900124F1F /* ysocket.swift */; };
+		AB04F1461BCE9906009BC1B5 /* JWGLViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB04F13F1BCE9906009BC1B5 /* JWGLViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		AB04F1471BCE9906009BC1B5 /* KebiaoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB04F1401BCE9906009BC1B5 /* KebiaoViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		AB04F1481BCE9906009BC1B5 /* NU.m in Sources */ = {isa = PBXBuildFile; fileRef = AB04F1421BCE9906009BC1B5 /* NU.m */; settings = {ASSET_TAGS = (); }; };
+		AB04F1491BCE9906009BC1B5 /* oc.m in Sources */ = {isa = PBXBuildFile; fileRef = AB04F1441BCE9906009BC1B5 /* oc.m */; settings = {ASSET_TAGS = (); }; };
+		AB04F14A1BCE9906009BC1B5 /* XiaoliViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB04F1451BCE9906009BC1B5 /* XiaoliViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		AB04F14C1BCE9964009BC1B5 /* ChengjiViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB04F14B1BCE9964009BC1B5 /* ChengjiViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		AB129AE71AADEB330044759D /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB129AE61AADEB330044759D /* MapViewController.swift */; };
 		AB129AE91AADEB570044759D /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB129AE81AADEB570044759D /* AboutViewController.swift */; };
 		AB2FA56E1A8E0B84000609E1 /* LeftViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB2FA56D1A8E0B84000609E1 /* LeftViewController.swift */; };
-		AB6BCAA91BAF0B1F005C2ECE /* MMDrawerBarButtonItem.m in Sources */ = {isa = PBXBuildFile; fileRef = AB6BCAA11BAF0B1F005C2ECE /* MMDrawerBarButtonItem.m */; settings = {ASSET_TAGS = (); }; };
-		AB6BCAAA1BAF0B1F005C2ECE /* MMDrawerController.m in Sources */ = {isa = PBXBuildFile; fileRef = AB6BCAA31BAF0B1F005C2ECE /* MMDrawerController.m */; settings = {ASSET_TAGS = (); }; };
-		AB6BCAAB1BAF0B1F005C2ECE /* MMDrawerVisualState.m in Sources */ = {isa = PBXBuildFile; fileRef = AB6BCAA61BAF0B1F005C2ECE /* MMDrawerVisualState.m */; settings = {ASSET_TAGS = (); }; };
-		AB6BCAAC1BAF0B1F005C2ECE /* UIViewController+MMDrawerController.m in Sources */ = {isa = PBXBuildFile; fileRef = AB6BCAA81BAF0B1F005C2ECE /* UIViewController+MMDrawerController.m */; settings = {ASSET_TAGS = (); }; };
 		AB6BCAB21BAF11FD005C2ECE /* libcrypto.a in Frameworks */ = {isa = PBXBuildFile; fileRef = AB6BCAB11BAF11FD005C2ECE /* libcrypto.a */; };
-		ABE6C1D71A74EBBE00163C01 /* NU.m in Sources */ = {isa = PBXBuildFile; fileRef = ABE6C1D61A74EBBE00163C01 /* NU.m */; };
-		ABE6C1DB1A74EBE500163C01 /* ChengjiViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABE6C1D81A74EBE500163C01 /* ChengjiViewController.swift */; };
-		ABE6C1DC1A74EBE500163C01 /* KebiaoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABE6C1D91A74EBE500163C01 /* KebiaoViewController.swift */; };
-		ABE6C1DD1A74EBE500163C01 /* XiaoliViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABE6C1DA1A74EBE500163C01 /* XiaoliViewController.swift */; };
-		ABE6C1DF1A74EC2B00163C01 /* JWGLViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABE6C1DE1A74EC2B00163C01 /* JWGLViewController.swift */; };
 		C03F71731A42B71A0096E923 /* Main_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C03F71711A42B71A0096E923 /* Main_iPad.storyboard */; };
 		C03F71761A42CE2D0096E923 /* libMobClickLibrary.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C03F71741A42CE2D0096E923 /* libMobClickLibrary.a */; };
 		C03F71781A42CE7F0096E923 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = C03F71771A42CE7F0096E923 /* libz.dylib */; };
@@ -40,7 +38,6 @@
 		C0DAD4BB1A3E7F9F00BE24A8 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C0DAD4BA1A3E7F9F00BE24A8 /* Images.xcassets */; };
 		C0DAD4BE1A3E7F9F00BE24A8 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = C0DAD4BC1A3E7F9F00BE24A8 /* LaunchScreen.xib */; };
 		C0DAD4CA1A3E7F9F00BE24A8 /* instabtbuTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0DAD4C91A3E7F9F00BE24A8 /* instabtbuTests.swift */; };
-		C0DAD4D61A3EB7B000BE24A8 /* oc.m in Sources */ = {isa = PBXBuildFile; fileRef = C0DAD4D51A3EB7B000BE24A8 /* oc.m */; };
 		C0DAD4DC1A3EFD5C00BE24A8 /* testc.c in Sources */ = {isa = PBXBuildFile; fileRef = C0DAD4DA1A3EFD5C00BE24A8 /* testc.c */; };
 /* End PBXBuildFile section */
 
@@ -55,31 +52,27 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		06C8BD140C807A3A40360D9A /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		9A77C1989FF0D84602D5407C /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		A1C70FB11B201ACF00C240FD /* Common.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Common.swift; sourceTree = "<group>"; };
 		A1C974D31B1FFD2700124F1F /* ytcpsocket.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = ytcpsocket.c; sourceTree = "<group>"; };
 		A1C974D41B1FFD2700124F1F /* ytcpsocket.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ytcpsocket.swift; sourceTree = "<group>"; };
 		A1C974D51B1FFD2700124F1F /* yudpsocket.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = yudpsocket.c; sourceTree = "<group>"; };
 		A1C974D61B1FFD2700124F1F /* yudpsocket.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = yudpsocket.swift; sourceTree = "<group>"; };
 		A1C974DB1B1FFD4900124F1F /* ysocket.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ysocket.swift; sourceTree = "<group>"; };
+		AB04F13F1BCE9906009BC1B5 /* JWGLViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JWGLViewController.swift; sourceTree = "<group>"; };
+		AB04F1401BCE9906009BC1B5 /* KebiaoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KebiaoViewController.swift; sourceTree = "<group>"; };
+		AB04F1411BCE9906009BC1B5 /* NU.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NU.h; sourceTree = "<group>"; };
+		AB04F1421BCE9906009BC1B5 /* NU.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NU.m; sourceTree = "<group>"; };
+		AB04F1431BCE9906009BC1B5 /* oc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = oc.h; sourceTree = "<group>"; };
+		AB04F1441BCE9906009BC1B5 /* oc.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = oc.m; sourceTree = "<group>"; };
+		AB04F1451BCE9906009BC1B5 /* XiaoliViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XiaoliViewController.swift; sourceTree = "<group>"; };
+		AB04F14B1BCE9964009BC1B5 /* ChengjiViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChengjiViewController.swift; sourceTree = "<group>"; };
+		AB04F14D1BCE99C3009BC1B5 /* instabtbu-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "instabtbu-Bridging-Header.h"; sourceTree = SOURCE_ROOT; };
 		AB129AE61AADEB330044759D /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		AB129AE81AADEB570044759D /* AboutViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
 		AB2FA56D1A8E0B84000609E1 /* LeftViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LeftViewController.swift; sourceTree = "<group>"; };
-		AB6BCAA01BAF0B1F005C2ECE /* MMDrawerBarButtonItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MMDrawerBarButtonItem.h; path = MMDrawerController/MMDrawerBarButtonItem.h; sourceTree = "<group>"; };
-		AB6BCAA11BAF0B1F005C2ECE /* MMDrawerBarButtonItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MMDrawerBarButtonItem.m; path = MMDrawerController/MMDrawerBarButtonItem.m; sourceTree = "<group>"; };
-		AB6BCAA21BAF0B1F005C2ECE /* MMDrawerController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MMDrawerController.h; path = MMDrawerController/MMDrawerController.h; sourceTree = "<group>"; };
-		AB6BCAA31BAF0B1F005C2ECE /* MMDrawerController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MMDrawerController.m; path = MMDrawerController/MMDrawerController.m; sourceTree = "<group>"; };
-		AB6BCAA41BAF0B1F005C2ECE /* MMDrawerController+Subclass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "MMDrawerController+Subclass.h"; path = "MMDrawerController/MMDrawerController+Subclass.h"; sourceTree = "<group>"; };
-		AB6BCAA51BAF0B1F005C2ECE /* MMDrawerVisualState.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MMDrawerVisualState.h; path = MMDrawerController/MMDrawerVisualState.h; sourceTree = "<group>"; };
-		AB6BCAA61BAF0B1F005C2ECE /* MMDrawerVisualState.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MMDrawerVisualState.m; path = MMDrawerController/MMDrawerVisualState.m; sourceTree = "<group>"; };
-		AB6BCAA71BAF0B1F005C2ECE /* UIViewController+MMDrawerController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIViewController+MMDrawerController.h"; path = "MMDrawerController/UIViewController+MMDrawerController.h"; sourceTree = "<group>"; };
-		AB6BCAA81BAF0B1F005C2ECE /* UIViewController+MMDrawerController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIViewController+MMDrawerController.m"; path = "MMDrawerController/UIViewController+MMDrawerController.m"; sourceTree = "<group>"; };
 		AB6BCAB11BAF11FD005C2ECE /* libcrypto.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libcrypto.a; sourceTree = "<group>"; };
-		ABE6C1D51A74EBBE00163C01 /* NU.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NU.h; path = ../NU.h; sourceTree = "<group>"; };
-		ABE6C1D61A74EBBE00163C01 /* NU.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NU.m; path = ../NU.m; sourceTree = "<group>"; };
-		ABE6C1D81A74EBE500163C01 /* ChengjiViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ChengjiViewController.swift; path = ../ChengjiViewController.swift; sourceTree = "<group>"; };
-		ABE6C1D91A74EBE500163C01 /* KebiaoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = KebiaoViewController.swift; path = ../KebiaoViewController.swift; sourceTree = "<group>"; };
-		ABE6C1DA1A74EBE500163C01 /* XiaoliViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = XiaoliViewController.swift; path = ../XiaoliViewController.swift; sourceTree = "<group>"; };
-		ABE6C1DE1A74EC2B00163C01 /* JWGLViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = JWGLViewController.swift; path = ../JWGLViewController.swift; sourceTree = "<group>"; };
 		C03F71721A42B71A0096E923 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPad.storyboard; sourceTree = "<group>"; };
 		C03F71741A42CE2D0096E923 /* libMobClickLibrary.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libMobClickLibrary.a; sourceTree = "<group>"; };
 		C03F71751A42CE2D0096E923 /* MobClick.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MobClick.h; sourceTree = "<group>"; };
@@ -176,11 +169,9 @@
 		C0DAD4C31A3E7F9F00BE24A8 /* instabtbuTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = instabtbuTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C0DAD4C81A3E7F9F00BE24A8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C0DAD4C91A3E7F9F00BE24A8 /* instabtbuTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = instabtbuTests.swift; sourceTree = "<group>"; };
-		C0DAD4D31A3EB7B000BE24A8 /* instabtbu-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "instabtbu-Bridging-Header.h"; sourceTree = SOURCE_ROOT; };
-		C0DAD4D41A3EB7B000BE24A8 /* oc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = oc.h; path = ../oc.h; sourceTree = "<group>"; };
-		C0DAD4D51A3EB7B000BE24A8 /* oc.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = oc.m; path = ../oc.m; sourceTree = "<group>"; };
 		C0DAD4DA1A3EFD5C00BE24A8 /* testc.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = testc.c; sourceTree = "<group>"; };
 		C0DAD4DB1A3EFD5C00BE24A8 /* testc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = testc.h; sourceTree = "<group>"; };
+		D83F9D05FFD3CD391626DFE6 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -193,6 +184,7 @@
 				C03F717E1A42DF650096E923 /* libUMFeedback.a in Frameworks */,
 				C03F71761A42CE2D0096E923 /* libMobClickLibrary.a in Frameworks */,
 				C0BE59301A405B690099DE32 /* libssl.a in Frameworks */,
+				2BDB8B55BD2D49ED5DF2DEEF /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -206,29 +198,21 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		AB6BCA9F1BAF0AF5005C2ECE /* MMDrawerController */ = {
+		6A04CE18B186EBD15990F381 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				AB6BCAA01BAF0B1F005C2ECE /* MMDrawerBarButtonItem.h */,
-				AB6BCAA11BAF0B1F005C2ECE /* MMDrawerBarButtonItem.m */,
-				AB6BCAA21BAF0B1F005C2ECE /* MMDrawerController.h */,
-				AB6BCAA31BAF0B1F005C2ECE /* MMDrawerController.m */,
-				AB6BCAA41BAF0B1F005C2ECE /* MMDrawerController+Subclass.h */,
-				AB6BCAA51BAF0B1F005C2ECE /* MMDrawerVisualState.h */,
-				AB6BCAA61BAF0B1F005C2ECE /* MMDrawerVisualState.m */,
-				AB6BCAA71BAF0B1F005C2ECE /* UIViewController+MMDrawerController.h */,
-				AB6BCAA81BAF0B1F005C2ECE /* UIViewController+MMDrawerController.m */,
+				06C8BD140C807A3A40360D9A /* libPods.a */,
 			);
-			name = MMDrawerController;
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		ABC364B41AE5338B0091ADBE /* OC */ = {
 			isa = PBXGroup;
 			children = (
-				C0DAD4D41A3EB7B000BE24A8 /* oc.h */,
-				C0DAD4D51A3EB7B000BE24A8 /* oc.m */,
-				ABE6C1D51A74EBBE00163C01 /* NU.h */,
-				ABE6C1D61A74EBBE00163C01 /* NU.m */,
+				AB04F1411BCE9906009BC1B5 /* NU.h */,
+				AB04F1421BCE9906009BC1B5 /* NU.m */,
+				AB04F1431BCE9906009BC1B5 /* oc.h */,
+				AB04F1441BCE9906009BC1B5 /* oc.m */,
 			);
 			name = OC;
 			sourceTree = "<group>";
@@ -236,10 +220,10 @@
 		ABC364B51AE5339A0091ADBE /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
-				ABE6C1DE1A74EC2B00163C01 /* JWGLViewController.swift */,
-				ABE6C1D81A74EBE500163C01 /* ChengjiViewController.swift */,
-				ABE6C1D91A74EBE500163C01 /* KebiaoViewController.swift */,
-				ABE6C1DA1A74EBE500163C01 /* XiaoliViewController.swift */,
+				AB04F13F1BCE9906009BC1B5 /* JWGLViewController.swift */,
+				AB04F1401BCE9906009BC1B5 /* KebiaoViewController.swift */,
+				AB04F1451BCE9906009BC1B5 /* XiaoliViewController.swift */,
+				AB04F14B1BCE9964009BC1B5 /* ChengjiViewController.swift */,
 				C0DAD4B51A3E7F9F00BE24A8 /* ShangwangViewController.swift */,
 				C069BE421AD6CD5100080844 /* LiuliangGoumaiViewController.swift */,
 				AB2FA56D1A8E0B84000609E1 /* LeftViewController.swift */,
@@ -346,6 +330,8 @@
 				C0DAD4B01A3E7F9F00BE24A8 /* instabtbu */,
 				C0DAD4C61A3E7F9F00BE24A8 /* instabtbuTests */,
 				C0DAD4AF1A3E7F9F00BE24A8 /* Products */,
+				F9FFEAD5BCE9151CAFB5C412 /* Pods */,
+				6A04CE18B186EBD15990F381 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -361,11 +347,8 @@
 		C0DAD4B01A3E7F9F00BE24A8 /* instabtbu */ = {
 			isa = PBXGroup;
 			children = (
-				AB6BCA9F1BAF0AF5005C2ECE /* MMDrawerController */,
 				C07755E91A448BC6003BD4E4 /* zh-Hans.lproj */,
 				C0BE58951A402C930099DE32 /* openssl */,
-				C0BE592E1A405B690099DE32 /* libssl.a */,
-				AB6BCAB11BAF11FD005C2ECE /* libcrypto.a */,
 				ABC364B41AE5338B0091ADBE /* OC */,
 				ABC364B51AE5339A0091ADBE /* ViewController */,
 				C07756231A45F185003BD4E4 /* GCDAsyncUdpSocket.h */,
@@ -376,9 +359,7 @@
 				A1C974D51B1FFD2700124F1F /* yudpsocket.c */,
 				A1C974D61B1FFD2700124F1F /* yudpsocket.swift */,
 				A1C974DB1B1FFD4900124F1F /* ysocket.swift */,
-				C03F71741A42CE2D0096E923 /* libMobClickLibrary.a */,
 				C03F71751A42CE2D0096E923 /* MobClick.h */,
-				C03F717C1A42DF650096E923 /* libUMFeedback.a */,
 				C03F717D1A42DF650096E923 /* UMFeedback.h */,
 				C0DAD4B31A3E7F9F00BE24A8 /* AppDelegate.swift */,
 				C0DAD4DA1A3EFD5C00BE24A8 /* testc.c */,
@@ -387,7 +368,11 @@
 				C03F71711A42B71A0096E923 /* Main_iPad.storyboard */,
 				C0DAD4BA1A3E7F9F00BE24A8 /* Images.xcassets */,
 				C0DAD4BC1A3E7F9F00BE24A8 /* LaunchScreen.xib */,
-				C0DAD4D31A3EB7B000BE24A8 /* instabtbu-Bridging-Header.h */,
+				AB04F14D1BCE99C3009BC1B5 /* instabtbu-Bridging-Header.h */,
+				C0BE592E1A405B690099DE32 /* libssl.a */,
+				AB6BCAB11BAF11FD005C2ECE /* libcrypto.a */,
+				C03F71741A42CE2D0096E923 /* libMobClickLibrary.a */,
+				C03F717C1A42DF650096E923 /* libUMFeedback.a */,
 				C0DAD4B11A3E7F9F00BE24A8 /* Supporting Files */,
 			);
 			path = instabtbu;
@@ -418,6 +403,15 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		F9FFEAD5BCE9151CAFB5C412 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				9A77C1989FF0D84602D5407C /* Pods.debug.xcconfig */,
+				D83F9D05FFD3CD391626DFE6 /* Pods.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -425,9 +419,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = C0DAD4CD1A3E7F9F00BE24A8 /* Build configuration list for PBXNativeTarget "instabtbu" */;
 			buildPhases = (
+				CFA26D39B99F7574139FC6FC /* Check Pods Manifest.lock */,
 				C0DAD4AA1A3E7F9F00BE24A8 /* Sources */,
 				C0DAD4AB1A3E7F9F00BE24A8 /* Frameworks */,
 				C0DAD4AC1A3E7F9F00BE24A8 /* Resources */,
+				5085D4FA74847406385BCC01 /* Embed Pods Frameworks */,
+				4883695B2C2C409E7788909E /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -520,16 +517,60 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		4883695B2C2C409E7788909E /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		5085D4FA74847406385BCC01 /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		CFA26D39B99F7574139FC6FC /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		C0DAD4AA1A3E7F9F00BE24A8 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				A1C974DC1B1FFD4900124F1F /* ysocket.swift in Sources */,
-				ABE6C1DF1A74EC2B00163C01 /* JWGLViewController.swift in Sources */,
-				C0DAD4D61A3EB7B000BE24A8 /* oc.m in Sources */,
-				AB6BCAAC1BAF0B1F005C2ECE /* UIViewController+MMDrawerController.m in Sources */,
-				ABE6C1DB1A74EBE500163C01 /* ChengjiViewController.swift in Sources */,
 				A1C974D81B1FFD2700124F1F /* ytcpsocket.swift in Sources */,
 				C0DAD4B61A3E7F9F00BE24A8 /* ShangwangViewController.swift in Sources */,
 				C07756251A45F185003BD4E4 /* GCDAsyncUdpSocket.m in Sources */,
@@ -538,16 +579,16 @@
 				C0DAD4DC1A3EFD5C00BE24A8 /* testc.c in Sources */,
 				C069BE431AD6CD5100080844 /* LiuliangGoumaiViewController.swift in Sources */,
 				AB2FA56E1A8E0B84000609E1 /* LeftViewController.swift in Sources */,
-				ABE6C1DC1A74EBE500163C01 /* KebiaoViewController.swift in Sources */,
-				AB6BCAAB1BAF0B1F005C2ECE /* MMDrawerVisualState.m in Sources */,
-				AB6BCAA91BAF0B1F005C2ECE /* MMDrawerBarButtonItem.m in Sources */,
-				AB6BCAAA1BAF0B1F005C2ECE /* MMDrawerController.m in Sources */,
+				AB04F1471BCE9906009BC1B5 /* KebiaoViewController.swift in Sources */,
+				AB04F1481BCE9906009BC1B5 /* NU.m in Sources */,
+				AB04F14A1BCE9906009BC1B5 /* XiaoliViewController.swift in Sources */,
 				A1C974D71B1FFD2700124F1F /* ytcpsocket.c in Sources */,
 				A1C70FB21B201ACF00C240FD /* Common.swift in Sources */,
-				ABE6C1DD1A74EBE500163C01 /* XiaoliViewController.swift in Sources */,
+				AB04F14C1BCE9964009BC1B5 /* ChengjiViewController.swift in Sources */,
+				AB04F1491BCE9906009BC1B5 /* oc.m in Sources */,
+				AB04F1461BCE9906009BC1B5 /* JWGLViewController.swift in Sources */,
 				A1C974DA1B1FFD2700124F1F /* yudpsocket.swift in Sources */,
 				AB129AE91AADEB570044759D /* AboutViewController.swift in Sources */,
-				ABE6C1D71A74EBBE00163C01 /* NU.m in Sources */,
 				A1C974D91B1FFD2700124F1F /* yudpsocket.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -696,6 +737,7 @@
 		};
 		C0DAD4CE1A3E7F9F00BE24A8 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9A77C1989FF0D84602D5407C /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -732,6 +774,7 @@
 		};
 		C0DAD4CF1A3E7F9F00BE24A8 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D83F9D05FFD3CD391626DFE6 /* Pods.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
