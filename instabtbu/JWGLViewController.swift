@@ -337,47 +337,49 @@ class JWGLViewController: UIViewController, UITextFieldDelegate {
         return yzm
     }
     
-//    @IBAction func VPN(sender: AnyObject) {
-//        var foc = oc()
-//        var result = foc.iPOSTwithurl("https://vpn.btbu.edu.cn/dana-na/auth/url_default/login.cgi", withpost:"tz_offset=480&username=1309010428&password=025827&realm=%E6%95%99%E5%B8%88&btnSubmit=%E7%99%BB%E9%99%86")
-//        println("VPN")
-//        var result1 = sGet("https://vpn.btbu.edu.cn/dana-na/auth/url_default/login.cgi?btnContinue=%E7%BB%A7%E7%BB%AD%E4%BC%9A%E8%AF%9D&FormDataStr=159%3B252%3BJqTqVdQGAQABAAAAQP4bd9P64lOT9%2BgFVbjddlHQKx2OpDAJCJRGDdZV%2BH7JPRPEETPqmPA7AKKsug%2F2vvSehqx3iiT3kOimCnBEYrPIPnrPPUbhjvFmFgpp9hEgh9TWaFrgQBRJVNxzVxWiPqb3hUVrMbG344sZw4vcShxYWMrdi8y3DI%2BhR4VzqakqGhsqJwOq0WwmaCXeixtctcvOPQrnFB83iggl2z6cQ4uQ3R4wer%2BqbDjxXqcYytg%3D")
-//        //println("\(result)")
-//        var rec = sGet("https://vpn.btbu.edu.cn/dana/home/launch.cgi?url=http%3A%2F%2Fjwgl.btbu.edu.cn")
-//        //println("\(rec)")
-//        var url = NSURL(string: "https://vpn.btbu.edu.cn/,DanaInfo=jwgl.btbu.edu.cn+verifycode.servlet")
-//        var request = NSURLRequest(URL: url!)
-//        var data = NSURLConnection.sendSynchronousRequest(request, returningResponse: nil, error: nil)
-//        if (data != nil) {
-//            var animage = UIImage(data: data!)
-//            var yzm = getyzm(animage!)
-//            println("\(yzm)")
-//            var retstr = foc.iPOSTwithurl("https://vpn.btbu.edu.cn/,DanaInfo=jwgl.btbu.edu.cn/Logon.do", withpost: "method=logon&USERNAME="+usn.text+"&PASSWORD="+psw.text+"&RANDOMCODE="+yzm)
-//            if foc.iFind("jwgl.btbu.edu.cn/framework/main.jsp", inthe: retstr) {
-//                //获取权限
-//                var a = foc.iPOSTwithurl("https://vpn.btbu.edu.cn/,DanaInfo=jwgl.btbu.edu.cn/Logon.do?method=logonBySSO", withpost: "")
-////                //储存账户密码在本地以及委托
-////                let iSave = NSUserDefaults(suiteName: "iSaveJW")
-////                iSave?.setObject(sendusn, forKey: "SaveUsn")
-////                iSave?.setObject(sendpsw, forKey: "SavePsw")
-////                delegate.jwusn = sendusn
-////                delegate.jwpsw = sendpsw
-//                //判断旁听生 目前只有成绩需要用旁听生bool 成绩必须要登陆
-//                //println("\(a)")
-//                if foc.iFind("P", inthe: usn.text) {
-//                    delegate.pangting = true
-//                    println("P")
-//                }
-////                return true
-//            }
-//            else {
-//                foc.ShowMessage("登录失败", msg: "请尝试重新登陆或重新输入登陆信息，默认密码为学号或身份证后六位。")
-////                return false
-//            }
-//        }
-//        else {
-////            return false
-//        }
-//    }
+    @IBAction func VPN(sender: AnyObject) {
+        let foc = oc()
+        _ = foc.iPOSTwithurl("https://vpn.btbu.edu.cn/dana-na/auth/url_default/login.cgi", withpost:"tz_offset=480&username=1309010428&password=025827&realm=%E6%95%99%E5%B8%88&btnSubmit=%E7%99%BB%E9%99%86")
+        print("VPN")
+        _ = sGet("https://vpn.btbu.edu.cn/dana-na/auth/url_default/login.cgi?btnContinue=%E7%BB%A7%E7%BB%AD%E4%BC%9A%E8%AF%9D&FormDataStr=159%3B252%3BJqTqVdQGAQABAAAAQP4bd9P64lOT9%2BgFVbjddlHQKx2OpDAJCJRGDdZV%2BH7JPRPEETPqmPA7AKKsug%2F2vvSehqx3iiT3kOimCnBEYrPIPnrPPUbhjvFmFgpp9hEgh9TWaFrgQBRJVNxzVxWiPqb3hUVrMbG344sZw4vcShxYWMrdi8y3DI%2BhR4VzqakqGhsqJwOq0WwmaCXeixtctcvOPQrnFB83iggl2z6cQ4uQ3R4wer%2BqbDjxXqcYytg%3D")
+        //println("\(result)")
+        _ = sGet("https://vpn.btbu.edu.cn/dana/home/launch.cgi?url=http%3A%2F%2Fjwgl.btbu.edu.cn")
+        //println("\(rec)")
+        let url = NSURL(string: "https://vpn.btbu.edu.cn/,DanaInfo=jwgl.btbu.edu.cn+verifycode.servlet")
+        let request = NSURLRequest(URL: url!)
+        let data = try?NSURLConnection.sendSynchronousRequest(request, returningResponse: nil)
+        if (data != nil) {
+            let animage = UIImage(data: data!)
+            let yzm = getyzm(animage!)
+            print("\(yzm)")
+            let postdata = "method=logon&USERNAME=" + usn.text! + "&PASSWORD="
+            let postdata2 = psw.text! + "&RANDOMCODE=" + yzm
+            let retstr = foc.iPOSTwithurl("https://vpn.btbu.edu.cn/,DanaInfo=jwgl.btbu.edu.cn/Logon.do", withpost: postdata + postdata2)
+            if foc.iFind("jwgl.btbu.edu.cn/framework/main.jsp", inthe: retstr) {
+                //获取权限
+                _ = foc.iPOSTwithurl("https://vpn.btbu.edu.cn/,DanaInfo=jwgl.btbu.edu.cn/Logon.do?method=logonBySSO", withpost: "")
+//                //储存账户密码在本地以及委托
+//                let iSave = NSUserDefaults(suiteName: "iSaveJW")
+//                iSave?.setObject(sendusn, forKey: "SaveUsn")
+//                iSave?.setObject(sendpsw, forKey: "SavePsw")
+//                delegate.jwusn = sendusn
+//                delegate.jwpsw = sendpsw
+                //判断旁听生 目前只有成绩需要用旁听生bool 成绩必须要登陆
+                //println("\(a)")
+                if foc.iFind("P", inthe: usn.text) {
+                    delegate.pangting = true
+                    print("P")
+                }
+//                return true
+            }
+            else {
+                foc.ShowMessage("登录失败", msg: "请尝试重新登陆或重新输入登陆信息，默认密码为学号或身份证后六位。")
+//                return false
+            }
+        }
+        else {
+//            return false
+        }
+    }
 
 }

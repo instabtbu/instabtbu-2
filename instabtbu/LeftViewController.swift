@@ -10,7 +10,7 @@ import UIKit
 
 class LeftViewController: UIViewController {
     
-    var AButtonName:[String] = ["SW","JW","DT","GY"]
+    var AButtonName:[String] = ["JW","SW","DT","GY"]
     var Buttons = [UIButton]()
     
     override func viewDidLoad() {
@@ -44,10 +44,10 @@ class LeftViewController: UIViewController {
         let i = sender.tag+1
         print("\(sender.tag)")
         if i == 1 {
-            centerViewController.viewControllers = [swViewController]
+            centerViewController.viewControllers = [jwViewController]
         }
         else if i == 2 {
-            centerViewController.viewControllers = [jwViewController]
+            centerViewController.viewControllers = [swViewController]
         }
         else if i == 3 {
             centerViewController.viewControllers = [MapViewController()]
