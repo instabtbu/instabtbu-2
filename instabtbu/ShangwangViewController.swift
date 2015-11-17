@@ -80,6 +80,11 @@ class ShangwangViewController: UIViewController,CLLocationManagerDelegate,GCDAsy
         //配置locationManager,精度稍低,防止使用GPS过度耗电
         locationManager.desiredAccuracy = kCLLocationAccuracyHundredMeters
         locationManager.delegate=self
+        if #available(iOS 9.0, *) {
+            locationManager.allowsBackgroundLocationUpdates = true
+        } else {
+            // Fallback on earlier versions
+        }
         if (UIDevice.currentDevice().systemVersion as NSString).floatValue >= 8 {
             locationManager.requestAlwaysAuthorization()
         }
