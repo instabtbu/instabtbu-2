@@ -50,11 +50,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
         
-        dispatch_async( dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), {
-            MobClick.startWithAppkey("54928b14fd98c57631000120", reportPolicy: BATCH , channelId: "instabtbu")
-            UMFeedback.setAppkey("54928b14fd98c57631000120")
-        })
-        
         if (UIDevice.currentDevice().userInterfaceIdiom == UIUserInterfaceIdiom.Phone) {
             stb = UIStoryboard(name: "Main", bundle: nil)
         }

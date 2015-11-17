@@ -26,11 +26,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "instabtbu/ShangwangViewController.swift"
-            timestampString = "469425953.87748"
+            timestampString = "469457924.292468"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "259"
-            endingLineNumber = "259"
+            startingLineNumber = "254"
+            endingLineNumber = "254"
             landmarkName = "denglu2(_:)"
             landmarkType = "5">
          </BreakpointContent>
@@ -74,11 +74,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "instabtbu/ShangwangViewController.swift"
-            timestampString = "469425953.87748"
+            timestampString = "469457924.292468"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "215"
-            endingLineNumber = "215"
+            startingLineNumber = "210"
+            endingLineNumber = "210"
             landmarkName = "ShangwangViewController"
             landmarkType = "3">
          </BreakpointContent>

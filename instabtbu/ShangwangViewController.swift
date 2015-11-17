@@ -198,11 +198,6 @@ class ShangwangViewController: UIViewController,CLLocationManagerDelegate,GCDAsy
         }
     }
     
-    @IBAction func feedback(sender: AnyObject) {
-        //反馈
-        navigationController?.pushViewController(UMFeedback.feedbackViewController(), animated: true)
-    }
-    
     var liulianglabel = UILabel()
     var zaixianlabel = UILabel()
     //上面两个用代码生成,因为不用代码就没办法修改位置
@@ -373,7 +368,6 @@ class ShangwangViewController: UIViewController,CLLocationManagerDelegate,GCDAsy
     var delaytime:UInt32 = 30
     
     func baochi(){
-        MobClick.beginEvent("service")
         
 //        var udp = GCDAsyncUdpSocket(delegate: self, delegateQueue: dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0))
 //        udp.connectToHost("192.168.8.8", onPort: 21099, error: nil)
@@ -409,9 +403,6 @@ class ShangwangViewController: UIViewController,CLLocationManagerDelegate,GCDAsy
             }
         }
         
-        MobClick.endEvent("service")
-        
-        
     }
     
     func testonline(){
@@ -441,7 +432,6 @@ class ShangwangViewController: UIViewController,CLLocationManagerDelegate,GCDAsy
     }
     
     func chaliuliang2(){
-        MobClick.event("chaliuliang")
         print("开始连接");
         let ip = oc().getIP()
         if ip != nil{
