@@ -138,9 +138,8 @@ class ShangwangViewController: UIViewController,CLLocationManagerDelegate,GCDAsy
         
         if(location.horizontalAccuracy>0){
             //获取到gps信息
-            let gps="GPS信息:\n经度:\(location.coordinate.latitude)\n纬度:\(location.coordinate.longitude)"
-            print(gps)
-            //print("GPS")
+            //let gps="GPS信息:\n经度:\(location.coordinate.latitude)\n纬度:\(location.coordinate.longitude)"
+            //print(gps)
         }
     }
     
@@ -264,6 +263,7 @@ class ShangwangViewController: UIViewController,CLLocationManagerDelegate,GCDAsy
                 print("保持在线数据:\(Common.t(Common.remain))")
                 ui({
                     self.locationManager.startUpdatingLocation()
+                    self.locationManager.startMonitoringSignificantLocationChanges()
                     //通过locationManager保持后台
                     
                     let data = NSUserDefaults(suiteName: "data")
@@ -347,6 +347,7 @@ class ShangwangViewController: UIViewController,CLLocationManagerDelegate,GCDAsy
         zhuangtai.image=UIImage(named: "shangwang_weilianjie.png")
         denglubutton.setImage(UIImage(named: "shangwang_denglu1.png"), forState: UIControlState.Normal)
         locationManager.stopUpdatingLocation()
+        locationManager.stopMonitoringSignificantLocationChanges()
         numtext.enabled = true
         pswtext.enabled = true
         
