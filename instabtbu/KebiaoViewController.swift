@@ -145,15 +145,16 @@ class KebiaoViewController: UIViewController, UIAlertViewDelegate {
         let a2 = a1.stringByReplacingOccurrencesOfString("<br><nobr>", withString: "\n")
         let a3 = a2.stringByReplacingOccurrencesOfString("<br><br>", withString: "\n")
         let a4 = a3.stringByReplacingOccurrencesOfString("<br>", withString: "\n")
-        let s1 = a4.rangeOfString("&nbsp;")
-        let r1 = Range(start: (s1?.endIndex)! , end: a4.endIndex)
-        let a5 = a4.substringWithRange(r1)
-        let s2 = a5.rangeOfString("</div>")
-        let r2 = Range(start: a1.startIndex, end: (s2?.startIndex)!)
-        let a6 = a5.substringWithRange(r2)
-        var a7 = a6.stringByReplacingOccurrencesOfString(" ", withString: "")
-        a7 = a7.substringToIndex(a7.endIndex.predecessor())
-        return a7
+        if let s1 = a4.rangeOfString("&nbsp;"){
+            let a5 = a4.substringWithRange(s1.endIndex..<a4.endIndex)
+            if let s2 = a5.rangeOfString("</div>"){
+                let a6 = a5.substringWithRange(a1.startIndex..<s2.startIndex)
+                var a7 = a6.stringByReplacingOccurrencesOfString(" ", withString: "")
+                a7 = a7.substringToIndex(a7.endIndex.predecessor())
+                return a7
+            }
+        }
+        return ""
     }
     
     func btnBackClicked(sender:AnyObject) {

@@ -318,11 +318,13 @@ class JWGLViewController: UIViewController, UITextFieldDelegate {
     }
     
     func zhongjian(str:String,str1:String,str2:String)->String {
-        let left = str.rangeOfString(str1)
-        let right = str.rangeOfString(str2)
-        let r = Range(start: (left?.endIndex)! , end: (right?.startIndex)!)
-        let s = str.substringWithRange(r)
-        return s
+        if let left = str.rangeOfString(str1){
+            if let right = str.rangeOfString(str2){
+                let s = str.substringWithRange(left.endIndex..<right.startIndex)
+                return s
+            }
+        }
+        return ""
     }
     
     func getyzm(img:UIImage) -> String {
