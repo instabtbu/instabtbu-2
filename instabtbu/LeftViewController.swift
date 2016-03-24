@@ -27,7 +27,7 @@ class LeftViewController: UIViewController {
             let AButton = UIButton(frame: CGRect(x: 0, y: Sumheight, width: width, height: width*43/200))
             Sumheight += width*43/200
             AButton.setBackgroundImage(UIImage(named: "\(AButtonName[i])f"), forState: UIControlState.Normal)
-            AButton.addTarget(self, action: "qiehuan:", forControlEvents: UIControlEvents.TouchUpInside)
+            AButton.addTarget(self, action: #selector(LeftViewController.qiehuan(_:)), forControlEvents: UIControlEvents.TouchUpInside)
             AButton.tag = i
             self.view.addSubview(AButton)
             Buttons.append(AButton)
@@ -58,7 +58,7 @@ class LeftViewController: UIViewController {
         var k = 0
         for j in Buttons {
             j.setBackgroundImage(UIImage(named: "\(AButtonName[k])f"), forState: UIControlState.Normal)
-            k++
+            k += 1
         }
         sender.setBackgroundImage(UIImage(named: "\(AButtonName[i-1])t"), forState: UIControlState.Normal)
         drawerController.closeDrawerAnimated(true, completion: nil)

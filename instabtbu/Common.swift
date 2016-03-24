@@ -29,7 +29,7 @@ class Common: NSObject {
         let len = len1+len2
         var f = false
         var re = [UInt8]()
-        for var i=0;i<Int(len);i=i+1{
+        for i in 0..<Int(len){
             re.append(buf2[i+4])
         }
         
@@ -79,22 +79,22 @@ class Common: NSObject {
         var i = 0
         for c in num.cStringUsingEncoding(NSASCIIStringEncoding)!{
             msg[i]=UInt8(c)
-            i++
+            i += 1
         }
         i=23
         for c in psw.cStringUsingEncoding(NSASCIIStringEncoding)!{
             msg[i]=UInt8(c)
-            i++
+            i += 1
         }
         i=23+23
         for c in ip.cStringUsingEncoding(NSASCIIStringEncoding)!{
             msg[i]=UInt8(c)
-            i++
+            i += 1
         }
         i=23+23+20
         for c in verify{
             msg[i]=UInt8(c)
-            i++
+            i += 1
         }
         return msg;
     }
@@ -105,12 +105,12 @@ class Common: NSObject {
         var i = 0
         for c in num.cStringUsingEncoding(NSASCIIStringEncoding)!{
             msg[i]=UInt8(c)
-            i++
+            i += 1
         }
         i=23
         for c in psw.cStringUsingEncoding(NSASCIIStringEncoding)!{
             msg[i]=UInt8(c)
-            i++
+            i += 1
         }
         for i in 0..<verify.count{
             msg[i+23+23]=verify[i]
@@ -121,7 +121,7 @@ class Common: NSObject {
     static func zhuanyi(buf:[UInt8])->[UInt8]{
         var re = [UInt8]()
         re.append(0x7E)
-        for var i=1;i<buf.count-1;i++ {
+        for i in 1 ..< buf.count-1 {
             if buf[i]==0x7D||buf[i]==0x7E{
                 re.append(0x7D)
                 re.append(buf[i]^0x40)
@@ -135,9 +135,10 @@ class Common: NSObject {
     
     static func fanzhuanyi(buf:[UInt8])->[UInt8]{
         var re = [UInt8]()
-        for var i=0;i<buf.count;i++ {
+        for var i in 0..<buf.count{
             if buf[i]==0x7D{
-                re.append(buf[++i]^0x40)
+                i += 1
+                re.append(buf[i]^0x40)
             }else {
                 re.append(buf[i])
             }
@@ -167,7 +168,8 @@ class Common: NSObject {
         let len = UInt8s.count;
         var crc = 0;
         while(i<len){
-            let index = UInt8(crc>>8)^UInt8s[i++];
+            let index = UInt8(crc>>8)^UInt8s[i];
+            i += 1
             crc = ((crc&0xFF)<<8) ^ table[Int(index)]
         }
         return crc;

@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import MMDrawerController
 
 class AboutViewController: UIViewController {
     
@@ -53,7 +54,7 @@ class AboutViewController: UIViewController {
         }
         self.navigationItem.title = "关于我们"
         
-        let leftDrawerButton = MMDrawerBarButtonItem(target: self, action: "leftDrawerButtonPress")
+        let leftDrawerButton = MMDrawerBarButtonItem(target: self, action: #selector(AboutViewController.leftDrawerButtonPress))
         self.navigationItem.leftBarButtonItem = leftDrawerButton
     }
     

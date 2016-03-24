@@ -22,6 +22,8 @@
 	<string>1</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
+	<key>UIApplicationExitsOnSuspend</key>
+	<false/>
 	<key>NSLocationAlwaysUsageDescription</key>
 	<string>为了保持持久在线,请点击允许</string>
 	<key>NSLocationUsageDescription</key>

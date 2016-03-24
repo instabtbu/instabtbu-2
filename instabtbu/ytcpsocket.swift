@@ -29,20 +29,13 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 */
 import Foundation
 
-@asmname("ytcpsocket_connect") func c_ytcpsocket_connect(host:UnsafePointer<Int8>,port:Int32,timeout:Int32) -> Int32
-@asmname("ytcpsocket_close") func c_ytcpsocket_close(fd:Int32) -> Int32
-@asmname("ytcpsocket_send") func c_ytcpsocket_send(fd:Int32,buff:UnsafePointer<UInt8>,len:Int32) -> Int32
-@asmname("ytcpsocket_pull") func c_ytcpsocket_pull(fd:Int32,buff:UnsafePointer<UInt8>,len:Int32) -> Int32
-@asmname("ytcpsocket_listen") func c_ytcpsocket_listen(addr:UnsafePointer<Int8>,port:Int32)->Int32
-@asmname("ytcpsocket_accept") func c_ytcpsocket_accept(onsocketfd:Int32,ip:UnsafePointer<Int8>,port:UnsafePointer<Int32>) -> Int32
-
 public class TCPClient:YSocket{
     /*
      * connect to server
      * return success or fail with message
      */
     public func connect(timeout t:Int)->(Bool,String){
-        let rs:Int32=c_ytcpsocket_connect(self.addr, port: Int32(self.port),timeout: Int32(t))
+        let rs:Int32=ytcpsocket_connect(self.addr, Int32(self.port),Int32(t))
         if rs>0{
             self.fd=rs
             return (true,"connect success")
@@ -65,7 +58,7 @@ public class TCPClient:YSocket{
     */
     public func close()->(Bool,String){
         if let fd:Int32=self.fd{
-            c_ytcpsocket_close(fd)
+            ytcpsocket_close(fd)
             self.fd=nil
             return (true,"close success")
         }else{
@@ -78,7 +71,7 @@ public class TCPClient:YSocket{
     */
     public func send(data d:[UInt8])->(Bool,String){
         if let fd:Int32=self.fd{
-            let sendsize:Int32=c_ytcpsocket_send(fd, buff: d, len: Int32(d.count))
+            let sendsize:Int32=ytcpsocket_send(fd, d, Int32(d.count))
             if Int(sendsize)==d.count{
                return (true,"send success")
             }else{
@@ -94,7 +87,7 @@ public class TCPClient:YSocket{
     */
     public func send(str s:String)->(Bool,String){
         if let fd:Int32=self.fd{
-            let sendsize:Int32=c_ytcpsocket_send(fd, buff: s, len: Int32(strlen(s)))
+            let sendsize:Int32=ytcpsocket_send(fd, s, Int32(strlen(s)))
             if sendsize==Int32(strlen(s)){
                 return (true,"send success")
             }else{
@@ -112,7 +105,7 @@ public class TCPClient:YSocket{
         if let fd:Int32=self.fd{
             var buff:[UInt8] = [UInt8](count:d.length,repeatedValue:0x0)
             d.getBytes(&buff, length: d.length)
-            let sendsize:Int32=c_ytcpsocket_send(fd, buff: buff, len: Int32(d.length))
+            let sendsize:Int32=ytcpsocket_send(fd, buff, Int32(d.length))
             if sendsize==Int32(d.length){
                 return (true,"send success")
             }else{
@@ -129,7 +122,7 @@ public class TCPClient:YSocket{
     public func read(expectlen:Int)->[UInt8]?{
         if let fd:Int32 = self.fd{
             var buff:[UInt8] = [UInt8](count:expectlen,repeatedValue:0x0)
-            let readLen:Int32=c_ytcpsocket_pull(fd, buff: &buff, len: Int32(expectlen))
+            let readLen:Int32=ytcpsocket_pull(fd, &buff, Int32(expectlen))
             if readLen<=0{
                 return nil
             }
@@ -145,7 +138,7 @@ public class TCPServer:YSocket{
 
     public func listen()->(Bool,String){
         
-        let fd:Int32=c_ytcpsocket_listen(self.addr, port: Int32(self.port))
+        let fd:Int32=ytcpsocket_listen(self.addr, Int32(self.port))
         if fd>0{
             self.fd=fd
             return (true,"listen success")
@@ -157,7 +150,7 @@ public class TCPServer:YSocket{
         if let serferfd=self.fd{
             var buff:[Int8] = [Int8](count:16,repeatedValue:0x0)
             var port:Int32=0
-            let clientfd:Int32=c_ytcpsocket_accept(serferfd, ip: &buff,port: &port)
+            let clientfd:Int32=ytcpsocket_accept(serferfd, &buff,&port)
             if clientfd<0{
                 return nil
             }
@@ -173,7 +166,7 @@ public class TCPServer:YSocket{
     }
     public func close()->(Bool,String){
         if let fd:Int32=self.fd{
-            c_ytcpsocket_close(fd)
+            ytcpsocket_close(fd)
             self.fd=nil
             return (true,"close success")
         }else{

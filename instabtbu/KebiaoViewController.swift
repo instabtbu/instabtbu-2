@@ -37,26 +37,32 @@ class KebiaoViewController: UIViewController, UIAlertViewDelegate {
         else if view.frame.width == 375 {
             x = [20,290,32]
         }
+        
         //显示学期
         let dangqian = UILabel(frame: CGRectMake(x[0], y[0], w[0], h[0]))
         dangqian.text = "当前学期：" + delegate.xueqi
         self.view.addSubview(dangqian)
+        
         //选学期按钮
-        let xuanxueqi: UIButton = UIButton(type: UIButtonType.System)
+        let xuanxueqi = UIButton(type: .System)
         xuanxueqi.frame = CGRectMake(x[1], y[0], w[1], h[0])
-        xuanxueqi.setTitle("学期", forState: UIControlState.Normal)
-        xuanxueqi.backgroundColor = UIColor.whiteColor()
-        xuanxueqi.addTarget(self, action: "xuanXQ", forControlEvents: UIControlEvents.TouchUpInside)
+        xuanxueqi.setTitle("学期", forState: .Normal)
+        xuanxueqi.backgroundColor = UIColor(red: 43.0/255.0, green: 188.0/255.0, blue: 93.0/255.0, alpha: 1.0)
+        xuanxueqi.setTitleColor(UIColor.whiteColor(), forState: .Normal)
+        xuanxueqi.addTarget(self, action: #selector(KebiaoViewController.xuanXQ), forControlEvents: UIControlEvents.TouchUpInside)
         self.view.addSubview(xuanxueqi)
+        
         //整体滑动
         let scrollview = UIScrollView(frame: CGRectMake(0, y[1], self.view.frame.width, self.view.frame.height-y[1]))
         scrollview.backgroundColor = UIColor.whiteColor()
         scrollview.bounces = false
         self.view.addSubview(scrollview)
+        
         //滑动内容
         let myView = UIView(frame: CGRectMake(0, 0, self.view.frame.width, y[2]*6))
         scrollview.addSubview(myView)
         scrollview.contentSize = myView.frame.size
+        
         //有委托学期则证明查过课表 生成ui
         if delegate.xueqi != "" {
             for i in 0...5 {

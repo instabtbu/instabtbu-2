@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import MMDrawerController
 
 class JWGLViewController: UIViewController, UITextFieldDelegate {
     var delegate:AppDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
@@ -25,7 +26,7 @@ class JWGLViewController: UIViewController, UITextFieldDelegate {
             delegate.jwusn = usn.text
             delegate.jwpsw = psw.text
         }
-        let leftDrawerButton = MMDrawerBarButtonItem(target: self, action: "leftDrawerButtonPress")
+        let leftDrawerButton = MMDrawerBarButtonItem(target: self, action: #selector(JWGLViewController.leftDrawerButtonPress))
         self.navigationItem.leftBarButtonItem = leftDrawerButton
     }
     
@@ -282,7 +283,7 @@ class JWGLViewController: UIViewController, UITextFieldDelegate {
                         }
                     }
                 }
-                xh++
+                xh += 1
             }
             return true
         }
@@ -299,9 +300,8 @@ class JWGLViewController: UIViewController, UITextFieldDelegate {
             for i in b {
                 print("\(i)")
             }
-            var i = 0
             
-            for (i = 0;i<b.count;i++) {
+            for i in 0..<b.count{
                 let c = foc.iRegular("&nbsp;(.*?)<br>(.+?)<br>(.*?)<br><nobr> *(.*?)<nobr><br>(.*?)<br>(.*?)<br>", and: b.objectAtIndex(i) as! String, withx: 0)
                 print("\(c)")
                 if c.count == 0{

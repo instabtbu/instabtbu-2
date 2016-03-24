@@ -7,27 +7,25 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		2BDB8B55BD2D49ED5DF2DEEF /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 06C8BD140C807A3A40360D9A /* libPods.a */; };
+		9F6ED245E6DAE6C027C921A0 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22C03AA95ABB3239C9F37FC5 /* Pods.framework */; };
 		A1C70FB21B201ACF00C240FD /* Common.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1C70FB11B201ACF00C240FD /* Common.swift */; };
 		A1C974D71B1FFD2700124F1F /* ytcpsocket.c in Sources */ = {isa = PBXBuildFile; fileRef = A1C974D31B1FFD2700124F1F /* ytcpsocket.c */; };
 		A1C974D81B1FFD2700124F1F /* ytcpsocket.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1C974D41B1FFD2700124F1F /* ytcpsocket.swift */; };
 		A1C974D91B1FFD2700124F1F /* yudpsocket.c in Sources */ = {isa = PBXBuildFile; fileRef = A1C974D51B1FFD2700124F1F /* yudpsocket.c */; };
 		A1C974DA1B1FFD2700124F1F /* yudpsocket.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1C974D61B1FFD2700124F1F /* yudpsocket.swift */; };
 		A1C974DC1B1FFD4900124F1F /* ysocket.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1C974DB1B1FFD4900124F1F /* ysocket.swift */; };
-		AB04F1461BCE9906009BC1B5 /* JWGLViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB04F13F1BCE9906009BC1B5 /* JWGLViewController.swift */; settings = {ASSET_TAGS = (); }; };
-		AB04F1471BCE9906009BC1B5 /* KebiaoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB04F1401BCE9906009BC1B5 /* KebiaoViewController.swift */; settings = {ASSET_TAGS = (); }; };
-		AB04F1481BCE9906009BC1B5 /* NU.m in Sources */ = {isa = PBXBuildFile; fileRef = AB04F1421BCE9906009BC1B5 /* NU.m */; settings = {ASSET_TAGS = (); }; };
-		AB04F1491BCE9906009BC1B5 /* oc.m in Sources */ = {isa = PBXBuildFile; fileRef = AB04F1441BCE9906009BC1B5 /* oc.m */; settings = {ASSET_TAGS = (); }; };
-		AB04F14A1BCE9906009BC1B5 /* XiaoliViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB04F1451BCE9906009BC1B5 /* XiaoliViewController.swift */; settings = {ASSET_TAGS = (); }; };
-		AB04F14C1BCE9964009BC1B5 /* ChengjiViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB04F14B1BCE9964009BC1B5 /* ChengjiViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		AB04F1461BCE9906009BC1B5 /* JWGLViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB04F13F1BCE9906009BC1B5 /* JWGLViewController.swift */; };
+		AB04F1471BCE9906009BC1B5 /* KebiaoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB04F1401BCE9906009BC1B5 /* KebiaoViewController.swift */; };
+		AB04F1481BCE9906009BC1B5 /* NU.m in Sources */ = {isa = PBXBuildFile; fileRef = AB04F1421BCE9906009BC1B5 /* NU.m */; };
+		AB04F1491BCE9906009BC1B5 /* oc.m in Sources */ = {isa = PBXBuildFile; fileRef = AB04F1441BCE9906009BC1B5 /* oc.m */; };
+		AB04F14A1BCE9906009BC1B5 /* XiaoliViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB04F1451BCE9906009BC1B5 /* XiaoliViewController.swift */; };
+		AB04F14C1BCE9964009BC1B5 /* ChengjiViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB04F14B1BCE9964009BC1B5 /* ChengjiViewController.swift */; };
 		AB129AE71AADEB330044759D /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB129AE61AADEB330044759D /* MapViewController.swift */; };
 		AB129AE91AADEB570044759D /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB129AE81AADEB570044759D /* AboutViewController.swift */; };
 		AB2FA56E1A8E0B84000609E1 /* LeftViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB2FA56D1A8E0B84000609E1 /* LeftViewController.swift */; };
 		AB6BCAB21BAF11FD005C2ECE /* libcrypto.a in Frameworks */ = {isa = PBXBuildFile; fileRef = AB6BCAB11BAF11FD005C2ECE /* libcrypto.a */; };
 		C03F71731A42B71A0096E923 /* Main_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C03F71711A42B71A0096E923 /* Main_iPad.storyboard */; };
-		C03F71761A42CE2D0096E923 /* libMobClickLibrary.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C03F71741A42CE2D0096E923 /* libMobClickLibrary.a */; };
 		C03F71781A42CE7F0096E923 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = C03F71771A42CE7F0096E923 /* libz.dylib */; };
-		C03F717E1A42DF650096E923 /* libUMFeedback.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C03F717C1A42DF650096E923 /* libUMFeedback.a */; };
 		C069BE431AD6CD5100080844 /* LiuliangGoumaiViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C069BE421AD6CD5100080844 /* LiuliangGoumaiViewController.swift */; };
 		C07755EC1A448BC6003BD4E4 /* UMFeedbackLocalizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = C07755EA1A448BC6003BD4E4 /* UMFeedbackLocalizable.strings */; };
 		C07756251A45F185003BD4E4 /* GCDAsyncUdpSocket.m in Sources */ = {isa = PBXBuildFile; fileRef = C07756241A45F185003BD4E4 /* GCDAsyncUdpSocket.m */; };
@@ -52,8 +50,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		06C8BD140C807A3A40360D9A /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		22C03AA95ABB3239C9F37FC5 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9A77C1989FF0D84602D5407C /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		A155EAA61CA395BB00AF7B57 /* ytcp.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ytcp.h; sourceTree = "<group>"; };
 		A1C70FB11B201ACF00C240FD /* Common.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Common.swift; sourceTree = "<group>"; };
 		A1C974D31B1FFD2700124F1F /* ytcpsocket.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = ytcpsocket.c; sourceTree = "<group>"; };
 		A1C974D41B1FFD2700124F1F /* ytcpsocket.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ytcpsocket.swift; sourceTree = "<group>"; };
@@ -71,14 +70,11 @@
 		AB04F14D1BCE99C3009BC1B5 /* instabtbu-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "instabtbu-Bridging-Header.h"; sourceTree = SOURCE_ROOT; };
 		AB129AE61AADEB330044759D /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		AB129AE81AADEB570044759D /* AboutViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
+		AB1EFE5F1BF37ACC00C9C1D3 /* libMMDrawerController.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libMMDrawerController.a; path = "Pods/../build/Debug-iphoneos/libMMDrawerController.a"; sourceTree = "<group>"; };
 		AB2FA56D1A8E0B84000609E1 /* LeftViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LeftViewController.swift; sourceTree = "<group>"; };
 		AB6BCAB11BAF11FD005C2ECE /* libcrypto.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libcrypto.a; sourceTree = "<group>"; };
 		C03F71721A42B71A0096E923 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPad.storyboard; sourceTree = "<group>"; };
-		C03F71741A42CE2D0096E923 /* libMobClickLibrary.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libMobClickLibrary.a; sourceTree = "<group>"; };
-		C03F71751A42CE2D0096E923 /* MobClick.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MobClick.h; sourceTree = "<group>"; };
 		C03F71771A42CE7F0096E923 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
-		C03F717C1A42DF650096E923 /* libUMFeedback.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libUMFeedback.a; sourceTree = "<group>"; };
-		C03F717D1A42DF650096E923 /* UMFeedback.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UMFeedback.h; sourceTree = "<group>"; };
 		C069BE421AD6CD5100080844 /* LiuliangGoumaiViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LiuliangGoumaiViewController.swift; sourceTree = "<group>"; };
 		C07755EB1A448BC6003BD4E4 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = UMFeedbackLocalizable.strings; sourceTree = "<group>"; };
 		C07756231A45F185003BD4E4 /* GCDAsyncUdpSocket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GCDAsyncUdpSocket.h; sourceTree = "<group>"; };
@@ -181,10 +177,8 @@
 			files = (
 				AB6BCAB21BAF11FD005C2ECE /* libcrypto.a in Frameworks */,
 				C03F71781A42CE7F0096E923 /* libz.dylib in Frameworks */,
-				C03F717E1A42DF650096E923 /* libUMFeedback.a in Frameworks */,
-				C03F71761A42CE2D0096E923 /* libMobClickLibrary.a in Frameworks */,
 				C0BE59301A405B690099DE32 /* libssl.a in Frameworks */,
-				2BDB8B55BD2D49ED5DF2DEEF /* libPods.a in Frameworks */,
+				9F6ED245E6DAE6C027C921A0 /* Pods.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -201,7 +195,8 @@
 		6A04CE18B186EBD15990F381 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				06C8BD140C807A3A40360D9A /* libPods.a */,
+				AB1EFE5F1BF37ACC00C9C1D3 /* libMMDrawerController.a */,
+				22C03AA95ABB3239C9F37FC5 /* Pods.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -217,7 +212,7 @@
 			name = OC;
 			sourceTree = "<group>";
 		};
-		ABC364B51AE5339A0091ADBE /* ViewController */ = {
+		ABC364B51AE5339A0091ADBE /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
 				AB04F13F1BCE9906009BC1B5 /* JWGLViewController.swift */,
@@ -230,7 +225,14 @@
 				AB129AE81AADEB570044759D /* AboutViewController.swift */,
 				AB129AE61AADEB330044759D /* MapViewController.swift */,
 			);
-			name = ViewController;
+			name = ViewControllers;
+			sourceTree = "<group>";
+		};
+		ABF5537F1BE772D8009BC941 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Views;
 			sourceTree = "<group>";
 		};
 		C07755E91A448BC6003BD4E4 /* zh-Hans.lproj */ = {
@@ -350,7 +352,8 @@
 				C07755E91A448BC6003BD4E4 /* zh-Hans.lproj */,
 				C0BE58951A402C930099DE32 /* openssl */,
 				ABC364B41AE5338B0091ADBE /* OC */,
-				ABC364B51AE5339A0091ADBE /* ViewController */,
+				ABC364B51AE5339A0091ADBE /* ViewControllers */,
+				ABF5537F1BE772D8009BC941 /* Views */,
 				C07756231A45F185003BD4E4 /* GCDAsyncUdpSocket.h */,
 				C07756241A45F185003BD4E4 /* GCDAsyncUdpSocket.m */,
 				A1C70FB11B201ACF00C240FD /* Common.swift */,
@@ -359,8 +362,6 @@
 				A1C974D51B1FFD2700124F1F /* yudpsocket.c */,
 				A1C974D61B1FFD2700124F1F /* yudpsocket.swift */,
 				A1C974DB1B1FFD4900124F1F /* ysocket.swift */,
-				C03F71751A42CE2D0096E923 /* MobClick.h */,
-				C03F717D1A42DF650096E923 /* UMFeedback.h */,
 				C0DAD4B31A3E7F9F00BE24A8 /* AppDelegate.swift */,
 				C0DAD4DA1A3EFD5C00BE24A8 /* testc.c */,
 				C0DAD4DB1A3EFD5C00BE24A8 /* testc.h */,
@@ -369,10 +370,9 @@
 				C0DAD4BA1A3E7F9F00BE24A8 /* Images.xcassets */,
 				C0DAD4BC1A3E7F9F00BE24A8 /* LaunchScreen.xib */,
 				AB04F14D1BCE99C3009BC1B5 /* instabtbu-Bridging-Header.h */,
+				A155EAA61CA395BB00AF7B57 /* ytcp.h */,
 				C0BE592E1A405B690099DE32 /* libssl.a */,
 				AB6BCAB11BAF11FD005C2ECE /* libcrypto.a */,
-				C03F71741A42CE2D0096E923 /* libMobClickLibrary.a */,
-				C03F717C1A42DF650096E923 /* libUMFeedback.a */,
 				C0DAD4B11A3E7F9F00BE24A8 /* Supporting Files */,
 			);
 			path = instabtbu;
@@ -462,11 +462,11 @@
 				LastSwiftMigration = 0700;
 				LastSwiftUpdateCheck = 0700;
 				LastUpgradeCheck = 0700;
-				ORGANIZATIONNAME = "杨培文";
+				ORGANIZATIONNAME = instabtbu;
 				TargetAttributes = {
 					C0DAD4AD1A3E7F9F00BE24A8 = {
 						CreatedOnToolsVersion = 6.1.1;
-						DevelopmentTeam = ME6769WAA3;
+						DevelopmentTeam = W26WBSVK66;
 					};
 					C0DAD4C21A3E7F9F00BE24A8 = {
 						CreatedOnToolsVersion = 6.1.1;
@@ -755,6 +755,7 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/instabtbu",
+					"$(PROJECT_DIR)/build/Debug-iphoneos",
 				);
 				"LIBRARY_SEARCH_PATHS[arch=*]" = (
 					"$(inherited)",
@@ -792,6 +793,7 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/instabtbu",
+					"$(PROJECT_DIR)/build/Debug-iphoneos",
 				);
 				ONLY_ACTIVE_ARCH = NO;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.$(PRODUCT_NAME:rfc1034identifier)";

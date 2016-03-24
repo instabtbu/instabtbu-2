@@ -30,23 +30,16 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 import Foundation
 
-@asmname("yudpsocket_server") func c_yudpsocket_server(host:UnsafePointer<Int8>,port:Int32) -> Int32
-@asmname("yudpsocket_recive") func c_yudpsocket_recive(fd:Int32,buff:UnsafePointer<UInt8>,len:Int32,ip:UnsafePointer<Int8>,port:UnsafePointer<Int32>) -> Int32
-@asmname("yudpsocket_close") func c_yudpsocket_close(fd:Int32) -> Int32
-@asmname("yudpsocket_client") func c_yudpsocket_client() -> Int32
-@asmname("yudpsocket_get_server_ip") func c_yudpsocket_get_server_ip(host:UnsafePointer<Int8>,ip:UnsafePointer<Int8>) -> Int32
-@asmname("yudpsocket_sentto") func c_yudpsocket_sentto(fd:Int32,buff:UnsafePointer<UInt8>,len:Int32,ip:UnsafePointer<Int8>,port:Int32) -> Int32
-
 public class UDPClient: YSocket {
     public override init(addr a:String,port p:Int){
         super.init()
         let remoteipbuff:[Int8] = [Int8](count:16,repeatedValue:0x0)
-        let ret=c_yudpsocket_get_server_ip(a, ip: remoteipbuff)
+        let ret=yudpsocket_get_server_ip(a, remoteipbuff)
         if ret==0{
             if let ip=String(CString: remoteipbuff, encoding: NSUTF8StringEncoding){
                 self.addr=ip
                 self.port=p
-                let fd:Int32=c_yudpsocket_client()
+                let fd:Int32=yudpsocket_client()
                 if fd>0{
                     self.fd=fd
                 }
@@ -59,7 +52,7 @@ public class UDPClient: YSocket {
     */
     public func send(data d:[UInt8])->(Bool,String){
         if let fd:Int32=self.fd{
-            let sendsize:Int32=c_yudpsocket_sentto(fd, buff: d, len: Int32(d.count), ip: self.addr,port: Int32(self.port))
+            let sendsize:Int32=yudpsocket_sentto(fd, d, Int32(d.count), self.addr,Int32(self.port))
             if Int(sendsize)==d.count{
                 return (true,"send success")
             }else{
@@ -75,7 +68,7 @@ public class UDPClient: YSocket {
     */
     public func send(str s:String)->(Bool,String){
         if let fd:Int32=self.fd{
-            let sendsize:Int32=c_yudpsocket_sentto(fd, buff: s, len: Int32(strlen(s)), ip: self.addr,port: Int32(self.port))
+            let sendsize:Int32=yudpsocket_sentto(fd, s, Int32(strlen(s)), self.addr,Int32(self.port))
             if sendsize==Int32(strlen(s)){
                 return (true,"send success")
             }else{
@@ -93,7 +86,7 @@ public class UDPClient: YSocket {
         if let fd:Int32=self.fd{
             var buff:[UInt8] = [UInt8](count:d.length,repeatedValue:0x0)
             d.getBytes(&buff, length: d.length)
-            let sendsize:Int32=c_yudpsocket_sentto(fd, buff: buff, len: Int32(d.length), ip: self.addr,port: Int32(self.port))
+            let sendsize:Int32=yudpsocket_sentto(fd, buff, Int32(d.length), self.addr,Int32(self.port))
             if sendsize==Int32(d.length){
                 return (true,"send success")
             }else{
@@ -105,7 +98,7 @@ public class UDPClient: YSocket {
     }
     public func close()->(Bool,String){
         if let fd:Int32=self.fd{
-            c_yudpsocket_close(fd)
+            yudpsocket_close(fd)
             self.fd=nil
             return (true,"close success")
         }else{
@@ -118,7 +111,7 @@ public class UDPClient: YSocket {
 public class UDPServer:YSocket{
     public override init(addr a:String,port p:Int){
         super.init(addr: a, port: p)
-        let fd:Int32 = c_yudpsocket_server(self.addr, port: Int32(self.port))
+        let fd:Int32 = yudpsocket_server(self.addr, Int32(self.port))
         if fd>0{
             self.fd=fd
         }
@@ -129,7 +122,7 @@ public class UDPServer:YSocket{
             var buff:[UInt8] = [UInt8](count:expectlen,repeatedValue:0x0)
             var remoteipbuff:[Int8] = [Int8](count:16,repeatedValue:0x0)
             var remoteport:Int32=0
-            let readLen:Int32=c_yudpsocket_recive(fd, buff: buff, len: Int32(expectlen), ip: &remoteipbuff, port: &remoteport)
+            let readLen:Int32=yudpsocket_recive(fd, buff, Int32(expectlen), &remoteipbuff, &remoteport)
             let port:Int=Int(remoteport)
             var addr:String=""
             if let ip=String(CString: remoteipbuff, encoding: NSUTF8StringEncoding){
@@ -146,7 +139,7 @@ public class UDPServer:YSocket{
     }
     public func close()->(Bool,String){
         if let fd:Int32=self.fd{
-            c_yudpsocket_close(fd)
+            yudpsocket_close(fd)
             self.fd=nil
             return (true,"close success")
         }else{

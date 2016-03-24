@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import MMDrawerController
 
 class MapViewController: UIViewController, UIScrollViewDelegate, UITabBarDelegate {
     
@@ -42,7 +43,7 @@ class MapViewController: UIViewController, UIScrollViewDelegate, UITabBarDelegat
         
         self.navigationItem.title = "地铁"
         
-        let leftDrawerButton = MMDrawerBarButtonItem(target: self, action: "leftDrawerButtonPress")
+        let leftDrawerButton = MMDrawerBarButtonItem(target: self, action: #selector(MapViewController.leftDrawerButtonPress))
         self.navigationItem.leftBarButtonItem = leftDrawerButton
     }
     

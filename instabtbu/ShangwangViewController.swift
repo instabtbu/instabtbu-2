@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import MMDrawerController
 import CoreLocation
 import Foundation
 
@@ -80,6 +81,11 @@ class ShangwangViewController: UIViewController,CLLocationManagerDelegate,GCDAsy
         //配置locationManager,精度稍低,防止使用GPS过度耗电
         locationManager.desiredAccuracy = kCLLocationAccuracyHundredMeters
         locationManager.delegate=self
+        if #available(iOS 9.0, *) {
+            locationManager.allowsBackgroundLocationUpdates = true
+        } else {
+            // Fallback on earlier versions
+        }
         if (UIDevice.currentDevice().systemVersion as NSString).floatValue >= 8 {
             locationManager.requestAlwaysAuthorization()
         }
@@ -111,7 +117,7 @@ class ShangwangViewController: UIViewController,CLLocationManagerDelegate,GCDAsy
             }
         }
         
-        let leftDrawerButton = MMDrawerBarButtonItem(target: self, action: "leftDrawerButtonPress")
+        let leftDrawerButton = MMDrawerBarButtonItem(target: self, action: #selector(ShangwangViewController.leftDrawerButtonPress))
         self.navigationItem.leftBarButtonItem = leftDrawerButton
         
         //self.locationManager.startUpdatingLocation()
@@ -133,9 +139,8 @@ class ShangwangViewController: UIViewController,CLLocationManagerDelegate,GCDAsy
         
         if(location.horizontalAccuracy>0){
             //获取到gps信息
-            let gps="GPS信息:\n经度:\(location.coordinate.latitude)\n纬度:\(location.coordinate.longitude)"
-            print(gps)
-            //print("GPS")
+            //let gps="GPS信息:\n经度:\(location.coordinate.latitude)\n纬度:\(location.coordinate.longitude)"
+            //print(gps)
         }
     }
     
@@ -193,11 +198,6 @@ class ShangwangViewController: UIViewController,CLLocationManagerDelegate,GCDAsy
         }
     }
     
-    @IBAction func feedback(sender: AnyObject) {
-        //反馈
-        navigationController?.pushViewController(UMFeedback.feedbackViewController(), animated: true)
-    }
-    
     var liulianglabel = UILabel()
     var zaixianlabel = UILabel()
     //上面两个用代码生成,因为不用代码就没办法修改位置
@@ -231,7 +231,7 @@ class ShangwangViewController: UIViewController,CLLocationManagerDelegate,GCDAsy
                     Common.send(buf)
                     rec = Common.read()
                     rec = Common.fanzhuanyi(rec)
-                    trytime++
+                    trytime += 1
                     print("第\(trytime)次")
                     if trytime > 20{
                         red()
@@ -264,6 +264,7 @@ class ShangwangViewController: UIViewController,CLLocationManagerDelegate,GCDAsy
                 print("保持在线数据:\(Common.t(Common.remain))")
                 ui({
                     self.locationManager.startUpdatingLocation()
+                    self.locationManager.startMonitoringSignificantLocationChanges()
                     //通过locationManager保持后台
                     
                     let data = NSUserDefaults(suiteName: "data")
@@ -347,6 +348,7 @@ class ShangwangViewController: UIViewController,CLLocationManagerDelegate,GCDAsy
         zhuangtai.image=UIImage(named: "shangwang_weilianjie.png")
         denglubutton.setImage(UIImage(named: "shangwang_denglu1.png"), forState: UIControlState.Normal)
         locationManager.stopUpdatingLocation()
+        locationManager.stopMonitoringSignificantLocationChanges()
         numtext.enabled = true
         pswtext.enabled = true
         
@@ -368,7 +370,6 @@ class ShangwangViewController: UIViewController,CLLocationManagerDelegate,GCDAsy
     var delaytime:UInt32 = 30
     
     func baochi(){
-        MobClick.beginEvent("service")
         
 //        var udp = GCDAsyncUdpSocket(delegate: self, delegateQueue: dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0))
 //        udp.connectToHost("192.168.8.8", onPort: 21099, error: nil)
@@ -404,9 +405,6 @@ class ShangwangViewController: UIViewController,CLLocationManagerDelegate,GCDAsy
             }
         }
         
-        MobClick.endEvent("service")
-        
-        
     }
     
     func testonline(){
@@ -436,7 +434,6 @@ class ShangwangViewController: UIViewController,CLLocationManagerDelegate,GCDAsy
     }
     
     func chaliuliang2(){
-        MobClick.event("chaliuliang")
         print("开始连接");
         let ip = oc().getIP()
         if ip != nil{
@@ -449,7 +446,7 @@ class ShangwangViewController: UIViewController,CLLocationManagerDelegate,GCDAsy
                     Common.send(buf)
                     rec = Common.read()
                     rec = Common.fanzhuanyi(rec)
-                    trytime++
+                    trytime += 1
                     print("第\(trytime)次")
                     if trytime > 20{
                         //show("查询流量失败")

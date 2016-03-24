@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9059" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="oIX-ks-njo">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="oIX-ks-njo">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
@@ -14,7 +14,6 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="hYT-05-1mI">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <animations/>
                     </navigationBar>
                     <connections>
                         <segue destination="JBW-sU-hsn" kind="relationship" relationship="rootViewController" id="tnp-SH-WJW"/>
@@ -36,23 +35,20 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="shangwang_weilianjie" translatesAutoresizingMaskIntoConstraints="NO" id="JSU-VL-nPH">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="shangwang_weilianjie" translatesAutoresizingMaskIntoConstraints="NO" id="JSU-VL-nPH">
                                 <rect key="frame" x="16" y="80" width="288" height="105"/>
-                                <animations/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="JSU-VL-nPH" secondAttribute="height" multiplier="96:35" id="2ze-1V-huE"/>
                                 </constraints>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="shangwang_psw_left" translatesAutoresizingMaskIntoConstraints="NO" id="yJJ-cD-LVc">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="shangwang_psw_left" translatesAutoresizingMaskIntoConstraints="NO" id="yJJ-cD-LVc">
                                 <rect key="frame" x="16" y="220" width="35" height="35"/>
-                                <animations/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="yJJ-cD-LVc" secondAttribute="height" multiplier="1:1" id="cU8-p2-Fkr"/>
                                 </constraints>
                             </imageView>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" minimumFontSize="17" background="shangwang_psw_right" translatesAutoresizingMaskIntoConstraints="NO" id="9J2-ET-dPB">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" minimumFontSize="17" background="shangwang_psw_right" translatesAutoresizingMaskIntoConstraints="NO" id="9J2-ET-dPB">
                                 <rect key="frame" x="51" y="220" width="253" height="35"/>
-                                <animations/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="9J2-ET-dPB" secondAttribute="height" multiplier="253:35" id="W9u-CR-DeS"/>
                                 </constraints>
@@ -63,9 +59,8 @@
                                     <action selector="pswdid:" destination="BYZ-38-t0r" eventType="editingDidEnd" id="fRW-I9-u64"/>
                                 </connections>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8by-fF-In4">
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8by-fF-In4">
                                 <rect key="frame" x="160" y="255" width="144" height="32"/>
-                                <animations/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="8by-fF-In4" secondAttribute="height" multiplier="9:2" id="jDp-tC-Fhm"/>
                                 </constraints>
@@ -76,9 +71,8 @@
                                     <action selector="duankai:" destination="BYZ-38-t0r" eventType="touchUpInside" id="BCN-Ww-81E"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eCL-7h-k5i">
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eCL-7h-k5i">
                                 <rect key="frame" x="16" y="295" width="140" height="70"/>
-                                <animations/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="eCL-7h-k5i" secondAttribute="height" multiplier="2:1" id="znX-kN-dMD"/>
                                 </constraints>
@@ -89,9 +83,8 @@
                                     <action selector="zidongdenglu:" destination="BYZ-38-t0r" eventType="touchUpInside" id="9fj-mq-rpU"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NZE-Pf-5cm">
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NZE-Pf-5cm">
                                 <rect key="frame" x="16" y="373" width="140" height="140"/>
-                                <animations/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="NZE-Pf-5cm" secondAttribute="height" multiplier="1:1" id="Qb5-lO-iZ5"/>
                                 </constraints>
@@ -102,9 +95,8 @@
                                     <action selector="chaliuliang:" destination="BYZ-38-t0r" eventType="touchUpInside" id="FJ4-Id-YIB"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LBs-gV-iHn">
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LBs-gV-iHn">
                                 <rect key="frame" x="164" y="373" width="140" height="140"/>
-                                <animations/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="LBs-gV-iHn" secondAttribute="height" multiplier="1:1" id="sdO-HP-yxN"/>
                                 </constraints>
@@ -115,9 +107,8 @@
                                     <segue destination="zW0-gA-kpP" kind="push" id="Wao-jR-75R"/>
                                 </connections>
                             </button>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" minimumFontSize="17" background="shangwang_num_right" translatesAutoresizingMaskIntoConstraints="NO" id="5Wf-pv-FeZ">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" minimumFontSize="17" background="shangwang_num_right" translatesAutoresizingMaskIntoConstraints="NO" id="5Wf-pv-FeZ">
                                 <rect key="frame" x="51" y="185" width="253" height="35"/>
-                                <animations/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="35" id="neS-0w-EVi"/>
                                     <constraint firstAttribute="width" secondItem="5Wf-pv-FeZ" secondAttribute="height" multiplier="253:35" id="tTF-af-pcR"/>
@@ -129,9 +120,8 @@
                                     <action selector="numdid:" destination="BYZ-38-t0r" eventType="editingDidEnd" id="BFf-Qz-QwY"/>
                                 </connections>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hyN-Hj-Bzq">
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hyN-Hj-Bzq">
                                 <rect key="frame" x="164" y="295" width="140" height="70"/>
-                                <animations/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="hyN-Hj-Bzq" secondAttribute="height" multiplier="2:1" id="CVO-1q-nJc"/>
                                 </constraints>
@@ -140,16 +130,14 @@
                                     <action selector="zidongcha:" destination="BYZ-38-t0r" eventType="touchUpInside" id="3SU-bq-h0v"/>
                                 </connections>
                             </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="shangwang_num_left" translatesAutoresizingMaskIntoConstraints="NO" id="l1R-sm-KEd">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="shangwang_num_left" translatesAutoresizingMaskIntoConstraints="NO" id="l1R-sm-KEd">
                                 <rect key="frame" x="16" y="185" width="35" height="35"/>
-                                <animations/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="l1R-sm-KEd" secondAttribute="height" multiplier="1:1" id="WyA-uP-7oq"/>
                                 </constraints>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yPC-IR-EbB">
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yPC-IR-EbB">
                                 <rect key="frame" x="16" y="255" width="144" height="32"/>
-                                <animations/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="yPC-IR-EbB" secondAttribute="height" multiplier="9:2" id="Jhi-Vv-1Rw"/>
                                 </constraints>
@@ -160,9 +148,8 @@
                                     <action selector="denglu:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ClL-SI-CwK"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="19n-Ke-gFP">
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="19n-Ke-gFP">
                                 <rect key="frame" x="16" y="521" width="288" height="35.5"/>
-                                <animations/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="19n-Ke-gFP" secondAttribute="height" multiplier="476:59" constant="1.5932203389830306" id="RP1-uu-w0g"/>
                                 </constraints>
@@ -174,7 +161,6 @@
                                 </connections>
                             </button>
                         </subviews>
-                        <animations/>
                         <color key="backgroundColor" red="0.95294117647058818" green="0.95294117647058818" blue="0.95294117647058818" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="JSU-VL-nPH" firstAttribute="trailing" secondItem="G6h-ff-tG3" secondAttribute="trailingMargin" id="0Wg-Jh-8a1"/>
@@ -247,14 +233,12 @@
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="liulianggoumai_yue" translatesAutoresizingMaskIntoConstraints="NO" id="rer-cr-QwV">
                                 <rect key="frame" x="0.0" y="60" width="320" height="181"/>
-                                <animations/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="rer-cr-QwV" secondAttribute="height" multiplier="320:181" id="Uur-l2-ZeF"/>
                                 </constraints>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0Lb-eG-Qu2">
                                 <rect key="frame" x="42" y="412.5" width="236" height="107.5"/>
-                                <animations/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="0Lb-eG-Qu2" secondAttribute="height" multiplier="35:16" id="Hsw-7W-qv4"/>
                                 </constraints>
@@ -267,7 +251,6 @@
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ive-ZR-Rce">
                                 <rect key="frame" x="42" y="273" width="236" height="107.5"/>
-                                <animations/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="ive-ZR-Rce" secondAttribute="height" multiplier="35:16" id="u7u-r2-UML"/>
                                 </constraints>
@@ -279,7 +262,6 @@
                                 </connections>
                             </button>
                         </subviews>
-                        <animations/>
                         <color key="backgroundColor" red="0.30196078431372547" green="0.30196078431372547" blue="0.30196078431372547" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="rer-cr-QwV" secondAttribute="trailing" id="03F-Ey-Gng"/>
@@ -311,9 +293,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" minimumFontSize="17" background="shangwang_num_right" translatesAutoresizingMaskIntoConstraints="NO" id="kDC-2w-QdD" userLabel="usn">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" minimumFontSize="17" background="shangwang_num_right" translatesAutoresizingMaskIntoConstraints="NO" id="kDC-2w-QdD" userLabel="usn">
                                 <rect key="frame" x="50" y="249" width="254" height="35"/>
-                                <animations/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="kDC-2w-QdD" secondAttribute="height" multiplier="254:35" id="thz-Na-7Vi"/>
                                 </constraints>
@@ -324,16 +305,14 @@
                                     <action selector="usndid:" destination="JBW-sU-hsn" eventType="editingDidEnd" id="lzV-Vl-fjd"/>
                                 </connections>
                             </textField>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="jiaowu_back" translatesAutoresizingMaskIntoConstraints="NO" id="HZQ-VE-h0O">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="jiaowu_back" translatesAutoresizingMaskIntoConstraints="NO" id="HZQ-VE-h0O">
                                 <rect key="frame" x="16" y="36" width="288" height="205"/>
-                                <animations/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="HZQ-VE-h0O" secondAttribute="height" multiplier="288:205" id="enw-Qz-GtG"/>
                                 </constraints>
                             </imageView>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" minimumFontSize="17" background="shangwang_psw_right" translatesAutoresizingMaskIntoConstraints="NO" id="l38-fE-ncb" userLabel="psw">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" minimumFontSize="17" background="shangwang_psw_right" translatesAutoresizingMaskIntoConstraints="NO" id="l38-fE-ncb" userLabel="psw">
                                 <rect key="frame" x="50" y="284" width="254" height="35"/>
-                                <animations/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="l38-fE-ncb" secondAttribute="height" multiplier="254:35" id="aI5-3X-psZ"/>
                                 </constraints>
@@ -344,9 +323,8 @@
                                     <action selector="pswdid:" destination="JBW-sU-hsn" eventType="editingDidEnd" id="27T-ex-wQY"/>
                                 </connections>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="56c-FU-Cc9">
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="56c-FU-Cc9">
                                 <rect key="frame" x="16" y="326" width="140" height="140"/>
-                                <animations/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="56c-FU-Cc9" secondAttribute="height" multiplier="1:1" id="aZB-jX-Hfx"/>
                                 </constraints>
@@ -357,9 +335,8 @@
                                     <action selector="ChengjiStart:" destination="JBW-sU-hsn" eventType="touchUpInside" id="TN9-Wb-7d6"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="D8c-cK-I5T">
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="D8c-cK-I5T">
                                 <rect key="frame" x="164" y="326" width="140" height="140"/>
-                                <animations/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="D8c-cK-I5T" secondAttribute="height" multiplier="1:1" id="Q6l-c0-4LH"/>
                                 </constraints>
@@ -370,9 +347,8 @@
                                     <action selector="KebiaoStart:" destination="JBW-sU-hsn" eventType="touchUpInside" id="mPj-PO-2v6"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="f1J-G5-IRd">
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="f1J-G5-IRd">
                                 <rect key="frame" x="16" y="474" width="140" height="36"/>
-                                <animations/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="f1J-G5-IRd" secondAttribute="height" multiplier="35:9" id="32m-nJ-tAp"/>
                                 </constraints>
@@ -383,9 +359,8 @@
                                     <action selector="Xiaoli:" destination="JBW-sU-hsn" eventType="touchUpInside" id="C7F-2E-0Yg"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4K8-7Y-HHt">
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4K8-7Y-HHt">
                                 <rect key="frame" x="164" y="474" width="140" height="36"/>
-                                <animations/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="4K8-7Y-HHt" secondAttribute="height" multiplier="35:9" id="QB9-rd-WVU"/>
                                 </constraints>
@@ -396,30 +371,19 @@
                                     <action selector="Clear:" destination="JBW-sU-hsn" eventType="touchUpInside" id="0bq-xC-ryE"/>
                                 </connections>
                             </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="shangwang_num_left" translatesAutoresizingMaskIntoConstraints="NO" id="hjY-JK-FIc">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="shangwang_num_left" translatesAutoresizingMaskIntoConstraints="NO" id="hjY-JK-FIc">
                                 <rect key="frame" x="16" y="249" width="35" height="35"/>
-                                <animations/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="hjY-JK-FIc" secondAttribute="height" multiplier="1:1" id="6IA-WX-6XC"/>
                                 </constraints>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="shangwang_psw_left" translatesAutoresizingMaskIntoConstraints="NO" id="SP3-An-r1n">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="shangwang_psw_left" translatesAutoresizingMaskIntoConstraints="NO" id="SP3-An-r1n">
                                 <rect key="frame" x="16" y="284" width="35" height="35"/>
-                                <animations/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="SP3-An-r1n" secondAttribute="height" multiplier="1:1" id="Dyk-1U-nxR"/>
                                 </constraints>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IyW-LI-WO1">
-                                <rect key="frame" x="137" y="518" width="46" height="30"/>
-                                <animations/>
-                                <state key="normal" title="Button"/>
-                                <connections>
-                                    <action selector="VPN:" destination="JBW-sU-hsn" eventType="touchUpInside" id="UwH-ub-5cS"/>
-                                </connections>
-                            </button>
                         </subviews>
-                        <animations/>
                         <color key="backgroundColor" red="0.95294117649999999" green="0.95294117649999999" blue="0.95294117649999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="l38-fE-ncb" firstAttribute="width" secondItem="HZQ-VE-h0O" secondAttribute="height" multiplier="254:205" id="37G-qA-60p"/>
