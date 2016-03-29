@@ -62,12 +62,12 @@
 #include "openssl/asn1.h"
 
 #ifndef OPENSSL_NO_BIO
-#include <openssl/bio.h>
+#include "openssl/bio.h"
 #endif
-#include <openssl/crypto.h>
-#include <openssl/ossl_typ.h>
+#include "openssl/crypto.h"
+#include "openssl/ossl_typ.h"
 #ifndef OPENSSL_NO_DEPRECATED
-#include <openssl/bn.h>
+#include "openssl/bn.h"
 #endif
 
 #ifdef OPENSSL_NO_RSA

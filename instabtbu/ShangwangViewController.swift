@@ -79,15 +79,13 @@ class ShangwangViewController: UIViewController,CLLocationManagerDelegate,GCDAsy
         */
         
         //配置locationManager,精度稍低,防止使用GPS过度耗电
-        locationManager.desiredAccuracy = kCLLocationAccuracyHundredMeters
+        locationManager.desiredAccuracy = kCLLocationAccuracyBest
         locationManager.delegate=self
+        locationManager.requestAlwaysAuthorization()
         if #available(iOS 9.0, *) {
             locationManager.allowsBackgroundLocationUpdates = true
         } else {
             // Fallback on earlier versions
-        }
-        if (UIDevice.currentDevice().systemVersion as NSString).floatValue >= 8 {
-            locationManager.requestAlwaysAuthorization()
         }
         
         //读取储存在本地的用户名和密码等配置信息
@@ -139,8 +137,8 @@ class ShangwangViewController: UIViewController,CLLocationManagerDelegate,GCDAsy
         
         if(location.horizontalAccuracy>0){
             //获取到gps信息
-            //let gps="GPS信息:\n经度:\(location.coordinate.latitude)\n纬度:\(location.coordinate.longitude)"
-            //print(gps)
+            let gps="GPS信息:\n经度:\(location.coordinate.latitude)\n纬度:\(location.coordinate.longitude)"
+            print(gps)
         }
     }
     
@@ -295,9 +293,9 @@ class ShangwangViewController: UIViewController,CLLocationManagerDelegate,GCDAsy
                         self.baochi()
                     })
                     //测试是否在线线程
-                    xiancheng({
-                        self.testonline()
-                    })
+//                    xiancheng({
+//                        self.testonline()
+//                    })
                 }
             }else {
                 if !isbackground{
@@ -329,10 +327,7 @@ class ShangwangViewController: UIViewController,CLLocationManagerDelegate,GCDAsy
     @IBAction func duankai(sender: AnyObject) {
         print("断开中")
         let udp = GCDAsyncUdpSocket(delegate: self, delegateQueue: dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0))
-        do {
-            try udp.connectToHost("192.168.8.8", onPort: 21099)
-        } catch _ {
-        }
+        _ = try? udp.connectToHost("192.168.8.8", onPort: 21099)
         let cmd = Common.getcmd(1)
         let data = NSData(bytes: cmd, length: cmd.count)
         
@@ -368,7 +363,7 @@ class ShangwangViewController: UIViewController,CLLocationManagerDelegate,GCDAsy
     }
     
     var delaytime:UInt32 = 30
-    
+    var errortime = 0
     func baochi(){
         
 //        var udp = GCDAsyncUdpSocket(delegate: self, delegateQueue: dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0))
@@ -396,32 +391,36 @@ class ShangwangViewController: UIViewController,CLLocationManagerDelegate,GCDAsy
             let (success,errmsg) = udpclient.send(data: data)
             //var (success,errmsg) = udpclient.send(data: data)
             if success{
-                delaytime = 30
+                delaytime = 45
                 print("发送保持数据成功:\(Common.t(cmd))")
             }else {
                 //一旦发送失败,加快发送速度
-                delaytime = 2
+                delaytime = 45
+                errortime = errortime + 1
+                if(errortime > 5){
+                    always = false
+                }
                 print("发送保持数据失败,原因: \(errmsg)")
             }
         }
         
     }
     
-    func testonline(){
-        while always{
-            sleep(delaytime)
-            let testclient = TCPClient(addr: "baidu.com", port: 80)
-            let (success, error) = testclient.connect(timeout: 15)
-            //var (success, error) = testclient.connect(timeout: 15)
-            print("\(success),\(error)")
-            testclient.close()
-            if success == false{
-                if always{
-                    denglu2(true)
-                }
-            }
-        }
-    }
+//    func testonline(){
+//        while always{
+//            sleep(delaytime)
+//            let testclient = TCPClient(addr: "baidu.com", port: 80)
+//            let (success, error) = testclient.connect(timeout: 15)
+//            //var (success, error) = testclient.connect(timeout: 15)
+//            print("\(success),\(error)")
+//            testclient.close()
+//            if success == false{
+//                if always{
+//                    denglu2(true)
+//                }
+//            }
+//        }
+//    }
     
     func udpSocket(sock: GCDAsyncUdpSocket!, didReceiveData data: NSData!, fromAddress address: NSData!, withFilterContext filterContext: AnyObject!) {
         var s = [UInt8](count:27,repeatedValue:0x0)
